@@ -1,0 +1,26 @@
+{
+  "name": "astro-throughputfocus-com",
+  "version": "1.0.0",
+  "description": "Rebuil site with Astro.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnwolf/astro-throughputfocus-com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rnwolf/astro-throughputfocus-com/issues"
+  },
+  "homepage": "https://github.com/rnwolf/astro-throughputfocus-com#readme",
+  "dependencies": {
+    "astro": "^0.22.17"
+  }
+}
