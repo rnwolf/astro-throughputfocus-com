@@ -1,11 +1,12 @@
 {
   "name": "astro-throughputfocus-com",
   "version": "1.0.0",
-  "description": "Rebuil site with Astro.",
+  "description": "Rebuilt site with Astro.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
@@ -21,6 +22,10 @@
   },
   "homepage": "https://github.com/rnwolf/astro-throughputfocus-com#readme",
   "dependencies": {
-    "astro": "^0.22.17"
+    "astro": "^1.0.0-beta.2"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^0.1.0",
+    "tailwindcss-logical": "^3.0.0"
   }
 }

@@ -1,0 +1,29 @@
+/* src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*The next section for javascript less navigation */
+/* maybe use the @layer here to grt this to work? */
+@layer base {
+  #nav-Checkbox:checked ~ ul.nav-Menu li,
+  #nav-Checkbox:checked ~ label#nav-Toggle #svg-close {
+    @apply block;
+  }
+  #nav-Checkbox:checked ~ label#nav-Toggle #svg-menu {
+    @apply hidden;
+  }
+  #nav-Checkbox:checked ~ ul.nav-Menu {
+    @apply pb-4;
+  }
+}
+/* end of JS for navigation */
+
+@layer base {
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
