@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.1.0",
+    "astro-icon": "^0.7.1",
     "tailwindcss-logical": "^3.0.0"
   }
 }
