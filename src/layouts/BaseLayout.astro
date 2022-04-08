@@ -1,5 +1,6 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import NavbarSpacer from '../components/NavbarSpacer.astro';
 import SiteBanner from '../components/SiteBanner.astro';
 const currentyear = new Date().getFullYear();
 const { title, description } = Astro.props;
@@ -17,9 +18,10 @@ const { title, description } = Astro.props;
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 <body>
-    <SiteBanner short="This is some text" long="This is a longer message" link="/"/>
   <div class="wrapper">
+    <!-- <SiteBanner short="This is some text" long="This is a longer message" link="/"/> -->
     <Navbar/>
+    <!-- <NavbarSpacer/> -->
 	  <main>
         <slot />
 	  </main>

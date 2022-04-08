@@ -1,0 +1,36 @@
+---
+// Value Stack
+//The value stack should list three simple successes that your customer will experience if they choose to work with you.
+//The purpose of this section is to help readers see how your company can make their life better. This helps increase the perceived value of your product or service.
+// For example Faster, Cheaper, Better ...
+import { Icon } from 'astro-icon';
+
+const values = [
+  {
+    text: 'Cheaper',
+    icon: 'mdi:cash-multiple',
+  },
+  {
+    text: 'Faster',
+    icon: 'mdi:alarm',
+  },
+  {
+    text: 'Better',
+    icon: 'mdi:arrow-top-right-thick',
+  },
+  {
+    text: 'Brilliant',
+    icon: 'mdi:account-check',
+  },
+];
+---
+
+<div class="container mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {values.map(value => (
+    <div class="flex justify-center text-4xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100"><Icon size={42} name={value.icon} />  {value.text}</div>
+        ))
+    }
+  </div>
+</div>
+
