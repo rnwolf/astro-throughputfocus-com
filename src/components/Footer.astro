@@ -1,5 +1,6 @@
 ---
 const currentyear = new Date().getFullYear();
+const currentisodatetime = new Date().toISOString();
 ---
 
 <!-- This example requires Tailwind CSS v2.0+ -->
@@ -48,5 +49,6 @@ const currentyear = new Date().getFullYear();
 
     </div>
     <p class="mt-8 text-center text-base text-gray-400">&copy; {currentyear}  Throughput Focus Ltd All rights reserved.</p>
+    <p class="mt-8 text-center text-base text-gray-400">Last published {currentisodatetime}.</p>
   </div>
 </footer>
