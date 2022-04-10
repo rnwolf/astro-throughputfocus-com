@@ -4,6 +4,8 @@ Rebuild site with Astro.
 
 # Using Cloudflate page functions
 
+https://developers.cloudflare.com/pages/platform/functions/
+
 https://eben.gilkenson.com/code/cloudflare-workers/cloudflare-worker-contact-form/
 Basic Contact Form with Cloudflare Workers
 Published on February 23rd, 2022
@@ -31,3 +33,9 @@ Each branch has an alias domain like qa.project.pages.dev
 To link these to custom domains, first add the domains as custom domains (So add qa.example.com to the custom domains area on the project), then once its all processed go to the DNS for that domain and change the created cname to be the branch alias like qa.project.pages.dev. Repeat for all other domains accordingly.
 
 It's important that you add all the domains to the Custom Domains area first, or they won't route to the project anymore. The DNS change simply changes which branch they should use
+
+# To secure Cloudflare Pages site set the headers for the site
+
+https://discord.com/channels/595317990191398933/789155108529111069/933503057570955335
+added a \_headers file to the output folder
+Check the settings with https://securityheaders.com/ or https://csp-evaluator.withgoogle.com/
