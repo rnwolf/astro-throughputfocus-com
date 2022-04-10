@@ -1,6 +1,14 @@
 /**
  * POST /api/submit
+ * and
+ * GET /api/submit
  */
+
+// GET requests to /filename would return "Hello, world!"
+export const onRequestGet = () => {
+  return new Response("Hello, world! I exist.", { status: 200 });
+};
+
 export async function onRequestPost(context) {
   try {
     let input = await context.request.formData();
