@@ -11,6 +11,13 @@ export const onRequestGet = () => {
 
 export async function onRequestPost(context) {
   try {
+    if (
+      context.request.headers.get("content-type") !==
+      "application/x-www-form-urlencoded"
+    ) {
+      return new Response("Invalid headers", { status: 400 });
+    }
+
     let input = await context.request.formData();
 
     // Convert FormData to JSON
