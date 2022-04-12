@@ -39,3 +39,13 @@ It's important that you add all the domains to the Custom Domains area first, or
 https://discord.com/channels/595317990191398933/789155108529111069/933503057570955335
 added a \_headers file to the output folder
 Check the settings with https://securityheaders.com/ or https://csp-evaluator.withgoogle.com/
+
+## How to get the raw markdown source
+
+How to get the markdown source for pages
+
+const pages = await Astro.glob("../../content/pages/\*.md");
+
+const rawPages = await Promise.all(
+pages.map(async (page) => await page.default().metadata.source)
+);

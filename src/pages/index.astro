@@ -1,20 +1,29 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
+//src/pages/index.astro
+import SmallComponent from '../components/SmallComponent.astro';
+
+const parentdataarray = [
+  {
+    text: 'Home ',
+    name: 'John Parent',
+  },
+  {
+    text: 'About Parent',
+    name: 'Fred Parent',
+  },
+  ]
+
 // JS/TS Code written in between the (---) code fence,
 // is ran solely on the Server!
 console.log('See me in the Terminal')
 ---
 
-<!-- <BaseLayout title="Throughput Focus home page">
-
-<p>Hello</p>
-
-</BaseLayout> -->
-
 <html>
   <body>
+    </br>
     <h1>Hello, World! WIP</h1>
+    </br>
+    <SmallComponent title='Sent in from the parent' dataarray={parentdataarray}/>
   </body>
 </html>
 
