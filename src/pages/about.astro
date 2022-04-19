@@ -1,9 +1,27 @@
 ---
+// /src/pages/about.astro
+
 import { Markdown } from 'astro/components'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
+openGraph:
+  basic:
+    title: "This is a title"
+    type:  "Website"
+    image: "./images/tetris-hero.png"
+    url: "https://google.com" 
+
+
+//  site_name: "This is some text"
+//  basic:
+//    type: "Article"
+//    image: "./images/tetris-hero.png"
 ---
-<BaseLayout title = "About" >
+
+<BaseLayout title="This is a title from about" 
+description="A description from " 
+metaTitle="SEO title" 
+metaImage="default-opengraph-image.png">
 <br>
 <br>
 <br>

@@ -1,11 +1,34 @@
 ---
+// /src/layouts/BaseLayout.astro
 import "../styles/global.css";
 import Navbar from '../components/Navbar.astro';
 import NavbarSpacer from '../components/NavbarSpacer.astro';
 import SiteBanner from '../components/SiteBanner.astro';
 import Footer from '../components/Footer.astro';
+import { SEO } from "astro-seo";
+
 const currentyear = new Date().getFullYear();
-const { title, description } = Astro.props;
+const { title, description='', metaTitle='', metaImage='' } = Astro.props;
+
+// const seoProps = {
+//     title,
+//     description,
+//     openGraph={{
+//       basic: {
+//         title: metaTitle,
+//         type: "website",
+//         image: "openGraphBasicImage",
+//         url: "smiley",
+//       },
+//       image: {
+//         secureUrl: "openGraphBasicImage",
+//         type: "image/png",
+//         width: "openGraphImageWidth",
+//         height: "openGraphImageHeight",
+//         alt: "openGraphImageAlt",
+//       },
+//     }},
+// };
 
 ---
 <!DOCTYPE html>
@@ -17,8 +40,32 @@ const { title, description } = Astro.props;
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
-	<title>{title}</title>
+  <!-- {description && <meta name="description" content={description} />} -->
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<SEO
+  {title}
+  {description}
+  openGraph={{
+    basic: { 
+      title: metaTitle,  
+      type: "website",
+      image: metaImage,
+    },
+    image: {
+      secureUrl: metaImage,
+      type: "image/png",
+      width: "1200",
+      height: "627",
+      alt: "open Graph Image Alt text",
+    },
+  }}
+/>
+
+        <!-- <meta property="og:title" content=${openGraph.basic.title} />
+        <meta property="og:type" content=${openGraph.basic.type} />
+        <meta property="og:image" content=${openGraph.basic.image} />
+        <meta property="og:url" content=${openGraph.basic.url} /> -->
+
 </head>
 <body>
   <div class="wrapper">

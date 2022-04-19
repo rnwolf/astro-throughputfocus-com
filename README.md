@@ -49,3 +49,38 @@ const pages = await Astro.glob("../../content/pages/\*.md");
 const rawPages = await Promise.all(
 pages.map(async (page) => await page.default().metadata.source)
 );
+
+---
+
+// An astro .md markdown file
+layout: ../layouts/Photo.astro
+title: Photos
+description: A Photo of something!
+publishDate: 2019-12-14T09:00:00-08:00
+setup: |
+import { Picture } from "astro-imagetools/components";
+
+---
+
+<Picture
+src="https://picsum.photos/1600/900"
+alt="A random image"
+format={["avif", "webp", "png"]}
+breakpoints={[200, 400, 800, 1600]} />
+
+<Picture
+src="https://picsum.photos/1024/768"
+alt="A random image"
+format={["avif", "webp", "png"]}
+breakpoints={{count: 3, minWidth: 300, maxWidth: 1024}} />
+
+<Picture
+  src="/src/images/ChonkChart.png"
+  alt="A local image"
+  sizes="1024px, 800px, 400px, 200px"
+  width="300px"
+/>
+
+{openGraph &&
+` <meta property="og:title" content=${openGraph.basic.title} /> <meta property="og:type" content=${openGraph.basic.type} /> <meta property="og:image" content=${openGraph.basic.image} /> <meta property="og:url" content=${openGraph.basic.url} /> `
+}
