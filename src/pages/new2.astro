@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+import Config from "../website.config.cjs";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import HeroTwo from '../components/HeroTwo.astro';
@@ -16,22 +18,14 @@ import SiteBanner from '../components/SiteBanner.astro';
 
 ---
 
-<BaseLayout title="Throughput Focus home page" 
-description="A description from the home page." 
-metaDescription="This is a comprehensive description that is intented for the social media cards."
-metaTitle="SEO title gors here and is different to the page title."
-metaImage="default-opengraph-image.png"
-metaImageAlt="System throughput is determined by system constraint.">
-    <SiteBanner short="This is a short text" long="This is a long piece of text" link="/contact" />
-    <HeroTwo />
-    <ValueStack/>
-    <ValueStackNumbers/>
-    <FeatureThreeColumn/>
-    <FeatureForRole />
-    <StakesTextRight/>
-    <StakesTextLeft/>
-    <PictureText />
-    <NewsLetter />
-    <FeaturedPosts />
-    <FeaturedPostsTwoCards />
-</BaseLayout>
+<html>
+  <head>
+  	<title>{Config.siteTitle}</title>
+  </head>
+  <body>
+    </br>
+    <h1>Hello, World! WIP</h1>
+    </br>
+    <SiteBanner short="This is a short text" long="This is a long piece of text" />
+  </body>
+</html>

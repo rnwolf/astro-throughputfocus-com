@@ -1,10 +1,12 @@
 ---
-// Display a benner with important information at the top of every page.
+// Display a banner with important information.
+// Use just below the Navigation menu.
+
 const { short, long, link } = Astro.props;
 ---
 
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative bg-indigo-600">
+<!-- Start of SiteBanner Component -->
+<div class="relative bg-blue-600">
   <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
     <div class="pr-16 sm:text-center sm:px-16">
       <p class="font-medium text-white">
@@ -16,8 +18,9 @@ const { short, long, link } = Astro.props;
       </p>
     </div>
     <div class="absolute inset-y-0 right-0 pt-1 pr-1 flex items-start sm:pt-1 sm:pr-2 sm:items-start">
-      <button type="button" class="flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white">
+      <button type="button" class="flex p-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white">
       </button>
     </div>
   </div>
 </div>
+<!-- End of SiteBanner Component -->

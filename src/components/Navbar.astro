@@ -20,7 +20,9 @@ const navLinks = [
   },
 ];
 ---
- <div>
+
+<!-- Start of Navbar component -->
+<div>
     <header class="fixed w-full mt-0 bg-black z-[9999]">
       <nav class="text-white bg-black">
         <input type="checkbox" id="nav-Checkbox" class="hidden" />
@@ -50,6 +52,7 @@ const navLinks = [
             ></path></svg
           >
         </label>
+
         <ul
           class="nav-Menu bg-black flex flex-col lg:flex-row gap-4 lg:gap-2 text-right my-2 lg:mt-1 lg:mb-0 mr-2 lg:mr-6 ml-0 mbs-0 mbe-0 pis-0"
         >
@@ -59,6 +62,11 @@ const navLinks = [
             <a aria-label="Jump to Home page" href="/" class="no-underline" aria-label="Home page">
             <Icon name="logo" width={180} class="print:hidden"/> 
             </a>
+          </li>
+          <li class="list-none hidden font-bold lg:text-sm lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0">
+          <a
+              href="/contact" class="no-underline text-white bg-blue-700 px-5 py-2.5 text-center mr-2 mb-2 rounded-md border border-transparent focus:outline-none focus:ring-4 focus:ring-blue-300 hover:bg-blue-800 hover:text-gray-300 focus:text-gray-300 active:text-gray-300"
+              aria-label="Talk to an expert">Talk to an expert</a>
           </li>
           {navLinks.map(link => (
             <li
@@ -75,4 +83,6 @@ const navLinks = [
         </ul>
       </nav>
     </header>
- </div> 
+</div> 
+
+<!-- End of Navbar component -->

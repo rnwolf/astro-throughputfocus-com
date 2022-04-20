@@ -82,5 +82,19 @@ breakpoints={{count: 3, minWidth: 300, maxWidth: 1024}} />
 />
 
 {openGraph &&
-` <meta property="og:title" content=${openGraph.basic.title} /> <meta property="og:type" content=${openGraph.basic.type} /> <meta property="og:image" content=${openGraph.basic.image} /> <meta property="og:url" content=${openGraph.basic.url} /> `
+`<meta property="og:title" content=${openGraph.basic.title} /> <meta property="og:type" content=${openGraph.basic.type} /> <meta property="og:image" content=${openGraph.basic.image} /> <meta property="og:url" content=${openGraph.basic.url} />`
 }
+
+# Twitter and Facebook Card Preview
+
+https://www.bannerbear.com/tools/twitter-card-preview-tool/
+
+# Linkedin Banner preview
+
+https://www.linkedin.com/post-inspector/
+
+# Create a Page of links sort of like a site map
+
+For astro pages and md pages
+
+https://codesandbox.io/s/upbeat-http-k8ifvm?file=/src/pages/index.astro:295-323

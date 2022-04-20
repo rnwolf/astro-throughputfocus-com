@@ -3,7 +3,6 @@
 import "../styles/global.css";
 import Navbar from '../components/Navbar.astro';
 import NavbarSpacer from '../components/NavbarSpacer.astro';
-import SiteBanner from '../components/SiteBanner.astro';
 import Footer from '../components/Footer.astro';
 import { SEO } from "astro-seo";
 
@@ -13,7 +12,7 @@ const {content} = Astro.props;
 
 // const projectRootURL = new URL('./fixtures/astro-basic/', import.meta.url);
 const projectRootURL = new URL(Astro.request.url).origin;
-const metaImageUrl = projectRootURL+ metaImage
+const metaImageUrl = projectRootURL+'/'+metaImage
 // const seoProps = {
 //     title,
 //     description,
@@ -34,7 +33,7 @@ const metaImageUrl = projectRootURL+ metaImage
 //     }},
 // };
 
-console.log(metaImageUrl)
+console.log(metaImageAlt)
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -76,9 +75,8 @@ console.log(metaImageUrl)
 </head>
 <body>
   <div class="wrapper">
-    <!-- <SiteBanner short="This is some text" long="This is a longer message" link="/"/> -->
     <Navbar/>
-    <!-- <NavbarSpacer/> -->
+    <NavbarSpacer/>
 	  <main>
         <slot />
 	  </main>
