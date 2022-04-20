@@ -3,6 +3,7 @@
 //The value stack should list three simple successes that your customer will experience if they choose to work with you.
 //The purpose of this section is to help readers see how your company can make their life better. This helps increase the perceived value of your product or service.
 // For example Faster, Cheaper, Better ...
+const { heading='Default Heading text goes here', subtext="Default subtext goes here" } = Astro.props;
 
 const values = [
   {
@@ -24,8 +25,8 @@ const values = [
 <div class="bg-gray-50 pt-12 sm:pt-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Trusted by developers from over 80 planets</h2>
-      <p class="mt-3 text-xl text-gray-500 sm:mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repellat laudantium.</p>
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">{heading}</h2>
+      <p class="mt-3 text-xl text-gray-500 sm:mt-4">{subtext}</p>
     </div>
   </div>
 
