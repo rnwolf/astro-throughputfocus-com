@@ -38,41 +38,22 @@ const featured = [
       </div>
   <div class="mt-6 md:flex space-x-6">
 
-    <div>
-      <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="" class="rounded-lg">
-      <div>
-        <h3  class="mt-3 text-gray-800 text-2xl font-bold my-2">long established</h3>
-        <p class="text-gray-700 mb-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....</p>
-        <div class="flex justify-between mt-4">
-          <span class="font-thin text-sm">May 20th 2020</span>
-          <span class="mb-2 text-gray-800 font-bold">Read more</span>
-        </div>
-      </div>
-    </div>
+    {featured.map(feature => (
 
-    <div>
-      <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="">
       <div>
-        <h3  class="mt-3 text-gray-800 text-2xl font-bold my-2">long established</h3>
-        <p class="text-gray-700 mb-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....</p>
-        <div class="flex justify-between mt-4">
-          <span class="font-thin text-sm">May 20th 2020</span>
-          <span class="mb-2 text-gray-800 font-bold">Read more</span>
+        <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="" class="rounded-lg">
+        <div>
+          <h3  class="mt-3 text-gray-800 text-2xl font-bold my-2">{feature.heading}</h3>
+          <p class="text-gray-700 mb-2">{feature.text}</p>
+          <div class="flex justify-between mt-4">
+            <span class="font-thin text-sm">{feature.publishedDate.slice(0,10)}</span>
+            <a href={feature.link} class="mb-2 text-gray-800 font-bold">Find out more in blog post</a>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div>
-      <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="">
-      <div>
-        <h3  class="mt-3 text-gray-800 text-2xl font-bold my-2">long established</h3>
-        <p class="text-gray-700 mb-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....</p>
-        <div class="flex justify-between mt-4">
-          <span class="font-thin text-sm">May 20th 2020</span>
-          <span class="mb-2 text-gray-800 font-bold">Read more</span>
-        </div>
-      </div>
-    </div>
+      ))
+    }
+  
 
   </div>
 </div>
