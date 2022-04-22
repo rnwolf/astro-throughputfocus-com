@@ -26,27 +26,6 @@ const roles = [
 
 <!-- Start of FeatureForRole Component -->
 
-<!-- <div class="py-12 bg-white">
-  <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <h2 class="sr-only">A better way to send money.</h2>
-    <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
-    
-    {features.map(feature => (
-      <div>
-        <dt>
-          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-            <Icon size={42} name={feature.icon} />
-          </div>
-          <p class="mt-5 text-lg leading-6 font-medium text-gray-900">{feature.header}</p>
-        </dt>
-        <dd class="mt-2 text-base text-gray-500">{feature.text}</dd>
-      </div>
-        ))
-    }
-    </dl>
-  </div>
-</div> -->
-
 <div class="py-16 bg-gray-50 overflow-hidden">
     <div class="container m-auto px-6 space-y-8 text-gray-500 md:px-12">
         <div>
@@ -61,11 +40,11 @@ const roles = [
                         <div class="w-10"><Icon size={42} name={role.icon} /> </div>
                         
                         <div class="space-y-2">
-                            <h3 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">{role.description}</h3>
+                            <h3 class="text-xl text-gray-800 font-medium transition">{role.description}</h3>
                             <p class="text-sm text-gray-600">{role.text}</p>
                         </div>
-                        <a href={role.link} class="flex justify-between items-center group-hover:text-yellow-600">
-                            <span class="text-sm">Read more</span>
+                        <a href={role.link} class="flex font-bold justify-between items-center group-hover:text-yellow-600">
+                            <span class="text-sm">How does this impact my role?</span>
                             <span class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
                         </a>
                     </div>
@@ -81,8 +60,8 @@ const roles = [
                         <h3 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">More features</h3>
                         <p class="text-sm text-gray-600">Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.</p>
                     </div>
-                    <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
-                        <span class="text-sm">Read more</span>
+                    <a href="#" class="flex font-bold justify-between items-center group-hover:text-yellow-600">
+                        <span class="text-sm">Learn about more here</span>
                         <span class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
                     </a>
                 </div>
