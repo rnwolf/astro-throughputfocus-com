@@ -1,4 +1,5 @@
 ---
+import Config from "../website.config.cjs";
 import { Icon } from 'astro-icon';
 
 const navLinks = [
@@ -24,7 +25,7 @@ const navLinks = [
 <!-- Start of Navbar component -->
 <div>
     <header class="fixed w-full mt-0 bg-black z-[9999]">
-      <nav class="text-white bg-black">
+      <nav aria-label={Config.siteTitle} class="text-white bg-black">
         <input type="checkbox" id="nav-Checkbox" class="hidden" />
         <label
           for="nav-Checkbox"
@@ -56,10 +57,10 @@ const navLinks = [
         <ul
           class="nav-Menu bg-black flex flex-col lg:flex-row gap-4 lg:gap-2 text-right my-2 lg:mt-1 lg:mb-0 mr-2 lg:mr-6 ml-0 mbs-0 mbe-0 pis-0"
         >
-          <li
+          <li aria-label="Jump to Home page"
             class="block py-2 my-0 mr-auto ml-6 lg:mt-0 lg:mb-1 lg:tracking-normal lg:leading-none"
           >
-            <a aria-label="Jump to Home page" href="/" class="no-underline" aria-label="Home page">
+            <a  href="/" class="no-underline" aria-label="Home page">
             <Icon name="logo" width={180} class="print:hidden"/> 
             </a>
           </li>
@@ -69,7 +70,7 @@ const navLinks = [
               aria-label="Talk to an expert">Talk to an expert</a>
           </li>
           {navLinks.map(link => (
-            <li
+            <li aria-label={link.name}
               class="list-none hidden font-bold lg:text-sm lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"
             >
             <a
