@@ -1,6 +1,7 @@
 ---
 //The Stakes Section
 // In this section we want to show the reader that we understand their problems and how critical it is to solve those problems.
+import Image from "astro-imagetools";
 ---
 <div class="py-16 bg-gray-50 overflow-hidden lg:py-24">
   <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
@@ -52,7 +53,10 @@
             </defs>
             <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
           </svg>
-          <img class="relative mx-auto" width="490" src="https://tailwindui.com/img/features/feature-example-2.png" alt="">
+          <!-- <img class="relative mx-auto" width="490" src="https://tailwindui.com/img/features/feature-example-2.png" alt=""> -->
+          <div class="relative mx-auto">
+            <Image src="https://tailwindui.com/img/features/feature-example-2.png" alt="Image description goes here" loading="lazy" width="490" height="">
+          </div> 
         </div>
 
       </div>
