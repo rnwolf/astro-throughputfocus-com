@@ -2,6 +2,22 @@
 // https://tailwindcomponents.com/component/main-content-component
 const { heading='Default Heading text goes here', subtext="Default subtext goes here" } = Astro.props;
 
+const featured = [
+  {
+    heading: 'This is the post heading',
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/woman.jpg',
+    imageDescription: "A picture of a woman",
+    link: "/",
+  },
+  {
+    heading: 'HHThis is another post heading',
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/man.jpg',
+    imageDescription: "A picture of a man",
+    link: "/",
+  },
+];
 ---
 <!-- Start of FearturedPostsTwoCards component -->
 <div class="py-16 ">  
@@ -12,6 +28,8 @@ const { heading='Default Heading text goes here', subtext="Default subtext goes 
       </div>
 
       <div class="grid gap-12 lg:grid-cols-2">
+
+
         <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
           <img src="https://tailus.io/sources/blocks/twocards/preview/images/woman.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
           <div class="sm:w-7/12 pl-0 p-5">
@@ -24,6 +42,8 @@ const { heading='Default Heading text goes here', subtext="Default subtext goes 
             </div>
           </div>
         </div>
+
+
         <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
           <img src="https://tailus.io/sources/blocks/twocards/preview/images/man.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
           <div class="sm:w-7/12 pl-0 p-5">
@@ -36,6 +56,8 @@ const { heading='Default Heading text goes here', subtext="Default subtext goes 
             </div>
           </div>
         </div>
+
+
       </div>
   </div>
 </div>
