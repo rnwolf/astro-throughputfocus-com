@@ -1,6 +1,8 @@
 ---
 // https://tailwindui.com/components/marketing/sections/feature-sections
+
 import { Icon } from 'astro-icon';
+const { heading='Default Heading text goes here', subtext="Default subtext goes here", bgcolour="bg-white" } = Astro.props;
 
 const features = [
   {
@@ -22,9 +24,12 @@ const features = [
 ---
 
 <!-- Start of FeatureThreeColumns component -->
-<div class="py-12 bg-white">
+<div class={"py-12 " + bgcolour}>
   <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <h2 class="sr-only">A better way to send money.</h2>
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">{heading}</h2>
+      <p class="mt-3 mb-6 text-xl text-gray-500 sm:mt-4">{subtext}</p>
+
+
     <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
     
     {features.map(feature => (
@@ -34,7 +39,7 @@ const features = [
             <!-- Heroicon name: outline/globe-alt -->
             <Icon size={42} name={feature.icon} />
           </div>
-          <h2 class="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">{feature.header}</h2>
+          <h3 class="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">{feature.header}</h3>
         </dt>
         <dd class="mt-2 text-base text-gray-500">{feature.text}</dd>
       </div>
