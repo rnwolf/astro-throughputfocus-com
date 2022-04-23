@@ -1,6 +1,7 @@
 ---
 // https://tailwindui.com/components/marketing/sections/feature-sections
 import { Icon } from 'astro-icon';
+const { heading='Whatever your job function or department', subtext="we can help your team work together better.", bgcolour="bg-white" } = Astro.props;
 
 const roles = [
   {
@@ -26,12 +27,12 @@ const roles = [
 
 <!-- Start of FeatureForRole Component -->
 
-<div class="py-16 bg-gray-50 overflow-hidden">
+<div class={"py-16 overflow-hidden " + bgcolour}>
     <div class="container m-auto px-6 space-y-8 text-red-900 md:px-12">
         <div>
-            <h2 class="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">Whatever your job function or department, 
-            <br class="lg:block" hidden>we can help your team work together better.  </h2>
-            <span class="text-gray-600 text-lg font-semibold">Built For Your Role</span>
+            <h2 class="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">{heading}</h2>
+            <!-- <br class="lg:block" hidden>we can help your team work together better.  </h2> -->
+            <span class="text-gray-600 text-lg font-semibold">{subtext}</span>
         </div>
         <div class="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-4">
             {roles.map(role => (

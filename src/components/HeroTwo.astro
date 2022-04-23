@@ -1,10 +1,11 @@
 ---
 import Image from "astro-imagetools";
+const { heading='Default Heading text goes here', subtext="Default subtext goes here", link='/contact', linkText='Talk to an expert', bgcolour="bg-white" } = Astro.props;
 ---
 
 <!-- Astro Component homepage hero section -->
 
-<div class="bg-white pb-8 sm:pb-12 lg:pb-12">
+<div class={"pb-8 sm:pb-12 lg:pb-12 " + bgcolour}>
   <div class="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-12">
     <div
       class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24"
@@ -15,17 +16,15 @@ import Image from "astro-imagetools";
             <h1
               class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl"
             >
-              Does it feel like you are playing 3D Tetris with your development teams?
+             {heading} 
             </h1>
             <p class="mt-6 text-xl text-gray-500">
-              Findout how you can empower your teams to use constaints inherant
-              in every organisational process to simplify and improve the flow
-              of work.
+              {subtext}
             </p>
           </div>
           <div class="mt-6">
-              <a href="/contact" class="no-underline text-white bg-blue-700 px-5 py-2.5 text-center mr-2 mb-2 rounded-md border border-transparent focus:outline-none focus:ring-4 focus:ring-blue-300 hover:bg-blue-800 hover:text-gray-300 focus:text-gray-300 active:text-gray-300"
-              aria-label="Talk to an expert">Talk to an expert</a>
+              <a href={link} class="no-underline text-white bg-blue-700 px-5 py-2.5 text-center mr-2 mb-2 rounded-md border border-transparent focus:outline-none focus:ring-4 focus:ring-blue-300 hover:bg-blue-800 hover:text-gray-300 focus:text-gray-300 active:text-gray-300"
+              aria-label={linkText}>{linkText}</a>
           </div>
         </div>
       </div>

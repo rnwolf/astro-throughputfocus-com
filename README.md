@@ -93,8 +93,45 @@ https://www.bannerbear.com/tools/twitter-card-preview-tool/
 
 https://www.linkedin.com/post-inspector/
 
+# Must have browser add-on for SEO info
+
+https://detailed.com/extension/
+
 # Create a Page of links sort of like a site map
 
 For astro pages and md pages
 
 https://codesandbox.io/s/upbeat-http-k8ifvm?file=/src/pages/index.astro:295-323
+
+# Embed Twwets or YouTube videos in astro or md pages
+
+https://github.com/astro-community/astro-embed/blob/main/packages/astro-embed/README.md
+
+'''
+
+## import { Tweet, YouTube } from 'astro-embed';
+
+<Tweet id="https://twitter.com/astrodotbuild/status/1512144306898976768" />
+
+<YouTube id="https://youtu.be/xtTy5nKay_Y" />
+'''
+
+Markdown pages
+
+You can also import an embed component for use on a Markdown page.
+
+'''
+
+setup: |
+import { Tweet, YouTube } from 'astro-embed';
+
+---
+
+Hey look! I can embed a tweet _in Markdown_!
+
+<Tweet id="https://twitter.com/astrodotbuild/status/1512144306898976768" />
+
+YouTube videos work too :-)
+
+<YouTube id="https://youtu.be/xtTy5nKay_Y" />
+'''
