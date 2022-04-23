@@ -28,8 +28,20 @@ metaImage="default-opengraph-image.png"
 metaImageAlt="System throughput is determined by system constraint.">
 
     <SiteBanner short="This is a short text" long="This is a long piece of text" link="/contact" />
-    <HeroTwo heading="Does it feel like you are playing 3D Tetris with your development teams?" subtext="Findout how you can empower your teams to use constaints inherant in every organisational process to simplify and improve the flow of work." link="/contact" linkText="Talk to an Expert" bgcolour="bg-blue-300" />
-    <FeaturedPosts heading="Featured posts" subtext="Highlighted posts, and some info about why these are signigicant." bgcolour="bg-slate-50"/>
+    
+    <HeroTwo 
+    heading="Does it feel like you are playing 3D Tetris with your development teams?" 
+    subtext="Findout how you can empower your teams to use constaints inherant in every organisational process to simplify and improve the flow of work." 
+    link="/contact" 
+    linkText="Talk to an Expert" 
+    bgcolour="bg-blue-300" />
+    
+    <FeaturedPosts 
+    heading="Featured posts" 
+    subtext="Highlighted posts, and some info about why these are signigicant." 
+    bgcolour="bg-slate-50"
+    featured={Config.featuredPosts}/>
+
     <FeaturedPostsTwoCards heading="Featured posts" subtext="Highlighted posts, and some info about why these are signigicant." bgcolour="bg-slate-100"/>
     <ValueStack/>
     <ValueStackNumbers heading="This is a H2 heading" subtext="This is a line of text to add something useful."/>

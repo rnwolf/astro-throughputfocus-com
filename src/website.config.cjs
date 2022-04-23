@@ -19,4 +19,30 @@ export default {
       name: "Fred Config",
     },
   ],
+  featuredPosts: [
+    {
+      heading: "This is the post heading A",
+      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      publishedDate: "2022-04-22T06:02:24+00:00",
+      imageThumbnail: "https://picsum.photos/1024/768",
+      imageDescription: "A picture of a woman",
+      link: "/",
+    },
+    {
+      heading: "This is another post heading B",
+      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      publishedDate: "2022-04-22T06:02:24+00:00",
+      imageThumbnail: "https://picsum.photos/1024/768",
+      imageDescription: "A picture of a man",
+      link: "/",
+    },
+    {
+      heading: "This is another post heading C",
+      text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      publishedDate: "2022-04-22T06:02:24+00:00",
+      imageThumbnail: "https://picsum.photos/1024/768",
+      imageDescription: "A picture of a man",
+      link: "/",
+    },
+  ],
 };
