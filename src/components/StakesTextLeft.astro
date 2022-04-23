@@ -3,25 +3,27 @@
 // In this section we want to show the reader that we understand their problems and how critical it is to solve those problems.
 
 import { Icon } from 'astro-icon';
-const { heading='Default Heading text goes here', subtext="Default subtext goes here", bgcolour="bg-white" } = Astro.props;
-
-const stakes = [
-  {
-    heading: 'Competitive exchange rates',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: 'mdi:cash-multiple',
-  },
-  {
-    heading: 'Faster',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: 'mdi:alarm',
-  },
-  {
-    heading: 'Better',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: 'mdi:arrow-top-right-thick',
-  },
-];
+const { heading='Default Heading text goes here', 
+        subtext="Default subtext goes here", 
+        bgcolour="bg-white",
+        stakes = [
+          {
+            heading: 'Competitive exchange rates',
+            text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            icon: 'mdi:cash-multiple',
+          },
+          {
+            heading: 'Faster',
+            text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            icon: 'mdi:alarm',
+          },
+          {
+            heading: 'Better',
+            text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            icon: 'mdi:arrow-top-right-thick',
+          },
+        ],
+      } = Astro.props;
 
 ---
 <div class={"py-16 overflow-hidden lg:py-24 " + bgcolour}>

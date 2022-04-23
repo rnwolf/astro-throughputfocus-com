@@ -1,37 +1,39 @@
 ---
 // https://tailwindcomponents.com/component/main-content-component
-const { heading='Default Heading text goes here', subtext="Default subtext goes here", bgcolour="bg-white" } = Astro.props;
-
-const featured = [
-  {
-    heading: 'This is the post heading',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/woman.jpg',
-    imageDescription: "A picture of a woman",
-    link: "/",
-  },
-  {
-    heading: 'This is another post heading',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/man.jpg',
-    imageDescription: "A picture of a man",
-    link: "/",
-  },
+const { 
+  heading='Default Heading text goes here', 
+  subtext="Default subtext goes here", 
+  bgcolour="bg-white",
+  featured = [
     {
-    heading: 'This is the post heading',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/woman.jpg',
-    imageDescription: "A picture of a woman",
-    link: "/",
-  },
-  {
-    heading: 'This is another post heading',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/man.jpg',
-    imageDescription: "A picture of a man",
-    link: "/",
-  },
-];
+      heading: 'This is the post heading',
+      text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/woman.jpg',
+      imageDescription: "A picture of a woman",
+      link: "/",
+    },
+    {
+      heading: 'This is another post heading',
+      text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/man.jpg',
+      imageDescription: "A picture of a man",
+      link: "/",
+    },
+      {
+      heading: 'This is the post heading',
+      text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/woman.jpg',
+      imageDescription: "A picture of a woman",
+      link: "/",
+    },
+    {
+      heading: 'This is another post heading',
+      text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      imageThumbnail: 'https://tailus.io/sources/blocks/twocards/preview/images/man.jpg',
+      imageDescription: "A picture of a man",
+      link: "/",
+    },
+  ] } = Astro.props;
 ---
 <!-- Start of FearturedPostsTwoCards component -->
 <div class={"py-16 " + bgcolour}>  

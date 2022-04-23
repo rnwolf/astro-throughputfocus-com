@@ -4,34 +4,45 @@
 //The purpose of this section is to help readers see how your company can make their life better. This helps increase the perceived value of your product or service.
 // For example Faster, Cheaper, Better ...
 import { Icon } from 'astro-icon';
-
-const values = [
-  {
-    text: 'Cheaper',
-    icon: 'mdi:cash-multiple',
-  },
-  {
-    text: 'Faster',
-    icon: 'mdi:alarm',
-  },
-  {
-    text: 'Better',
-    icon: 'mdi:arrow-top-right-thick',
-  },
-  {
-    text: 'Brilliant',
-    icon: 'mdi:account-check',
-  },
-];
+const { bgcolour="bg-white",
+        values=[
+          {
+            text: 'Cheaper',
+            icon: 'mdi:cash-multiple',
+          },
+          {
+            text: 'Faster',
+            icon: 'mdi:alarm',
+          },
+          {
+            text: 'Better',
+            icon: 'mdi:arrow-top-right-thick',
+          },
+          {
+            text: 'Brilliant',
+            icon: 'mdi:account-check',
+          },
+        ]} = Astro.props;
 ---
 <!-- Start of ValueStack component -->
-<div class="container mx-auto">
-  <div class="grid grid-cols-1 py-4 px-4 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    {values.map(value => (
-    <div class="flex justify-center text-4xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100 shadow-xl"><Icon size={42} name={value.icon} />  {value.text}</div>
+<div class={"" + bgcolour}>
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 py-4 px-4 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {values.map(value => (
+
+        <div class="flex justify-center text-4xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100 shadow-xl">
+        
+          <div class="grid">
+
+            <div class="absolute flex justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+              <Icon size={42} name={value.icon}  />
+            </div>
+            <p class="ml-16 font-medium">{value.text}</p>
+          </div>
+        </div>
         ))
-    }
+      }
+    </div>
   </div>
 </div>
-
 <!-- End of ValueStack component -->

@@ -1,28 +1,31 @@
 ---
 // https://tailwindui.com/components/marketing/sections/feature-sections
 import { Icon } from 'astro-icon';
-const { heading='Whatever your job function or department', subtext="we can help your team work together better.", bgcolour="bg-white" } = Astro.props;
+const { heading='Whatever your job function or department', 
+        subtext="we can help your team work together better.", 
+        bgcolour="bg-white",
+        roles=[
+            {
+                description: 'Manager',
+                text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+                icon: 'mdi:cash-multiple',
+                link: "/",
+            },
+            {
+                description: 'Software Developer',
+                text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+                icon: 'mdi:alarm',
+                link: "/",
+            },
+            {
+                description: 'Finance',
+                text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+                icon: 'mdi:arrow-top-right-thick',
+                link: "/",
+            }
+        ],
+    } = Astro.props;
 
-const roles = [
-  {
-    description: 'Manager',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: 'mdi:cash-multiple',
-    link: "/",
-  },
-  {
-    description: 'Software Developer',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: 'mdi:alarm',
-    link: "/",
-  },
-  {
-    description: 'Finance',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: 'mdi:arrow-top-right-thick',
-    link: "/",
-  }
-];
 ---
 
 <!-- Start of FeatureForRole Component -->

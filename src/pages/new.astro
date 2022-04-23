@@ -30,27 +30,76 @@ metaImageAlt="System throughput is determined by system constraint.">
     <SiteBanner short="This is a short text" long="This is a long piece of text" link="/contact" />
     
     <HeroTwo 
-    heading="Does it feel like you are playing 3D Tetris with your development teams?" 
-    subtext="Findout how you can empower your teams to use constaints inherant in every organisational process to simplify and improve the flow of work." 
-    link="/contact" 
-    linkText="Talk to an Expert" 
-    bgcolour="bg-blue-300" />
+        heading="Does it feel like you are playing 3D Tetris with your development teams?" 
+        subtext="Findout how you can empower your teams to use constaints inherant in every organisational process to simplify and improve the flow of work." 
+        link="/contact" 
+        linkText="Talk to an Expert" 
+        bgcolour="bg-blue-300" />
     
     <FeaturedPosts 
-    heading="Featured posts" 
-    subtext="Highlighted posts, and some info about why these are signigicant." 
-    bgcolour="bg-slate-50"
-    featured={Config.featuredPosts}/>
+        heading="Featured posts" 
+        subtext="Highlighted posts, and some info about why these are signigicant." 
+        bgcolour="bg-slate-50"
+        featured={Config.featuredPosts} />
 
-    <FeaturedPostsTwoCards heading="Featured posts" subtext="Highlighted posts, and some info about why these are signigicant." bgcolour="bg-slate-100"/>
-    <ValueStack/>
-    <ValueStackNumbers heading="This is a H2 heading" subtext="This is a line of text to add something useful."/>
-    <FeatureThreeColumn heading="Featured posts" subtext="Highlighted posts, and some info about why these are signigicant." bgcolour="bg-red-300" />
-    <FeatureForRole heading='Whatever your job function or department' subtext="we can help your team work together better." bgcolour="bg-indigo-200"/>
-    <StakesTextRight heading="Heading info here" subtext="Some info about that is signigicant." bgcolour="bg-red-300" />
-    <StakesTextLeft heading="Featured posts" subtext="Highlighted posts, and some info about why these are signigicant." bgcolour="bg-blue-300" />
-    <PictureTextRight heading="Featured posts" bgcolour="bg-red-300" />
-    <PictureTextLeft heading="Featured posts" bgcolour="bg-indigo-300" />
-    <NewsLetter heading="Sign up for our newsletter" subtext="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat." link='/api/submit' linkText='Notify Me' bgcolour="bg-red-300"  />
-    <Testimonials heading="What our customers say" subtext="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat." bgcolour="bg-blue-300" />
+    <FeaturedPostsTwoCards 
+        heading="Featured posts" 
+        subtext="Highlighted posts, and some info about why these are signigicant." 
+        bgcolour="bg-slate-100"
+        featured={Config.selectedPosts} />
+
+    <ValueStack 
+        bgcolour="bg-white" 
+        values={Config.valueStackButtons}/>
+
+    <ValueStackNumbers 
+        heading="This is a H2 heading" 
+        subtext="This is a line of text to add something useful."/>
+    
+    <FeatureThreeColumn 
+        heading="Featured posts" 
+        subtext="Highlighted posts, and some info about why these are signigicant." 
+        bgcolour="bg-red-300"
+        features={Config.featuresThreeColumn} />
+    
+    <FeatureForRole 
+        heading='Whatever your job function or department' 
+        subtext="we can help your team work together better." 
+        bgcolour="bg-indigo-200"
+        roles={Config.roleFeatures}/>
+    
+    <StakesTextRight 
+        heading="Heading info here" 
+        subtext="Some info about that is signigicant." 
+        bgcolour="bg-grey-300"
+        stakes={Config.stakesForTextRight} />
+    
+    <StakesTextLeft 
+        heading="Featured posts" 
+        subtext="Highlighted posts, and some info about why these are signigicant." 
+        bgcolour="bg-blue-300"
+        stakes={Config.stakesForTextLeft} />
+    
+    <PictureTextRight 
+        heading="Heading for Text Right Hand side" 
+        bgcolour="bg-red-300"
+        paragraphs= {Config.paragraphsForPictureTextRight} />
+    
+    <PictureTextLeft 
+        heading="Heading goes here on left side" 
+        bgcolour="bg-indigo-300" 
+        paragraphs= {Config.paragraphsForPictureTextLeft} />
+    
+    <NewsLetter 
+        heading="Sign up for our newsletter" 
+        subtext="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat." 
+        link='/api/submit' 
+        linkText='Notify Me' 
+        bgcolour="bg-red-300"  />
+    
+    <Testimonials 
+        heading="What our customers say" 
+        subtext="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat." 
+        bgcolour="bg-blue-300" />
+
 </BaseLayout>

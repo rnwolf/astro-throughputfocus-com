@@ -1,8 +1,24 @@
 ---
 //The Stakes Section
 // In this section we want to show the reader that we understand their problems and how critical it is to solve those problems.
+import { Icon } from 'astro-icon';
 import Image from "astro-imagetools";
-const { heading='Default Heading text goes here', subtext="Default subtext goes here", bgcolour="bg-white" } = Astro.props;
+const { heading='Default Heading text goes here', 
+        subtext="Default subtext goes here", 
+        bgcolour="bg-white",
+        stakes = [
+          {
+            heading: 'Competitive exchange rates',
+            text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            icon: 'mdi:cash-multiple',
+          },
+          {
+            heading: 'Faster',
+            text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            icon: 'mdi:alarm',
+          },
+        ],
+      } = Astro.props;
 
 ---
 <div class={"py-16 overflow-hidden lg:py-24 " + bgcolour}>
@@ -17,32 +33,19 @@ const { heading='Default Heading text goes here', subtext="Default subtext goes 
 
           <dl class="mt-10 space-y-10">
 
-          
-            <div class="relative">
-              <dt>
-                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                  <!-- Heroicon name: outline/annotation -->
-                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                  </svg>
-                </div>
-                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Mobile notifications</p>
-              </dt>
-              <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
-            </div>
+          {stakes.map(stake => (
+              <div class="relative">
+                <dt>
+                  <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    <Icon size={42} name={stake.icon}  />
+                  </div>
+                  <p class="ml-16 text-lg leading-6 font-medium text-gray-900">{stake.heading}</p>
+                </dt>
+                <dd class="mt-2 ml-16 text-base text-gray-500">{stake.text}</dd>
+              </div>
+            ))
+          }
 
-            <div class="relative">
-              <dt>
-                <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                  <!-- Heroicon name: outline/mail -->
-                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Reminder emails</p>
-              </dt>
-              <dd class="mt-2 ml-16 text-base text-gray-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
-            </div>
           </dl>
         </div>
 
