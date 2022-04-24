@@ -3,22 +3,23 @@
 //The value stack should list three simple successes that your customer will experience if they choose to work with you.
 //The purpose of this section is to help readers see how your company can make their life better. This helps increase the perceived value of your product or service.
 // For example Faster, Cheaper, Better ...
-const { heading='Default Heading text goes here', subtext="Default subtext goes here" } = Astro.props;
-
-const values = [
-  {
-    heading: '100%',
-    subtext: 'faster',
-  },
-  {
-    heading: '24/7',
-    subtext: 'Delivery',
-  },
-  {
-    heading: '100k',
-    subtext: 'Value',
-  }
-];
+const { heading='Default Heading text goes here', 
+        subtext="Default subtext goes here",
+        values = [
+          {
+            heading: '100%',
+            subtext: 'faster',
+          },
+          {
+            heading: '24/7',
+            subtext: 'Delivery',
+          },
+          {
+            heading: '100k',
+            subtext: 'Value',
+          }
+        ],
+} = Astro.props;
 ---
 
 <!-- This example requires Tailwind CSS v2.0+ -->

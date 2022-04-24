@@ -169,12 +169,46 @@ export default {
   ],
   // Picture Text Right
 
-  paragraphs: [
+  paragraphsForPictureTextRight: [
     {
       text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!",
     },
     {
       text: "Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.",
+    },
+  ],
+  testimonials: [
+    {
+      name: "Peter Pan A",
+      role: "Job title",
+      text: "A Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat repellat perspiciatis excepturi est. Non ipsum iusto aliquam consequatur repellat provident, omnis ut, sapiente voluptates veritatis cum deleniti repudiandae ad doloribus.",
+      image: "https://picsum.photos/220/220",
+    },
+    {
+      name: "Robin Hood B",
+      role: "Job title",
+      text: "B Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat repellat perspiciatis excepturi est. Non ipsum iusto aliquam consequatur repellat provident, omnis ut, sapiente voluptates veritatis cum deleniti repudiandae ad doloribus.",
+      image: "https://picsum.photos/220/220",
+    },
+    {
+      name: "Sam Walton C",
+      role: "Job title",
+      text: "C Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat repellat perspiciatis excepturi est. Non ipsum iusto aliquam consequatur repellat provident, omnis ut, sapiente voluptates veritatis cum deleniti repudiandae ad doloribus.",
+      image: "https://picsum.photos/220/220",
+    },
+  ],
+  valueStackNumbers: [
+    {
+      heading: "100%",
+      subtext: "faster A",
+    },
+    {
+      heading: "24/7",
+      subtext: "Delivery B",
+    },
+    {
+      heading: "100k",
+      subtext: "Value C",
     },
   ],
 };
