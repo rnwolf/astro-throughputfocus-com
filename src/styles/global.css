@@ -26,4 +26,21 @@
   h2 {
     @apply text-xl;
   }
+  /* The following is to format the Table Of Contents (TOC) for markdown pages  */
+  div.toc-item.toc-item-h1 {
+    /* @apply bg-blue-200; */
+    @apply pl-1;
+  }
+  div.toc-item.toc-item-h2 {
+    /* @apply bg-blue-400; */
+    @apply pl-6;
+  }
+  div.toc-item.toc-item-h3 {
+    /* @apply bg-yellow-200; */
+    @apply pl-12;
+  }
+  div.toc-item.toc-item-h4 {
+    /* @apply bg-red-200; */
+    @apply pl-16;
+  }
 }

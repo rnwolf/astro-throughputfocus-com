@@ -1,0 +1,30 @@
+---
+// This is /pokemon/[...page].astro
+export async function getStaticPaths({ paginate }) {
+  // Load your data with fetch(), Astro.fetchContent(), etc.
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`);
+  const result = await response.json();
+  const allPokemon = result.results;
+  // Return a paginated collection of paths for all posts
+  return paginate(allPokemon, { pageSize: 10 });
+}
+// If set up correctly, The page prop now has everything that
+// you need to render a single page (see next section).
+const { page } = Astro.props;
+---
+
+<strong>Pokemons:</strong>
+
+<br>
+
+{page.data.map(p => {
+    return <a href="/pokemon/${p.name}">View {p.name}</a><br>;
+})}
+
+<br>
+
+{page.url.prev && <a href={page.url.prev}>Previous page</a>}
+{page.url.next && <a href={page.url.next}>Next page</a>}
+<p>Current page: {page.currentPage} </p>
+<p> per page: {page.size} </p>
+<p> Last page: {page.lastPage} </p>

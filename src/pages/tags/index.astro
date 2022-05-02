@@ -1,36 +1,21 @@
 ---
+import BaseLayout from '$layouts/BaseLayout.astro'
 //src/pages/index.astro
 import SmallComponent from '$components/SmallComponent.astro';
 import Config from "$/website.config.cjs";
-
-// const parentdataarray = [
-//   {
-//     text: 'Home ',
-//     name: 'John Parent',
-//   },
-//   {
-//     text: 'About Parent',
-//     name: 'Fred Parent',
-//   },
-//   ]
 
 // JS/TS Code written in between the (---) code fence,
 // is ran solely on the Server!
 console.log('See me in the Terminal')
 ---
 
-<html>
-  <head>
-  	<title>{Config.siteTitle}</title>
-  </head>
-  <body>
+
+  <BaseLayout>
     </br>
-    <h1>Hello, World! WIP</h1>
+    <h1>Index in the tag-post directory</h1>
     </br>
     <SmallComponent title='Sent in from the parent' dataarray={Config.parentdataarray}/>
-  </body>
-</html>
-
+  </BaseLayout>
 
 
 <script>

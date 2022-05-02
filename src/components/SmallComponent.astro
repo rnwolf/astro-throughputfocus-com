@@ -2,18 +2,18 @@
 // Experiment to pass in data to a component including an array
 
 // Access passed-in component props, like `<X title="Hello, World" />`
-const {title, dataarray} = Astro.props;
-
-// const dataarray = [
-//   {
-//     text: 'Home',
-//     name: 'John',
-//   },
-//   {
-//     text: 'About',
-//     name: 'Fred',
-//   },
-//   ]
+const { title,
+        dataarray = [
+          {
+            text: 'Home',
+            name: 'John',
+          },
+          {
+            text: 'About',
+            name: 'Fred',
+          },
+          ]
+        } = Astro.props;
 
 ---
 

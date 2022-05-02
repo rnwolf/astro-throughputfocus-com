@@ -74,10 +74,27 @@ console.log(metaImageAlt)
 
 </head>
 <body>
+  <section >
+    <nav class="skip-links" aria-label="Skiplinks">
+      <ul>
+        <li>
+          
+            <a href="#main-navigation" class="sr-only focus:not-sr-only" data-skip-link >Skip to main menu</a>
+          
+        </li>
+        <li >
+          
+            <a href="#main-content" class="sr-only focus:not-sr-only" data-skip-link >Skip to main content</a>
+          
+        </li>
+      </ul>
+    </nav>
+  </section>
+
   <div class="wrapper">
     <Navbar/>
     <NavbarSpacer/>
-	  <main>
+	  <main id="main-content">
         <slot />
 	  </main>
     <Footer/> 

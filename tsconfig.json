@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    // Setup some aliases so that we can keep imports simple when locating them in multiple directories
+    "baseUrl": ".",
+    "paths": {
+      "$components/*": ["src/components/*"],
+      "$layouts/*": ["src/layouts/*"],
+      "$/*": ["src/*"]
+    }
+  }
+}

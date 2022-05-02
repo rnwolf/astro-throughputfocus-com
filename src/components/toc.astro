@@ -1,0 +1,11 @@
+---
+//src/components/toc.astro
+
+const { toc } = Astro.props;
+
+// Limit the depth of heading indents 
+---
+<nav class="toc">
+<h2>Table of contents</h2>
+{toc.filter((heading) => heading.depth >= 0 && heading.depth <= 4).map((heading) => <div class={"toc-item toc-item-h" + heading.depth}> <a href={"#"+ heading.slug}>{heading.text}</a> </div> )}
+</nav>

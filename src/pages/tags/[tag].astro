@@ -1,0 +1,67 @@
+---
+import BaseLayout from '$layouts/BaseLayout.astro'
+
+export async function getStaticPaths () {
+  // grab all .md files from a folder
+  let allPosts = await Astro.glob('../posts/*.md');
+  // I need this filter to ignore files that they do not have 
+  // a title, or no published date (in frontmatter)
+  // this way I leave the date out while the post is not finished.
+  let filteredPosts = 
+      allPosts.filter((p) => { 
+        return p.frontmatter.title && p.frontmatter.datePublished; 
+      });
+  // an object to collect existing tags
+  let dix = {};
+  filteredPosts.forEach((post) => {
+    // go thru each tag in each published post,
+    // fill in the object...
+    post.frontmatter.tags.forEach((tag) => {
+      if (!dix[tag]) dix[tag] = 0;
+      dix[tag] += 1;
+    });
+  });
+  console.log('dix', dix); // <-- prints out our tag-cloud data.
+
+  let ary = [];
+  // format the data to return from getStaticPaths()
+  for (let prop in dix) {
+    ary.push({
+      params: { tag: prop.replace(/:/g, '') },
+      props: { tagname: prop, count: dix[prop] }
+    });
+  }
+  return ary;
+}
+
+// grab the selected tag from the url (dynamic [tag])
+const tagname = Astro.params.tag;
+const tagcount = Astro.props.count;
+// These section feels duplicated from getStaticPaths()
+// opportunity to refactor...
+let allPosts = await Astro.glob('../posts/*.md');
+let filteredPosts = 
+    allPosts.filter((p) => { 
+      return p.frontmatter.title && p.frontmatter.datePublished; 
+    });
+// now filter to only posts containing the selected tag,
+// these will be rendered below in the markup.
+let tagged = filteredPosts.filter((p) => { 
+  return p.frontmatter.tags.includes(tagname); 
+});
+
+---
+<BaseLayout title="A title" description="some description">
+        <h2> {tagname} - {tagcount} {tagcount>1 ? 'posts' : 'post'}</h2>
+        {tagged.map(post => (
+            <a href={post.url}>
+            <div >
+                <h4>{post.frontmatter.title}</h4>
+                <p>{post.frontmatter.description}</p>
+                {post.frontmatter.tags.map(tag => (
+                <a href={`/tags/${tag}`}><span class="badge bg-secondary me-1 mb-2">{tag}</span></a>
+                ))}
+            </div>
+            </a>
+        ))}
+</BaseLayout>   

@@ -2,6 +2,9 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}"],
   theme: {
+    backgroundImage: (theme) => ({
+      "hero-pattern": "url('/wave.svg')",
+    }),
     fill: (theme) => ({
       current: "currentColor",
       white: theme("colors.white"),

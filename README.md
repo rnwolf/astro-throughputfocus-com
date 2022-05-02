@@ -135,3 +135,19 @@ YouTube videos work too :-)
 
 <YouTube id="https://youtu.be/xtTy5nKay_Y" />
 '''
+
+# How to add class info to astro-imagetools images?
+
+You can do that using the attributes prop, `attributes={{ img: { class: "custom-class" } }}`
+
+# Improve performance by getting markdown posts once!
+
+Not possible yet! See https://github.com/withastro/astro/issues/3203
+
+// src/components/GlobPosts.js
+
+let allPosts = import.meta.globEager('@pages/posts/\*.md')
+allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+allPosts = import.meta.env.DEV ? allPosts : allPosts.filter((a)=>!a.draft);
+
+export {allPosts};

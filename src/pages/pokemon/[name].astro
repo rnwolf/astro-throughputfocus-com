@@ -1,0 +1,26 @@
+---
+// This is /pokemon/[name].astro
+export async function getStaticPaths({ paginate }) {
+  // Load your data with fetch(), Astro.fetchContent(), etc.
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150`);
+  const result = await response.json();
+  const allPokemon = result.results.map( pokemon => {
+
+    return {
+      params: {
+        name: pokemon.name,
+      },
+      props: pokemon,
+    }
+  });
+  
+  // Return a paginated collection of paths for all posts
+  return allPokemon;
+}
+// If set up correctly, The page prop now has everything that
+// you need to render a single page (see next section).
+const { name } = Astro.props;
+
+---
+
+The pokemon is {name}

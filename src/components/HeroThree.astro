@@ -1,0 +1,13 @@
+---
+import Button from './Button.astro';
+import Image from "astro-imagetools";
+const { heading='Default Heading text goes here', subtext="Default subtext goes here", link='/contact', linkText='Talk to an expert', bgcolour="bg-white" } = Astro.props;
+---
+<div class="bg-gray-200 ">
+    <div class="container px-6 py-4 mx-auto  ">
+        <div class="flex items-center justify-center w-full mt-2 lg:h-96 ">
+            <img class="object-cover w-full max-w-2xl rounded-md lg:h-full"
+                src="https://source.unsplash.com/user/erondu/1600x900" alt="apple watch photo">
+        </div>
+    </div>
+</div>

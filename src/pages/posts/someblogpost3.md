@@ -1,57 +1,34 @@
 ---
-// /src/pages/about.astro
-
-import { Markdown } from 'astro/components'
-import BaseLayout from '$layouts/BaseLayout.astro'
-
-export const frontmatter = {
-  openGraph: {
-    basic: { 
-      title: "hello",
-      type: "website",
-      image: "Some image",
-      url: "smiley",
-    }
-  }}  
-
-
-
-
-
-//  site_name: "This is some text"
-//  basic:
-//    type: "Article"
-//    image: "./images/tetris-hero.png"
+title: this is the page title FOUR
+description: "This is a description FOUR"
+datePublished: "2020-09-05T08:15:30-05:00"
+dateModified: "2020-09-05T08:15:30-05:00"
+author: Rudiger Wolf
+tags:
+  - solutions
+  - hello
+draft: true
+sitemap: true
+layout: ../../layouts/PostLayout.astro
+openGraph:
+  title: title
+  description: description
+  basic:
+    title: sometitle
+    type: website
+    image: openGraphBasicImage
+    url: smiley
+  image:
+    secureUrl: openGraphBasicImage
+    type: "image/png"
+    width: openGraphImageWidth
+    height: openGraphImageHeight
+    alt: openGraphImageAlt
 ---
 
-<BaseLayout title="This is a title from about" 
-description="A description from the about page." 
-metaDescription="This is a comprehensive description that is intented for the social media cards."
-metaTitle="SEO title gors here and is different to the page title."
-metaImage="default-opengraph-image.png"
-metaImageAlt="System throughput is determined by system constraint.">
-<br>
-<br>
-<br>
-  <!-- This example requires Tailwind CSS v2.0+ -->
+# 3 This is the post H1 header. Only one
 
-<div class="mx-auto px-4 sm:px-6 lg:px-8">
-  <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
-  <div class="prose max-w-none">
-    <Markdown>
-
-# About This Website
-
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis vehicula orci. Nullam urna lacus, fringilla ut eros sed, tempus dignissim arcu. Aliquam vehicula dictum elit, nec eleifend metus convallis non. Phasellus ut vulputate diam, eget blandit arcu. Nulla vel mollis massa, non accumsan velit. Nunc vel sollicitudin lectus. Nullam euismod lacus sapien, sit amet feugiat nisi iaculis id. Vestibulum sollicitudin dui a faucibus rutrum. Nulla malesuada ante massa, a mollis eros tristique nec. In interdum a felis quis auctor. Sed nec nisl vitae ipsum lacinia mattis. Proin posuere quam in eleifend dapibus. In ac gravida metus.
-
-Nulla pharetra odio magna. Nunc ut mollis nisi. Maecenas a nibh venenatis, luctus turpis a, tempus mi. Quisque ipsum massa, accumsan in pulvinar ut, condimentum et lectus. Aliquam ac eleifend ante. Nunc a suscipit est. Integer vitae neque vitae ipsum aliquam vulputate eu a dolor. Nunc augue metus, porttitor at tellus a, egestas iaculis felis. Fusce sed purus magna. Vivamus lacinia quam dignissim consequat imperdiet. Donec tempor elit mollis, eleifend mi eget, vulputate enim. Ut augue ligula, maximus ut pretium non, pellentesque at sem. Duis non quam purus. Aliquam vitae tristique nibh. Phasellus ut sagittis odio, vel rutrum dui. Aliquam erat volutpat. 
-
-# About  ([Contact](/contact))
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis vehicula orci. Nullam urna lacus, fringilla ut eros sed, tempus dignissim arcu. Aliquam vehicula dictum elit, nec eleifend metus convallis non. Phasellus ut vulputate diam, eget blandit arcu. Nulla vel mollis massa, non accumsan velit. Nunc vel sollicitudin lectus. Nullam euismod lacus sapien, sit amet feugiat nisi iaculis id. Vestibulum sollicitudin dui a faucibus rutrum. Nulla malesuada ante massa, a mollis eros tristique nec. In interdum a felis quis auctor. Sed nec nisl vitae ipsum lacinia mattis. Proin posuere quam in eleifend dapibus. In ac gravida metus.
-
-Nulla pharetra odio magna. Nunc ut mollis nisi. Maecenas a nibh venenatis, luctus turpis a, tempus mi. Quisque ipsum massa, accumsan in pulvinar ut, condimentum et lectus. Aliquam ac eleifend ante. Nunc a suscipit est. Integer vitae neque vitae ipsum aliquam vulputate eu a dolor. Nunc augue metus, porttitor at tellus a, egestas iaculis felis. Fusce sed purus magna. Vivamus lacinia quam dignissim consequat imperdiet. Donec tempor elit mollis, eleifend mi eget, vulputate enim. Ut augue ligula, maximus ut pretium non, pellentesque at sem. Duis non quam purus. Aliquam vitae tristique nibh. Phasellus ut sagittis odio, vel rutrum dui. Aliquam erat volutpat. 
-
+This is a paragraph.
 
 <p className="lead">
   Until now, trying to style an article, document, or blog post with Tailwind has been a very
@@ -68,8 +45,8 @@ The `@tailwindcss/typography` plugin is our attempt to give you what you _actual
 
 ```html
 <p>
-  But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-  springing up around the country.
+  But a recent study shows that the celebrated appetizer may be linked to a
+  series of rabies cases springing up around the country.
 </p>
 ```
 
@@ -156,7 +133,7 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-}
+};
 ```
 
 Hopefully that looks good enough to you.
@@ -238,9 +215,3 @@ Phew, with any luck we have styled the headings above this text and they look pr
 Let's add a closing paragraph here so things end with a decently sized block of text. I can't explain why I want things to end that way but I have to assume it's because I think things will look weird or unbalanced if there is a heading too close to the end of the document.
 
 What I've written here is probably long enough, but adding this final sentence can't hurt.
-
-    </Markdown>
-  </div>
- </div>
-
-</BaseLayout>
