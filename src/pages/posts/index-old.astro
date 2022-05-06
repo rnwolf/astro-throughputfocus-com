@@ -47,13 +47,13 @@ const mysortedPosts = myPosts.sort((a, b) => Date.parse(b.frontmatter.datePublis
 
 {JSON.stringify({page})}
 
-<!-- <h1>Page {page.currentPage}</h1> -->
+<h1>Page {page.currentPage}</h1>
 <ul>
-  <!-- {page.sortedPosts.map(item => <li>{item.title}</li>)} -->
+  {page.sortedPosts.map(item => <li>{item.title}</li>)}
 </ul>
 
 
-    <h2> All Posts Archive</h2>
+    <!-- <h2> All Posts Archive</h2>
     <div>
       {mysortedPosts.map((post) => {
       
@@ -70,5 +70,5 @@ const mysortedPosts = myPosts.sort((a, b) => Date.parse(b.frontmatter.datePublis
             <hr>
           </article>
       )})}
-    </div>
+    </div> -->
 </BaseLayout>

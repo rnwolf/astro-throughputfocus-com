@@ -3,29 +3,31 @@ title: this is the page title TWO
 description: "This is a description TWO"
 datePublished: "2020-10-05T08:15:30-05:00"
 dateModified: "2020-10-05T08:15:30-05:00"
-author: Rudiger Wolf
+author: rnwolf
 authors:
   - rnwolf
 tags:
   - solutions
   - hello
 draft: true
+readingtime: 10min
 sitemap: true
 layout: ../../layouts/PostLayout.astro
 openGraph:
-  title: OpenGraph title goes here
-  description: This is a pretty comprehensive description of the page that helps with SEo and social media summaries.
+  title: This is the Open Graph title for the post
+  description: This is a comprehensive description that give some kind of a super hight level summary of that the post is all about and it uses some of the key words for seo reasons as well.
   basic:
-    title: The basic OpenGraph title
+    title: different from the value of the title prop
     type: article
-    image: /default-opengraph-image.png
-    url: smiley
+    image: https://picsum.photos/1200/627
   image:
-    secureUrl: /default-opengraph-image.png
+    secureUrl: https://picsum.photos/1200/627
     type: "image/png"
     width: 1200
     height: 627
-    alt: "System throughput is determined by system constraint."
+    alt: This is a description of what is in the image
+setup: |
+  import { YouTube } from 'astro-embed';
 ---
 
 # 1 This is the post H1 header. Only one

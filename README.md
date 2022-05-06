@@ -151,3 +151,61 @@ allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date)
 allPosts = import.meta.env.DEV ? allPosts : allPosts.filter((a)=>!a.draft);
 
 export {allPosts};
+
+## How to obtain content info for a Markdown post
+
+See https://www.readonlychild.com/blog/astro-md-content/
+
+## New way to create RSS feed for md blog posts
+
+// src/pages/rss.xml.js
+import rss from '@astrojs/rss';
+const postImportResult = import.meta.globEager('../posts/\*_/_.md');
+const posts = Object.values(postImportResult);
+export const get = () => rss({
+title: 'Buzz’s Blog',
+description: 'A humble Astronaut’s guide to the stars',
+items: posts.map((post) => ({
+link: post.frontmatter.slug,
+title: post.frontmatter.title,
+pubDate: post.frontmatter.pubDate,
+}))
+});
+
+See https://github.com/withastro/docs/pull/430/files
+
+# What is the URL for a given astro page
+
+URL interface from Astro.request.url to use it in the way you used to:
+
+const pathname = new URL(Astro.request.url).pathname;
+
+==================
+
+// help.astro
+const mode = import.meta.env.MODE;
+...
+
+<li>
+  <a href={mode === "development" ? '/help' : 'help.html'}>Help</a>
+</li>
+
+## Configuration setting to try==========
+
+Here’s the basic tsconfig all of Astro’s starters come with:
+
+{
+"compilerOptions": {
+// Enable top-level await, and other modern ESM features.
+"target": "ESNext",
+"module": "ESNext",
+// Enable node-style module resolution, for things like npm package imports.
+"moduleResolution": "node",
+// Enable JSON imports.
+"resolveJsonModule": true,
+// Enable stricter transpilation for better output.
+"isolatedModules": true,
+// Add type definitions for our Vite runtime.
+"types": ["vite/client"]
+}
+}

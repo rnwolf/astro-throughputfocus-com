@@ -1,44 +1,56 @@
 ---
+// src/pages/authors/[author].astro
 import BaseLayout from '$layouts/BaseLayout.astro';
-import PostPreview from '$components/PostPreview.astro';
-//import authorData from '../../data/authors.json';
+import { Markdown } from 'astro/components'
+import AUTHOR from "$components/author.astro";
+import PostPreviewCard from '$components/PostPreviewCard.astro';
 import Config from "$/website.config.cjs";
-
+const authorData = Config.authors ?? [];
+// console.log(JSON.stringify(authorData))
+let authors = authorData.map(obj => {return obj.key})
+// console.log(authors)
 
 export async function getStaticPaths() {
 	const allPosts = await Astro.glob('../posts/*.md');
-	let allAuthorsUnique = [...new Set(allPosts.map((p) => p.frontmatter.author))];
+	// let allAuthorsUnique = ['rnwolf']; //For testing
+	let allAuthorsUnique = Config.authors.map(obj => {return obj.key});
+	// console.log(allAuthorsUnique);
+
 	return allAuthorsUnique.map((author) => ({ params: { author }, props: { allPosts } }));
 }
 
 const { allPosts } = Astro.props;
-const title = 'Don’s Blog';
-const description = 'An example blog on Astro';
+// console.log(JSON.stringify(allPosts))
 
 /** filter posts by author, sort by date */
-const posts = allPosts.filter((post) => post.frontmatter.author === Astro.params.author).sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
-const author = authorData[posts[0].frontmatter.author];
+const posts = allPosts
+.filter(post => post.frontmatter.authors.includes(Astro.params.author))
+.sort((a, b) => new Date(b.frontmatter.datePublished).valueOf() - new Date(a.frontmatter.datePublished).valueOf());
+
+const postauthor = authorData.filter( author => author.key === Astro.params.author)[0];
+console.log(JSON.stringify(postauthor));
 ---
 
-<BaseLayout title="Throughput Focus home page" 
-description="A description from the home page." 
-metaDescription="This is a comprehensive description that is intented for the social media cards."
-metaTitle="SEO title goes here and is different to the page title."
-metaImage="default-opengraph-image.png"
-metaImageAlt="System throughput is determined by system constraint.">
+<BaseLayout title="Throughput Focus home page" >
 
-    <SiteBanner short="This is a short text" long="This is a long piece of text" link="/contact" />
+	<div class="mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+  		<div class="prose max-w-6xl mx-auto">
+			<Markdown>
 
-	<p>{title}</p>
-	<p>{description}</p> 
-	<p>image={posts[0].frontmatter.image}</p> 
-	<p>canonicalURL={Astro.canonicalURL.toString()} </p>
+			# Authors
 
-		<main class="wrapper">
-			<h2 class="title">
-				<div class="avatar"><img class="avatar-img" src={author.image} alt="" /></div>
-				{author.name}
-			</h2>
-			{posts.map((post) => <PostPreview post={post} author={author} />)}
-		</main>
+			Some blub about Authors for the site.
+
+			</Markdown>
+
+			<AUTHOR author={postauthor} />
+			<div class="py-12 md:px-20 sm:px-14 px-6 bg-red-200">
+				{posts.map((post) => <PostPreviewCard post={post} />)}
+			</div>
+
+		</div>
+	</div>
+
+
 </BaseLayout>

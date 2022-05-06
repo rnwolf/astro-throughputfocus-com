@@ -2,6 +2,7 @@
 import BaseLayout from '$layouts/BaseLayout.astro';
 import SiteBanner from '$components/SiteBanner.astro';
 import PictureTextRight from '$components/PictureTextRight.astro';
+import FeaturedBlogPosts from '$components/FeaturedBlogPosts.astro';
 
 import Config from "$/website.config.cjs";
 
@@ -19,5 +20,11 @@ metaImageAlt="System throughput is determined by system constraint.">
         heading="Heading for Text Right Hand side" 
         bgcolour="bg-red-300"
         paragraphs= {Config.paragraphsForPictureTextRight} />
+
+    <FeaturedBlogPosts 
+        heading="Featured posts" 
+        subtext="Highlighted posts, and some info about why these are signigicant." 
+        bgcolour="bg-red-200"
+        featured={Config.featuredPosts} />
 
 </BaseLayout>

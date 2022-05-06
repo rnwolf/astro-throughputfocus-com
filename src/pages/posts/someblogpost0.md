@@ -3,7 +3,6 @@ title: this is the page title ONE
 description: "This is a description for ONE"
 datePublished: "2020-11-05T08:15:30-05:00"
 dateModified: "2020-11-05T08:15:30-05:00"
-author: Rudiger Wolf
 authors:
   - rnwolf
   - bloggs
