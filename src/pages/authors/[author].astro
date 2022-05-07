@@ -45,10 +45,12 @@ console.log(JSON.stringify(postauthor));
 			</Markdown>
 
 			<AUTHOR author={postauthor} />
-			<div class="py-12 md:px-20 sm:px-14 px-6 bg-red-200">
-				{posts.map((post) => <PostPreviewCard post={post} />)}
+			<!-- <div class="py-12 sm:px-14 px-6 bg-red-200"> -->
+			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center bg-red-200">
+				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
+					{posts.map((post) => <PostPreviewCard post={post} />)}
+				</div>
 			</div>
-
 		</div>
 	</div>
 

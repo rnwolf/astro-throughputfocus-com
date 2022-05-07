@@ -1,13 +1,17 @@
 ---
 // This is /src/posts/[...page].astro
 import BaseLayout from '$layouts/BaseLayout.astro'
+import { Markdown } from 'astro/components'
+import PostPreviewCard from '$components/PostPreviewCard.astro';
+import NavPagination from '$components/NavPagination.astro';
+import Config from "$/website.config.cjs";
 
 export async function getStaticPaths({ paginate }) {
   // Load your data with fetch(), Astro.fetchContent(), etc.
   const allPosts = await Astro.glob('./*.md');
   const data = allPosts.sort((a, b) => Date.parse(b.frontmatter.datePublished) - Date.parse(a.frontmatter.datePublished));
   // Return a paginated collection of paths for all posts
-  return paginate(data, { pageSize: 4 });
+  return paginate(data, { pageSize: Config.pageSize });
 }
 
 // If set up correctly, The page prop now has everything that
@@ -15,23 +19,32 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BaseLayout title="All Posts"></BaseLayout>
+<BaseLayout title="All Posts">
   <!-- {JSON.stringify({page})} -->
 
-  <br>
-  <strong>Posts:</strong>
-  <br>
+	<div class="mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+  		<div class="prose max-w-6xl mx-auto">
+			  <Markdown>
 
-  {page.data.map(p => {
-      return <span><a href={p.url} >View {p.url} {p.frontmatter.title}</a> Published: {p.frontmatter.datePublished} </span><br>;
-  })}
+  			# Blog Posts 
 
-  <br>
+  			Some blub about blog posts for the site.
 
-  {page.url.prev && <a href={page.url.prev}>Previous page</a>}
-  {page.url.next && <a href={page.url.next}>Next page</a>}
-  <p>Current page: {page.currentPage} </p>
-  <p> per page: {page.size} </p>
-  <p> Last page: {page.lastPage} </p>
+  			</Markdown>
+  			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
+            {page.data.map(post => <PostPreviewCard post={post} />)}
+             
+             
+             <!-- {
+              return <span><a href={post.purl} >View {post.url} {post.frontmatter.title}</a> Published: {post.frontmatter.datePublished} </span><br>;
+            })} -->
+          </div>
+        </div>
 
+        <NavPagination page={page} />
+        
+      </div>
+  </div>
 </BaseLayout>
