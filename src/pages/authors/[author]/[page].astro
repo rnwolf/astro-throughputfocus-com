@@ -4,26 +4,41 @@ import BaseLayout from '$layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components'
 import AUTHOR from "$components/author.astro";
 import PostPreviewCard from '$components/PostPreviewCard.astro';
+import NavPagination from '$components/NavPagination.astro';
 import Config from "$/website.config.cjs";
 const authorData = Config.authors ?? [];
 // console.log(JSON.stringify(authorData))
 let authors = authorData.map(obj => {return obj.key})
 // console.log(authors)
-export async function getStaticPaths() {
-	const allPosts = await Astro.glob('../posts/*.md');
+
+export async function getStaticPaths({paginate}) {
+	const allPosts = await Astro.glob('../../posts/*.md');
 	// let allAuthorsUnique = ['rnwolf']; //For testing
 	let allAuthorsUnique = Config.authors.map(obj => {return obj.key});
 	// console.log(allAuthorsUnique);
-	return allAuthorsUnique.map((author) => ({ params: { author }, props: { allPosts } }));
-}
-const { allPosts } = Astro.props;
-// console.log(JSON.stringify(allPosts))
+
+	return allAuthorsUnique.map((author) => {
+
+	    const filteredPosts = allPosts.filter(post => post.frontmatter.authors.includes(author))
+		.sort((a, b) => Date.parse(b.frontmatter.datePublished) - Date.parse(a.frontmatter.datePublished));
+
+    	return paginate(filteredPosts, {
+      		params: { author },
+      		pageSize: Config.pageSize
+    	});
+	});
+};
+
+// If set up correctly, The page prop now has everything that
+// you need to render a single page (see next section).
+const { page } = Astro.props;
+const params = Astro.params;
+
 /** filter posts by author, sort by date */
-const posts = allPosts
-.filter(post => post.frontmatter.authors.includes(Astro.params.author))
-.sort((a, b) => new Date(b.frontmatter.datePublished).valueOf() - new Date(a.frontmatter.datePublished).valueOf());
+
 const postauthor = authorData.filter( author => author.key === Astro.params.author)[0];
-console.log(JSON.stringify(postauthor));
+
+// console.log(JSON.stringify(postauthor));
 ---
 
 <BaseLayout title="Throughput Focus home page" >
@@ -43,11 +58,10 @@ console.log(JSON.stringify(postauthor));
 			<!-- <div class="py-12 sm:px-14 px-6 bg-red-200"> -->
 			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center bg-red-200">
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
-					{posts.map((post) => <PostPreviewCard post={post} />)}
+					{page.data.map((post) => <PostPreviewCard post={post} />)}
 				</div>
 			</div>
+		<NavPagination page={page} />
 		</div>
 	</div>
-
-
 </BaseLayout>
