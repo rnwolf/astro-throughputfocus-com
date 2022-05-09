@@ -4,8 +4,11 @@ import BaseLayout from '$layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components'
 import AUTHOR from "$components/author.astro";
 import PostPreviewCard from '$components/PostPreviewCard.astro';
+import NavPaginationPageOne from '$components/NavPaginationPageOne.astro';
 import Config from "$/website.config.cjs";
+
 const authorData = Config.authors ?? [];
+
 // console.log(JSON.stringify(authorData))
 let authors = authorData.map(obj => {return obj.key})
 // console.log(authors)
@@ -19,11 +22,24 @@ export async function getStaticPaths() {
 const { allPosts } = Astro.props;
 // console.log(JSON.stringify(allPosts))
 /** filter posts by author, sort by date */
-const posts = allPosts
+const filteredPosts = allPosts
 .filter(post => post.frontmatter.authors.includes(Astro.params.author))
 .sort((a, b) => new Date(b.frontmatter.datePublished).valueOf() - new Date(a.frontmatter.datePublished).valueOf());
+
+const postCount = filteredPosts.length;
+const pages = Math.ceil(postCount / Config.pageSize);
+console.log(postCount,pages);
 const postauthor = authorData.filter( author => author.key === Astro.params.author)[0];
-console.log(JSON.stringify(postauthor));
+
+let authorURL = new URL(Astro.request.url);
+if (pages > 1) {
+  authorURL = new URL((Astro.params.author+'/2'),authorURL);
+} else {
+  authorURL = null;
+};
+
+// console.log(JSON.stringify(postauthor));
+
 ---
 
 <BaseLayout title="Throughput Focus home page" >
@@ -41,11 +57,12 @@ console.log(JSON.stringify(postauthor));
 
 			<AUTHOR author={postauthor} />
 			<!-- <div class="py-12 sm:px-14 px-6 bg-red-200"> -->
-			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center bg-red-200">
+			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
-					{posts.map((post) => <PostPreviewCard post={post} />)}
+					{filteredPosts.slice(0,Config.pageSize).map((post) => <PostPreviewCard post={post} />)}
 				</div>
 			</div>
+			<NavPaginationPageOne lastPage={pages}, url={authorURL} />
 		</div>
 	</div>
 

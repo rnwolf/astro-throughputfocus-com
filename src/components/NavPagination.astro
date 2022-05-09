@@ -1,6 +1,8 @@
 ---
 // /src/components/NavPagination.astro
-const {page } = Astro.props;
+import Config from "$/website.config.cjs";
+
+const {page} = Astro.props;
 
 ---
 
@@ -8,11 +10,11 @@ const {page } = Astro.props;
     <div class="hidden sm:block">
     <p class="text-sm text-gray-700">
         Showing page
-        <span class="font-medium">{page.currentPage}</span>
+        <span class="font-medium"> {page.currentPage && page.currentPage } </span>
         of
-        <span class="font-medium">{page.lastPage}</span>
-        with 
-        <span class="font-medium">{page.size}</span>
+        <span class="font-medium"> {page.lastPage && page.lastPage } </span>
+        with upto
+        <span class="font-medium"> {Config.pageSize} </span>
         posts per page
     </p>
     </div>
