@@ -35,16 +35,9 @@ const { page } = Astro.props;
   			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
           <div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
             {page.data.map(post => <PostPreviewCard post={post} />)}
-             
-             
-             <!-- {
-              return <span><a href={post.url} >View {post.url} {post.frontmatter.title}</a> Published: {post.frontmatter.datePublished} </span><br>;
-            })} -->
           </div>
         </div>
-
         <NavPagination page={page} />
-        
       </div>
   </div>
 </BaseLayout>

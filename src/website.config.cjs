@@ -8,7 +8,7 @@ export default {
     twitter: "throughputfocus",
     linkedin: "throughputfocus",
   },
-  pageSize: 5,
+  pageSize: 6,
   parentdataarray: [
     {
       text: "Home data",
@@ -17,6 +17,88 @@ export default {
     {
       text: "About Config",
       name: "Fred Config",
+    },
+  ],
+  tags: [
+    {
+      key: "strategy",
+      title: "Strategy",
+      blurb:
+        " This is some text that describes what this topic is all about and why it is worthy of a tag.",
+      icon: "ph:strategy-bold",
+    },
+    {
+      key: "kanban",
+      title: "Kanban",
+      blurb:
+        " This is some text that describes what this topic is all about and why it is worthy of a tag.",
+      icon: "ph:kanban-fill",
+    },
+    {
+      key: "leadership",
+      title: "Leadership",
+      blurb: "Some text about this tag.",
+      icon: "akar-icons:people-group",
+    },
+    {
+      key: "agile",
+      title: "Agile",
+      blurb: "Info about agile here.",
+      icon: "carbon:loop",
+    },
+    {
+      key: "flow",
+      title: "Flow",
+      blurb: "All about flow.",
+      icon: "ph:flow-arrow-bold",
+    },
+    {
+      key: "pm",
+      title: "Product Management",
+      blurb: "Product Management info goes here.",
+      icon: "carbon:delivery-parcel",
+    },
+    {
+      key: "python",
+      title: "Python",
+      blurb: "Info about python goes here",
+      icon: "akar-icons:python-fill",
+    },
+    {
+      key: "metrics",
+      title: "Metrics",
+      blurb: "Some info about why this is a tag",
+      icon: "mdi:chart-areaspline",
+    },
+    {
+      key: "life",
+      title: "Life",
+      blurb: "Some infor about the tag life",
+      icon: "ph:lifebuoy-fill",
+    },
+    {
+      key: "technology",
+      title: "Technology",
+      blurb: "What this technology tag is about",
+      icon: "iconoir:electronics-chip",
+    },
+    {
+      key: "design",
+      title: "Design",
+      blurb: "Some info goes here",
+      icon: "ic:baseline-design-services",
+    },
+    {
+      key: "finance",
+      title: "Finance",
+      blurb: "Some info about finance",
+      icon: "fluent:money-hand-20-filled",
+    },
+    {
+      key: "toc",
+      title: "Theory of Contraints",
+      blurb: "Some info about ToC goes here",
+      icon: "fa-solid:wine-bottle",
     },
   ],
   authors: [
