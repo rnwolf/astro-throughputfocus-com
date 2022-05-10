@@ -9,6 +9,8 @@ authors:
   - bloggs
 tags:
   - agile
+  - toc
+  - finance
 draft: true
 readingtime: 10min
 sitemap: true

@@ -7,8 +7,9 @@ authors:
   - rnwolf
   - bloggs
 tags:
-  - astro
-  - hello
+  - kanban
+  - agile
+  - pm
 draft: true
 readingtime: 10min
 sitemap: true

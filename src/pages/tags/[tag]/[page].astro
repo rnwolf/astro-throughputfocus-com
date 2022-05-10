@@ -1,0 +1,65 @@
+---
+// src/pages/tags/[tag].astro
+import BaseLayout from '$layouts/BaseLayout.astro';
+import { Markdown } from 'astro/components'
+import TagCard from "$components/TagCard.astro";
+import PostPreviewCard from '$components/PostPreviewCard.astro';
+import NavPagination from '$components/NavPagination.astro';
+import Config from "$/website.config.cjs";
+const tagData = Config.tags ?? [];
+
+console.log(JSON.stringify(tagData))
+let tags = tagData.map(obj => {return obj.key})
+console.log(tags)
+
+export async function getStaticPaths({paginate}) {
+	const allPosts = await Astro.glob('../../posts/*.md');
+	let allTagsUnique = Config.tags.map(obj => {return obj.key});
+	console.log(allTagsUnique);
+
+	return allTagsUnique.map((tag) => {
+
+	    const filteredPosts = allPosts.filter(post => post.frontmatter.tags.includes(tag))
+		.sort((a, b) => Date.parse(b.frontmatter.datePublished) - Date.parse(a.frontmatter.datePublished));
+
+    	return paginate(filteredPosts, {
+      		params: { tag },
+      		pageSize: Config.pageSize
+    	});
+	});
+};
+
+// If set up correctly, The page prop now has everything that
+// you need to render a single page (see next section).
+const { page } = Astro.props;
+const params = Astro.params;
+
+/** filter posts by author, sort by date */
+
+const postTag = tagData.filter( tag => tag.key === Astro.params.tag)[0];
+
+// console.log(JSON.stringify(postTag));
+---
+
+<BaseLayout title="Throughput Focus home page" >
+
+	<div class="mx-auto px-4 sm:px-6 lg:px-8">
+  		<div class="prose max-w-6xl mx-auto">
+			<Markdown>
+
+			# Tags
+
+			Some blub about Tags for the site.
+
+			</Markdown>
+
+			<TagCard tag={postTag} />
+			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
+				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
+					{page.data.map((post) => <PostPreviewCard post={post} />)}
+				</div>
+			</div>
+		<NavPagination page={page} />
+		</div>
+	</div>
+</BaseLayout>

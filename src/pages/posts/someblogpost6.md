@@ -7,8 +7,10 @@ author: Rudiger Wolf
 authors:
   - rnwolf
 tags:
-  - solutions
-  - hello
+  - pm
+  - strategy
+  - kanban
+  - life
 draft: true
 readingtime: 10min
 sitemap: true

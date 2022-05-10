@@ -7,8 +7,9 @@ author: rnwolf
 authors:
   - rnwolf
 tags:
-  - solutions
-  - hello
+  - strategy
+  - leadership
+  - flow
 draft: true
 readingtime: 10min
 sitemap: true

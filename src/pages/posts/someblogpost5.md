@@ -8,8 +8,10 @@ authors:
   - rnwolf
   - bloggs
 tags:
-  - solutions
-  - hello
+  - strategy
+  - toc
+  - metrics
+  - kanban
 draft: true
 readingtime: 10min
 sitemap: true

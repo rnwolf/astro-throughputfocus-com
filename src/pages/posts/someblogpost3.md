@@ -7,8 +7,9 @@ author: Rudiger Wolf
 authors:
   - rnwolf
 tags:
-  - solutions
-  - hello
+  - strategy
+  - life
+  - design
 draft: true
 readingtime: 10min
 sitemap: true

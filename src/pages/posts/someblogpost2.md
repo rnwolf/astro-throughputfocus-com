@@ -8,8 +8,9 @@ authors:
   - rnwolf
   - bloggs
 tags:
-  - solutions
-  - world
+  - metrics
+  - strategy
+  - python
 draft: true
 readingtime: 10min
 sitemap: true
