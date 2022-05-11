@@ -6,36 +6,29 @@ import Config from "$/website.config.cjs";
 
 const team = Config.team ?? [];
 ---
-<!--
-  This example requires some changes to your config:
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
-<BaseLayout title="The team">
-<NavbarSpacer/>
+
+<BaseLayout title="Team - Throughput Focus" 
+description="The Throughput Focus Team." 
+metaDescription="Individual productivity is important but teamwork is essential in solving complex issues. Here are some of the people supporting Throughput Focus clients."
+metaTitle="Who is in the Throughput Focus Team?"
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint. Our team focuses efforts on throughput at your constraint.">
+
 <div class="bg-white">
-  <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+  <div class="mx-auto py-24 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
     <div class="space-y-12">
       <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
         <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Our Team</h2>
-        <p class="text-xl text-gray-500">Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus quis et.</p>
+        <p class="text-xl text-gray-500">some text goes here. Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus quis et.</p>
       </div>
-      <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
+      <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
           
           {team.map(member => (
 
             <li>
             <div class="space-y-4">
                 <div class="aspect-w-3 aspect-h-2">
-                <img class="object-cover shadow-lg rounded-lg" src={member.photo} alt="Head shot photo">
+                <img class="object-cover shadow-lg rounded-lg" src={member.photo} alt="Head shot photo" width="589" height="589">
                 </div>
 
                 <div class="space-y-2">
@@ -47,15 +40,15 @@ const team = Config.team ?? [];
                     <p class="text-gray-500">Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.</p>
                 </div>
 
-                <ul role="list" class="flex space-x-5">
+                <ul class="flex space-x-5">
                     <li>
-                    <a href={`https://twitter.com${member.twitterprofile}`} class="text-gray-400 hover:text-gray-500">
+                    <a href={`https://twitter.com${member.twitterprofile}`} class="text-gray-400 hover:text-blue-500  hover:underline-offset-4">
                         <span class="sr-only">Twitter</span>
                         <Icon size={24} name='mdi:twitter' />
                     </a>
                     </li>
                     <li>
-                    <a href={`https://linkedin.com${member.linkedinprofile}`} class="text-gray-400 hover:text-gray-500">
+                    <a href={`https://linkedin.com${member.linkedinprofile}`} class="text-gray-400 hover:text-blue-500 hover:underline-offset-4">
                         <span class="sr-only">LinkedIn</span>
                         <Icon size={24} name='mdi:linkedin' />
                     </a>
@@ -65,7 +58,6 @@ const team = Config.team ?? [];
             </div>
             </li>
 
-        <!-- More people... -->
             ))
           }
 

@@ -3,7 +3,7 @@
 import "../styles/global.css";
 import Navbar from '../components/Navbar.astro';
 import NavbarSpacer from '../components/NavbarSpacer.astro';
-import Footer from '../components/Footer.astro';
+import Footer from '../components/FooterNav.astro';
 import { SEO } from "astro-seo";
 
 const currentyear = new Date().getFullYear();
@@ -93,7 +93,7 @@ console.log(metaImageAlt)
 
   <div class="wrapper">
     <Navbar/>
-    <NavbarSpacer/>
+    <!-- <NavbarSpacer/> -->
 	  <main id="main-content">
         <slot />
 	  </main>
