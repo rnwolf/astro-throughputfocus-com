@@ -2,7 +2,7 @@
 //src/components/author.astro
 // Display the key information about a particular author
 import { Icon } from 'astro-icon';
-const { author={} } = Astro.props;
+const { author={}, count } = Astro.props;
 
 // Debugging What is comming into this component?
 // console.log(author);
@@ -27,7 +27,7 @@ const { author={} } = Astro.props;
         <div class="space-y-4">
           
           <div class="text-lg leading-6 font-medium space-y-1">
-            <h3><a href={"/authors/" + author.key}>{author.fullname}</a></h3>
+            <h3><a href={"/authors/" + author.key}>{author.fullname}</a> {count && " - " + count +" Posts"} </h3>
             <p class="text-indigo-600">{author.role}</p>
           </div>
 

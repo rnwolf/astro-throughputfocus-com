@@ -24,6 +24,7 @@ export async function getStaticPaths({paginate}) {
 
     	return paginate(filteredPosts, {
       		params: { tag },
+			props: { tagname: tag, count: filteredPosts.length },
       		pageSize: Config.pageSize
     	});
 	});
@@ -31,7 +32,7 @@ export async function getStaticPaths({paginate}) {
 
 // If set up correctly, The page prop now has everything that
 // you need to render a single page (see next section).
-const { page } = Astro.props;
+const { page, count } = Astro.props;
 const params = Astro.params;
 
 /** filter posts by author, sort by date */
@@ -53,7 +54,7 @@ const postTag = tagData.filter( tag => tag.key === Astro.params.tag)[0];
 
 			</Markdown>
 
-			<TagCard tag={postTag} />
+			<TagCard tag={postTag} count={count} />
 			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
 					{page.data.map((post) => <PostPreviewCard post={post} />)}

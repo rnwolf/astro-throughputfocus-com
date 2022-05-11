@@ -49,6 +49,7 @@ let filteredPosts =
     allPosts.filter((p) => { 
       return p.frontmatter.title && p.frontmatter.datePublished; 
     });
+
 // now filter to only posts containing the selected tag,
 // these will be rendered below in the markup.
 let tagged = filteredPosts.filter((p) => { 
@@ -72,7 +73,7 @@ let tagged = filteredPosts.filter((p) => {
 </BaseLayout>    -->
 
 
-<BaseLayout title={"Posts tagged with " + tagname} >
+<BaseLayout title={tagname + " posts"} >
 
 	<div class="mx-auto px-4 sm:px-6 lg:px-8">
   		<div class="prose max-w-6xl mx-auto">
@@ -85,6 +86,7 @@ let tagged = filteredPosts.filter((p) => {
 			</Markdown>
 
 			<TagCard tag={tagname} />
+      <p>{tagged.length}</p>
 			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
 					{tagged.map((post) => <PostPreviewCard post={post} />)}

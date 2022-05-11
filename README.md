@@ -190,6 +190,9 @@ const mode = import.meta.env.MODE;
   <a href={mode === "development" ? '/help' : 'help.html'}>Help</a>
 </li>
 
+Seems like it needs a rag around condition.
+<tag>{item.original_language === 'en' ? item.title : item.original_language}</tag>
+
 ## Configuration setting to try==========
 
 Here’s the basic tsconfig all of Astro’s starters come with:
@@ -209,3 +212,100 @@ Here’s the basic tsconfig all of Astro’s starters come with:
 "types": ["vite/client"]
 }
 }
+
+## Javascript to link together data
+
+https://discord.com/channels/830184174198718474/845451724738265138/973596845764919327
+
+Sample from Movies endpoint:
+
+[
+{  
+ title: 'Fast Color',
+genre_ids: [ 53, 878 ],
+},
+]
+
+Sample from Genres endpoint:
+[
+{ id: 28, name: 'Action' },
+{ id: 12, name: 'Adventure' },
+]
+
+Abbreviated JS thus far:
+
+const loadGenres = async () => {
+const response = await fetch(genres_url);
+const results = await response.json();
+return results.genres;
+};
+
+const loadMovies = async () => {
+const response = await fetch(movies_url);
+const results = await response.json();
+return results.results;
+};
+
+const genres = await loadGenres();
+const movies = await loadMovies();
+
+Autothreader
+BOT
+— Yesterday at 3:46 PM
+Hey @djmtype! I've automatically created this helpful thread from your message 17 hours ago.
+
+Pinging @support-squad so that they see this as well!
+[3:46 PM]
+Done with your thread? Press Resolve Thread to auto-archive the discussion for everyone.
+
+Resolve Thread
+[3:46 PM]
+You can also right-click the thread in Discord (or use the ... menu) and select Leave Thread to unsubscribe from future updates.
+
+readonlychild (ernesto) — Yesterday at 3:55 PM
+pseudo-code
+[3:55 PM]
+function getGenreById (id, genres) {
+let g = '??';
+genres.forEach((genre) => {
+if (genre.id === id) g = genre.name;
+}
+return g;
+}
+
+---
+
+<span>Genre 28 = {getGenreById(28, genres)}</span>
+
+## Enrich data
+
+https://discord.com/channels/830184174198718474/845451724738265138/973718140859076638
+
+I'm trying to fetch more details about each movie so I'm making 2 fetch calls.
+
+async function loadMovies() {
+const entries = [];
+let page = 1;
+const allMovies = `https://api.themoviedb.org/3/account/xxx/favorite/movies?xxx&page=${page}`;
+let data = await fetch(allMovies);
+let fetchResults = await data.json();
+entries.push(...fetchResults.results);
+
+    const allSingleMovies = []
+    for (const item of entries) {
+        const singleMovie = `https://api.themoviedb.org/3/movie/${item.id}?xxx`;
+        const data = await fetch(singleMovie);
+        let singleMovieResults = await data.json();
+        allSingleMovies.push(singleMovieResults);
+    }
+    return allSingleMovies;
+
+}
+
+let movies = await loadMovies();
+
+<ol>
+    {movies.map((item) => 
+    <li>{item.title}</li>
+  )}
+</ol>

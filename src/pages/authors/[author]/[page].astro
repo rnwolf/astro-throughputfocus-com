@@ -24,6 +24,7 @@ export async function getStaticPaths({paginate}) {
 
     	return paginate(filteredPosts, {
       		params: { author },
+			props: { count: filteredPosts.length },
       		pageSize: Config.pageSize
     	});
 	});
@@ -31,7 +32,7 @@ export async function getStaticPaths({paginate}) {
 
 // If set up correctly, The page prop now has everything that
 // you need to render a single page (see next section).
-const { page } = Astro.props;
+const { page, count} = Astro.props;
 const params = Astro.params;
 
 /** filter posts by author, sort by date */
@@ -39,6 +40,7 @@ const params = Astro.params;
 const postauthor = authorData.filter( author => author.key === Astro.params.author)[0];
 
 // console.log(JSON.stringify(postauthor));
+
 ---
 
 <BaseLayout title="Throughput Focus home page" >
@@ -54,7 +56,7 @@ const postauthor = authorData.filter( author => author.key === Astro.params.auth
 
 			</Markdown>
 
-			<AUTHOR author={postauthor} />
+			<AUTHOR author={postauthor} count={count} />
 			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
 					{page.data.map((post) => <PostPreviewCard post={post} />)}

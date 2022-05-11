@@ -7,7 +7,7 @@ import Config from "$/website.config.cjs";
 
 // JS/TS Code written in between the (---) code fence,
 // is ran solely on the Server!
-console.log('See me in the Terminal')
+const tagsRootURL = new URL(Astro.request.url);
 ---
 
 <BaseLayout title="Throughput Focus tags page" >
@@ -26,7 +26,7 @@ console.log('See me in the Terminal')
       <ul>    {Config.tags.map(tag => (
         <h2>{tag.title}</h2> 
         <li >
-        <a href={"tags/"+ tag.key + "/1"} class="inline-flex items-center text-gray-600 my-0">
+        <a href={tagsRootURL.href + "/" + tag.key + "/1"} class="inline-flex items-center text-gray-600 my-0">
           <Icon size={42} name={tag.icon}/>
           <Icon size={24} name="mdi:tag"/>
           {tag.key}</a> 
