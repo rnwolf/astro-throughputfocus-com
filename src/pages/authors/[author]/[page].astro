@@ -20,7 +20,7 @@ export async function getStaticPaths({paginate}) {
 	return allAuthorsUnique.map((author) => {
 
 	    const filteredPosts = allPosts.filter(post => post.frontmatter.authors.includes(author))
-		.sort((a, b) => Date.parse(b.frontmatter.datePublished) - Date.parse(a.frontmatter.datePublished));
+		.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 
     	return paginate(filteredPosts, {
       		params: { author },

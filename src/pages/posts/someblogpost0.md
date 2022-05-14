@@ -1,8 +1,8 @@
 ---
 title: this is the page title ONE
 description: "This is a description for ONE"
-datePublished: "2020-11-05T08:15:30-05:00"
-dateModified: "2020-11-05T08:15:30-05:00"
+pubDate: "2020-11-05T08:15:30-05:00"
+firstPub: "2020-11-05T08:15:30-05:00"
 authors:
   - rnwolf
   - bloggs

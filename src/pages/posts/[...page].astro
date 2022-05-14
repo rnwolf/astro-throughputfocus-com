@@ -9,7 +9,7 @@ import Config from "$/website.config.cjs";
 export async function getStaticPaths({ paginate }) {
   // Load your data with fetch(), Astro.fetchContent(), etc.
   const allPosts = await Astro.glob('./*.md');
-  const data = allPosts.sort((a, b) => Date.parse(b.frontmatter.datePublished) - Date.parse(a.frontmatter.datePublished));
+  const data = allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
   // Return a paginated collection of paths for all posts
   return paginate(data, { pageSize: Config.pageSize });
 }

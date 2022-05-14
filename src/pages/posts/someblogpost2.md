@@ -1,9 +1,8 @@
 ---
 title: this is the page title THREE
 description: "This is a description THREE"
-datePublished: "2020-09-05T08:15:30-05:00"
-dateModified: "2020-09-05T08:15:30-05:00"
-author: Rudiger Wolf
+pubDate: "2020-09-05T08:15:30-05:00"
+firstDate: "2020-09-05T08:15:30-05:00"
 authors:
   - rnwolf
   - bloggs

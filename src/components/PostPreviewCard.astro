@@ -38,19 +38,21 @@ const authorData = Config.authors ?? [];
 
             <li class="inline-flex items-center text-gray-600 my-0">
               <Icon size={24} name="mdi:calendar"  />
-              <time class="text-gray-600" datetime={post.frontmatter.datePublished}>
-                Published:  {post.frontmatter.datePublished.slice(0, 10)}
+              <time class="text-gray-600" datetime={post.frontmatter.pubDate}>
+                Published:  {post.frontmatter.pubDate.slice(0, 10)}
               </time>
 
             </li>
-
+            
+            {post.frontmatter.firstPub &&
             <li class="inline-flex items-center text-gray-600 my-0">
               <Icon size={24} name="mdi:calendar"  />
-              <time class="text-gray-600" datetime={post.frontmatter.dateModified}>
-                Updated: {post.frontmatter.dateModified.slice(0, 10)}
+              <time class="text-gray-600" datetime={post.frontmatter.firstPub}>
+                First published: {post.frontmatter.firstPub.slice(0, 10)}
               </time>
 
             </li>
+            }
 
             <li class="inline-flex items-center text-gray-600 my-0">
               <Icon size={24} name="mdi:pencil"  />

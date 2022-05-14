@@ -14,7 +14,7 @@ export async function getStaticPaths () {
   // this way I leave the date out while the post is not finished.
   let filteredPosts = 
       allPosts.filter((p) => { 
-        return p.frontmatter.title && p.frontmatter.datePublished; 
+        return p.frontmatter.title && p.frontmatter.pubDate; 
       });
   // an object to collect existing tags
   let dix = {};
@@ -26,7 +26,7 @@ export async function getStaticPaths () {
       dix[tag] += 1;
     });
   });
-  console.log('dix', dix); // <-- prints out our tag-cloud data.
+  // console.log('dix', dix); // <-- prints out our tag-cloud data.
 
   let ary = [];
   // format the data to return from getStaticPaths()
@@ -47,7 +47,7 @@ const tagcount = Astro.props.count;
 let allPosts = await Astro.glob('../posts/*.md');
 let filteredPosts = 
     allPosts.filter((p) => { 
-      return p.frontmatter.title && p.frontmatter.datePublished; 
+      return p.frontmatter.title && p.frontmatter.pubDate; 
     });
 
 // now filter to only posts containing the selected tag,

@@ -6,14 +6,14 @@ import { Icon } from 'astro-icon';
 
 
 const {content} = Astro.props;
-const postPublished = content.datePublished.slice(0,10);
-const postUpdate = content.dateModified.slice(0,10);
+const postPublished = content.pubDate.slice(0,10);
+const postFirstPublished = content.firstPub.slice(0,10);
 
 
 // Code to provide links to next and previous published blog posts
 let allPosts = await Astro.glob('../pages/posts/**/*.md')
 
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.datePublished).valueOf() - new Date(a.frontmatter.datePublished).valueOf())
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
 let postsNumber = allPosts.length
 const thisUrl = new URL(Astro.request.url)
 let nextUrl = ""
@@ -120,7 +120,10 @@ console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
             <ul>
               <li class="inline-flex items-center text-gray-600">
                 <Icon size={24} name="mdi:calendar"  />
-                <time class="ml-2 inline-flex items-center text-gray-600">First Published: {postPublished}</time>
+                <time class="ml-2 inline-flex items-center text-gray-600">Published: {postPublished}</time>
+                {postFirstPublished && 
+                  <time class="ml-2 inline-flex items-center text-gray-600">First Published: {postFirstPublished}</time>
+                }
               </li>
 
               <li class="mt-2 inline-flex items-center text-gray-600">

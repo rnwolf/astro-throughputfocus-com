@@ -8,19 +8,19 @@ import NavPagination from '$components/NavPagination.astro';
 import Config from "$/website.config.cjs";
 const tagData = Config.tags ?? [];
 
-console.log(JSON.stringify(tagData))
+// console.log(JSON.stringify(tagData))
 let tags = tagData.map(obj => {return obj.key})
-console.log(tags)
+// console.log(tags)
 
 export async function getStaticPaths({paginate}) {
 	const allPosts = await Astro.glob('../../posts/*.md');
 	let allTagsUnique = Config.tags.map(obj => {return obj.key});
-	console.log(allTagsUnique);
+	// console.log(allTagsUnique);
 
 	return allTagsUnique.map((tag) => {
 
 	    const filteredPosts = allPosts.filter(post => post.frontmatter.tags.includes(tag))
-		.sort((a, b) => Date.parse(b.frontmatter.datePublished) - Date.parse(a.frontmatter.datePublished));
+		.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 
     	return paginate(filteredPosts, {
       		params: { tag },

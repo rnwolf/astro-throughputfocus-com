@@ -1,9 +1,8 @@
 ---
 title: this is the page title TWO
 description: "This is a description TWO"
-datePublished: "2020-10-05T08:15:30-05:00"
-dateModified: "2020-10-05T08:15:30-05:00"
-author: rnwolf
+pubDate: "2020-10-05T08:15:30-05:00"
+firstDate: "2020-10-05T08:15:30-05:00"
 authors:
   - rnwolf
 tags:

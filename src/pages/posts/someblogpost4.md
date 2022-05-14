@@ -1,9 +1,8 @@
 ---
 title: this is the page title FIVE
 description: "This is a description FIVE"
-datePublished: "2020-08-05T08:15:30-05:00"
-dateModified: "2020-08-05T08:15:30-05:00"
-author: Rudiger Wolf
+pubDate: "2020-08-05T08:15:30-05:00"
+firstPub: "2020-08-05T08:15:30-05:00"
 authors:
   - rnwolf
   - bloggs

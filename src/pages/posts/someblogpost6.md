@@ -1,9 +1,8 @@
 ---
 title: this is the page title SEVEN
 description: "This is a description SEVEN"
-datePublished: "2020-06-05T08:15:30-05:00"
-dateModified: "2020-06-05T08:15:30-05:00"
-author: Rudiger Wolf
+pubDate: "2020-06-05T08:15:30-05:00"
+firstPub: "2020-06-05T08:15:30-05:00"
 authors:
   - rnwolf
 tags:

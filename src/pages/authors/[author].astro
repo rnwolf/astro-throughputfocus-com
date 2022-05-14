@@ -25,7 +25,7 @@ const { allPosts } = Astro.props;
 /** filter posts by author, sort by date */
 const filteredPosts = allPosts
 .filter(post => post.frontmatter.authors.includes(Astro.params.author))
-.sort((a, b) => new Date(b.frontmatter.datePublished).valueOf() - new Date(a.frontmatter.datePublished).valueOf());
+.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
 
 const postCount = filteredPosts.length;
 const pages = Math.ceil(postCount / Config.pageSize);
