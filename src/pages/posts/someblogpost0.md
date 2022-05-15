@@ -1,4 +1,5 @@
 ---
+slug: abcd0
 title: this is the page title Zero
 description: "This is a description for Zero"
 pubDate: "2020-11-05T08:15:30-05:00"

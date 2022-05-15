@@ -1,4 +1,5 @@
 ---
+slug: abcd6
 title: this is the page title SIX
 description: "This is a description SIX"
 pubDate: "2020-06-05T08:15:30-05:00"
