@@ -19,7 +19,9 @@ export async function getStaticPaths({paginate}) {
 
 	return allAuthorsUnique.map((author) => {
 
-	    const filteredPosts = allPosts.filter(post => post.frontmatter.authors.includes(author))
+	    const filteredPosts = allPosts
+		.filter(post => !post.frontmatter.draft)
+		.filter(post => post.frontmatter.authors.includes(author))
 		.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 
     	return paginate(filteredPosts, {
@@ -43,7 +45,12 @@ const postauthor = authorData.filter( author => author.key === Astro.params.auth
 
 ---
 
-<BaseLayout title="Throughput Focus home page" >
+<BaseLayout title={postauthor + " posts"} 
+description={"Index page for posts writtern by " + postauthor} 
+metaDescription={"Index page for posts writtern by " + postauthor} 
+metaTitle={"Index page for " + postauthor + " related blog posts."} 
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint.">
 
 	<div class="pt-24 mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->

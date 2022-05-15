@@ -8,7 +8,7 @@ const authorData = Config.authors ?? [];
 // console.log(JSON.stringify(authorData))
 // let authors = authorData.map(obj => {return obj.key})
 // console.log('post.authors')
-// console.log(JSON.stringify(post.authors));
+console.log(JSON.stringify(post.frontmatter.draft));
 
 // console.log(authorData.filter(author => {return author.key == "rnwolf"; })[0].fullname);
 
@@ -43,6 +43,12 @@ const authorData = Config.authors ?? [];
               </time>
 
             </li>
+
+             {post.frontmatter.draft &&
+            <li class="inline-flex items-center text-gray-600 my-0">
+                Draft: {post.frontmatter.draft}
+            </li>
+            }
             
             {post.frontmatter.firstPub &&
             <li class="inline-flex items-center text-gray-600 my-0">
@@ -84,6 +90,10 @@ const authorData = Config.authors ?? [];
 
       <p class="mt-6 leading-normal line-clamp-3 text-lg text-gray-600">
        {post.frontmatter.description} 
+      </p>
+
+      <p class="mt-6 leading-normal line-clamp-3 text-lg text-gray-600">
+       Draft: {post.frontmatter.draft}  Goes here.
       </p>
 
     </div>

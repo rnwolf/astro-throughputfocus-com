@@ -10,7 +10,12 @@ import Config from "$/website.config.cjs";
 const tagsRootURL = new URL(Astro.request.url);
 ---
 
-<BaseLayout title="Throughput Focus tags page" >
+<BaseLayout title="Tags index for Throughput Focus blog posts." 
+description="Index page for tags used on Throughput Focus blog posts." 
+metaDescription="See Tags index page to navigate to blogs posts related to a particulkar topic."
+metaTitle="Use tag index to quickly navigate to related posts."
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint.">
 
 	<div class="pt-24 mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
@@ -26,7 +31,8 @@ const tagsRootURL = new URL(Astro.request.url);
       <ul>    {Config.tags.map(tag => (
         <h2>{tag.title}</h2> 
         <li >
-        <a href={tagsRootURL.href + "/" + tag.key + "/1"} class="inline-flex items-center text-gray-600 my-0">
+        <!-- tagsRootURL.href -->
+        <a href={"/tags/" + tag.key + "/1"} class="inline-flex items-center text-gray-600 my-0">
           <Icon size={42} name={tag.icon}/>
           <Icon size={24} name="mdi:tag"/>
           {tag.key}</a> 

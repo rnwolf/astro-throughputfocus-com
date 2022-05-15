@@ -1,6 +1,6 @@
 ---
-title: this is the page title ONE
-description: "This is a description for ONE"
+title: this is the page title Zero
+description: "This is a description for Zero"
 pubDate: "2020-11-05T08:15:30-05:00"
 firstPub: "2020-11-05T08:15:30-05:00"
 authors:
@@ -10,7 +10,6 @@ tags:
   - kanban
   - agile
   - pm
-draft: true
 readingtime: 10min
 sitemap: true
 layout: ../../layouts/PostLayout.astro

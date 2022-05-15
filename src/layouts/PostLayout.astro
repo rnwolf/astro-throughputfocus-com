@@ -6,14 +6,18 @@ import { Icon } from 'astro-icon';
 
 
 const {content} = Astro.props;
-const postPublished = content.pubDate.slice(0,10);
-const postFirstPublished = content.firstPub.slice(0,10);
-
+const postPublished = content.pubDate;
+const postFirstPublished = content.firstPub;
+// console.log(JSON.stringify(content.pubDate))
+// console.log(JSON.stringify(content.firstPub))
 
 // Code to provide links to next and previous published blog posts
 let allPosts = await Astro.glob('../pages/posts/**/*.md')
+// console.log(JSON.stringify(allPosts))
 
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
+allPosts = allPosts.filter(post => !post.frontmatter.draft)
+.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
+
 let postsNumber = allPosts.length
 const thisUrl = new URL(Astro.request.url)
 let nextUrl = ""
@@ -23,12 +27,12 @@ let prevTitle = ""
 let addSlash = ""
 let x=""
 
-// console.log("Hello")
-// console.log("Start:",nextUrl, nextTitle, prevUrl, prevTitle, addSlash,":end")
+console.log("Hello")
+console.log("Start:",nextUrl, nextTitle, prevUrl, prevTitle, addSlash,":end")
 
 let envMode = import.meta.env.MODE
 
-// console.log(envMode, postsNumber)
+console.log(envMode, postsNumber)
 
 // https://github.com/withastro/astro/issues/1415 was a bug thats come back
 if (envMode == "production") {  // Prior to beta 18 this needed to be development
@@ -58,7 +62,12 @@ console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
 
 <!-- {JSON.stringify({headers})} -->
 
-<BaseLayout title = {content.title} >
+<BaseLayout title={content.title} 
+description={content.description} 
+metaDescription={content.openGraph.description}
+metaTitle={content.openGraph.basic.title}
+metaImage= {content.openGraph.image.secureUrl}
+metaImageAlt={content.openGraph.image.alt}>
 
   <!-- <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
 	<img class="object-cover h-48" src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=420&q=80" alt="Flower and sky"/>
@@ -120,9 +129,11 @@ console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
             <ul>
               <li class="inline-flex items-center text-gray-600">
                 <Icon size={24} name="mdi:calendar"  />
-                <time class="ml-2 inline-flex items-center text-gray-600">Published: {postPublished}</time>
+                {postPublished &&
+                  <time class="ml-2 inline-flex items-center text-gray-600">Published: {postPublished.slice(0,10)}</time>
+                }
                 {postFirstPublished && 
-                  <time class="ml-2 inline-flex items-center text-gray-600">First Published: {postFirstPublished}</time>
+                  <time class="ml-2 inline-flex items-center text-gray-600">First Published: {postFirstPublished.slice(0,10)}</time>
                 }
               </li>
 

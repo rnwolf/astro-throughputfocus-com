@@ -1,6 +1,6 @@
 ---
-title: this is the page title FOUR
-description: "This is a description FOUR"
+title: this is the page title THREE
+description: "This is a description THREE"
 pubDate: "2020-09-05T08:15:30-05:00"
 firstDate: "2020-09-05T08:15:30-05:00"
 authors:
@@ -9,7 +9,6 @@ tags:
   - strategy
   - life
   - design
-draft: true
 readingtime: 10min
 sitemap: true
 layout: ../../layouts/PostLayout.astro

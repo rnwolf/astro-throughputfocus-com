@@ -1,6 +1,6 @@
 ---
-title: this is the page title THREE
-description: "This is a description THREE"
+title: this is the page title TWO
+description: "This is a description TWO"
 pubDate: "2020-09-05T08:15:30-05:00"
 firstDate: "2020-09-05T08:15:30-05:00"
 authors:
@@ -10,7 +10,7 @@ tags:
   - metrics
   - strategy
   - python
-draft: true
+draft: false
 readingtime: 10min
 sitemap: true
 layout: ../../layouts/PostLayout.astro

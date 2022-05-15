@@ -1,6 +1,6 @@
 ---
-title: this is the page title TWO
-description: "This is a description TWO"
+title: this is the page title ONE
+description: "This is a description ONE"
 pubDate: "2020-10-05T08:15:30-05:00"
 firstDate: "2020-10-05T08:15:30-05:00"
 authors:
@@ -9,7 +9,7 @@ tags:
   - strategy
   - leadership
   - flow
-draft: true
+draft: false
 readingtime: 10min
 sitemap: true
 layout: ../../layouts/PostLayout.astro

@@ -24,12 +24,13 @@ const { allPosts } = Astro.props;
 // console.log(JSON.stringify(allPosts))
 /** filter posts by author, sort by date */
 const filteredPosts = allPosts
+.filter(post => !post.frontmatter.draft)
 .filter(post => post.frontmatter.authors.includes(Astro.params.author))
 .sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
 
 const postCount = filteredPosts.length;
 const pages = Math.ceil(postCount / Config.pageSize);
-console.log(postCount,pages);
+console.log("[author.astro] postCount=",postCount,pages);
 const postauthor = authorData.filter( author => author.key === Astro.params.author)[0];
 
 let authorURL = new URL(Astro.request.url);
@@ -43,7 +44,12 @@ if (pages > 1) {
 
 ---
 
-<BaseLayout title="Throughput Focus home page" >
+<BaseLayout title={ postauthor + " blog posts."} 
+description={ postauthor +" blog posts."}
+metaDescription="Index page for authors writing blog posts"
+metaTitle={"Index page for " + postauthor + " related blog posts."} 
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint.">
 
 	<div class="pt-24 mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->

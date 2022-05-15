@@ -13,7 +13,9 @@ export async function getStaticPaths () {
   // a title, or no published date (in frontmatter)
   // this way I leave the date out while the post is not finished.
   let filteredPosts = 
-      allPosts.filter((p) => { 
+      allPosts
+      .filter(post => !post.frontmatter.draft)
+      .filter((p) => { 
         return p.frontmatter.title && p.frontmatter.pubDate; 
       });
   // an object to collect existing tags
@@ -57,23 +59,13 @@ let tagged = filteredPosts.filter((p) => {
 });
 
 ---
-<!-- <BaseLayout title="A title" description="some description">
-        <h2> {tagname} - {tagcount} {tagcount>1 ? 'posts' : 'post'}</h2>
-        {tagged.map(post => (
-            <a href={post.url}>
-            <div >
-                <h4>{post.frontmatter.title}</h4>
-                <p>{post.frontmatter.description}</p>
-                {post.frontmatter.tags.map(tag => (
-                <a href={`/tags/${tag}`}><span class="badge bg-secondary me-1 mb-2">{tag}</span></a>
-                ))}
-            </div>
-            </a>
-        ))}
-</BaseLayout>    -->
 
-
-<BaseLayout title={tagname + " posts"} >
+<BaseLayout title={tagname + " posts"} 
+description={"Index page for " + tagname + " related blog posts."} 
+metaDescription="Use Tags index page to navigate to blogs posts related to a particular topic."
+metaTitle={"Index page for " + tagname + " related blog posts."} 
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint.">
 
 	<div class="pt-24 mx-auto px-4 sm:px-6 lg:px-8">
   		<div class="prose max-w-6xl mx-auto">

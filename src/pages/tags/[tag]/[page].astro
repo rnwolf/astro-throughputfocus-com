@@ -19,7 +19,8 @@ export async function getStaticPaths({paginate}) {
 
 	return allTagsUnique.map((tag) => {
 
-	    const filteredPosts = allPosts.filter(post => post.frontmatter.tags.includes(tag))
+	    const filteredPosts = allPosts
+		.filter(post => post.frontmatter.tags.includes(tag) && !post.frontmatter.draft)
 		.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 
     	return paginate(filteredPosts, {
@@ -42,7 +43,13 @@ const postTag = tagData.filter( tag => tag.key === Astro.params.tag)[0];
 // console.log(JSON.stringify(postTag));
 ---
 
-<BaseLayout title="Throughput Focus home page" >
+<BaseLayout title={postTag.title + " posts"} 
+description={"Page of " + postTag.title +" related blog posts."}
+metaDescription={"Page of " + postTag.title +" related blog posts."}
+metaTitle={postTag.title +" related blog posts."}
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint.">
+
 
 	<div class="pt-24 mx-auto px-4 sm:px-6 lg:px-8">
   		<div class="prose max-w-6xl mx-auto">
@@ -50,11 +57,14 @@ const postTag = tagData.filter( tag => tag.key === Astro.params.tag)[0];
 
 			# Tags
 
-			Some blub about Tags for the site.
+			Some blub about Tags for the site via the [page].astro page.
 
 			</Markdown>
 
+			{JSON.stringify(postTag)}
+			
 			<TagCard tag={postTag} count={count} />
+
 			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
 					{page.data.map((post) => <PostPreviewCard post={post} />)}
