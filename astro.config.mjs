@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://throughputfocus.com/",
+  site: "https://throughputfocus.com",
   markdown: {
     rehypePlugins: [
       // "rehype-slug", // This plugin will make the headings a-href links in their own right.

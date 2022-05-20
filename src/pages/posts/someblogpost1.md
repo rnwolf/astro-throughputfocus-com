@@ -11,6 +11,7 @@ tags:
   - leadership
   - flow
 draft: false
+featured_image: https://picsum.photos/1200/627
 readingtime: 10min
 sitemap: true
 layout: ../../layouts/PostLayout.astro

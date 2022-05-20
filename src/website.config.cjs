@@ -6,6 +6,7 @@ export default {
   siteCopyright: "Throughput Focus Ltd",
   favicon: "/favicon.ico",
   dateFormat: "yyyy-MM-dd HH:mm",
+  socialImage: "default-opengraph-image.png",
   socialMedia: {
     twitter: "throughputfocus",
     linkedin: "throughputfocus",
