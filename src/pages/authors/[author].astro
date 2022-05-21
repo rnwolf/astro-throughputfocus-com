@@ -34,8 +34,12 @@ console.log("[author.astro] postCount=",postCount,pages);
 const postauthor = authorData.filter( author => author.key === Astro.params.author)[0];
 
 let authorURL = new URL(Astro.request.url);
+console.log(authorURL);
+console.log((Astro.params.author+'/2'));
+
 if (pages > 1) {
-  authorURL = new URL((Astro.params.author+'/2'),authorURL);
+   authorURL = new URL(`${authorURL}2`);
+//   authorURL = new URL((Astro.params.author+'/2'),authorURL);
 } else {
   authorURL = null;
 };

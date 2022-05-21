@@ -5,18 +5,14 @@
 // https://www.readonlychild.com/blog/astro-md-content/ (2022-04-26)
 // h/t Ernesto Lopez
 import Config from "$/website.config.cjs";
+import { Feed } from "feed";
 
 let feedExt = "xml"; // 'json' or 'xml';
 const currentyear = new Date().getFullYear();
-import { Feed } from "feed";
 
-// let socialImg =
-// "https://res.cloudinary.com/brycewray-com/image/upload/c_fill,w_1024,h_512,q_auto,f_auto,x_0,z_1/";
-let socialImg = `${import.meta.env.SITE}${Config.socialImage}`;
-
-// https://cdn.discordapp.com/attachments/830184175176122389/960357703807537183/unknown.png
 export async function get() {
-  // console.log(import.meta.env.SITE);
+  console.log(import.meta.env.SITE);
+  let socialImg = `${import.meta.env.SITE}${Config.socialImage}`;
   const feed = new Feed({
     title: Config.siteTitle,
     description: Config.siteDescription,
