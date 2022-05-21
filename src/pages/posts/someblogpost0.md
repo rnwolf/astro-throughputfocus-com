@@ -10,6 +10,7 @@ tags:
   - kanban
   - agile
   - pm
+  - strategy
 readingtime: 10min
 draft: false
 sitemap: true

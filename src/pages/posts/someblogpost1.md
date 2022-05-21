@@ -10,6 +10,7 @@ tags:
   - strategy
   - leadership
   - flow
+  - strategy
 draft: false
 featured_image: https://picsum.photos/1200/627
 readingtime: 10min

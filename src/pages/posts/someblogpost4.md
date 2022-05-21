@@ -11,6 +11,7 @@ tags:
   - agile
   - toc
   - finance
+  - strategy
 draft: false
 readingtime: 10min
 sitemap: true
