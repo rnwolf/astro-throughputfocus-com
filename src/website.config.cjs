@@ -1,4 +1,5 @@
 export default {
+  siteUrl: "https://ThroughputFocus.com",
   siteTitle: "Throughput Focus Ltd Website",
   siteDescription:
     "Website for people that want to improve the performance of their organisation.",

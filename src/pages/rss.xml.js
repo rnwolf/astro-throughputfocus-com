@@ -11,25 +11,25 @@ let feedExt = "xml"; // 'json' or 'xml';
 const currentyear = new Date().getFullYear();
 
 export async function get() {
-  console.log(import.meta.env.SITE);
-  let socialImg = `${import.meta.env.SITE}${Config.socialImage}`;
+  // console.log(import.meta.env.SITE);
+  let socialImg = `${Config.siteUrl}${Config.socialImage}`;
   const feed = new Feed({
     title: Config.siteTitle,
     description: Config.siteDescription,
-    id: import.meta.env.SITE,
-    link: `${import.meta.env.SITE}rss.${feedExt}`,
+    id: `${Config.siteUrl}`,
+    link: `${Config.siteUrl}/rss.${feedExt}`,
     language: "en",
-    image: `${import.meta.env.SITE}android-chrome-192x192.png`,
-    favicon: `${import.meta.env.SITE}"android-chrome-192x192.png`,
+    image: `${Config.siteUrl}/android-chrome-192x192.png`,
+    favicon: `${Config.siteUrl}/android-chrome-192x192.png`,
     copyright: `Content copyright ${currentyear} except where otherwise noted`,
     feedLinks: {
-      json: `${import.meta.env.SITE}rss.json`,
-      rss: `${import.meta.env.SITE}rss.xml`,
+      json: `${Config.siteUrl}/rss.json`,
+      rss: `${Config.siteUrl}/rss.xml`,
     },
     author: {
       name: "Rudiger Wolf",
       email: "rudiger.wolf@Throughputfocus.com",
-      link: `${import.meta.env.SITE}/about/`,
+      link: `${Config.siteUrl}/about/`,
     },
   });
 
@@ -59,15 +59,15 @@ export async function get() {
       theContent = awaitedPost.metadata.source;
       feed.addItem({
         title: theTitle,
-        id: `${import.meta.env.SITE}${post.url}/`,
-        link: `${import.meta.env.SITE}${post.url}/`,
+        id: `${Config.siteUrl}${post.url}/`,
+        link: `${Config.siteUrl}${post.url}/`,
         description: theDescription,
         content: theContent,
         author: [
           {
             name: "Rudiger Wolf",
             email: "rudiger.wolf@Throughputfocus.com",
-            link: `${import.meta.env.SITE}/about/`,
+            link: `${Config.siteUrl}/about/`,
           },
         ],
         date: sanitizedDate,
