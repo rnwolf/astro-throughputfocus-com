@@ -22,7 +22,7 @@ const authorData = Config.authors ?? [];
 ---
 
 
-  <div class="p-6 bg-white rounded-xl shadow-xl">
+  <!-- <div class="p-6 bg-white rounded-xl shadow-xl">
     <a href={post.url} class="group" >
       <div class="overflow-hidden">
         <img
@@ -98,4 +98,82 @@ const authorData = Config.authors ?? [];
        {post.frontmatter.description} 
     </p>
 
+  </div> -->
+
+
+  
+
+
+<!-- card -->
+<div class="flex flex-col lg:flex-row overflow-hidden
+                                  bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+  <!-- media -->
+  <div class="h-64 w-auto lg:w-1/2">
+    <img class="inset-0 h-full w-full object-cover object-center" src={post.frontmatter.openGraph.image.secureUrl} />
   </div>
+  <!-- content -->
+  <div class="w-full py-4 px-6 text-gray-800 flex flex-col ">
+    <a href={post.url} class="group" >
+    <h3 class="font-semibold text-lg leading-tight truncate">{post.frontmatter.title}</h3>
+    </a>
+    <p class="mt-2">
+      {post.frontmatter.description} 
+    </p>
+    <ul>
+
+            <li class="inline-flex items-center text-gray-600 my-0">
+              <Icon size={24} name="mdi:calendar"  />
+              <time class="text-gray-600" datetime={post.frontmatter.pubDate}>
+                Published:  {post.frontmatter.pubDate.slice(0, 10)}
+              </time>
+
+            </li>
+
+             {post.frontmatter.draft &&
+            <li class="inline-flex items-center text-gray-600 my-0">
+                Draft: {post.frontmatter.draft}
+            </li>
+            }
+            
+            {post.frontmatter.firstPub &&
+            <li class="inline-flex items-center text-gray-600 my-0">
+              <Icon size={24} name="mdi:calendar"  />
+              <time class="text-gray-600" datetime={post.frontmatter.firstPub}>
+                First published: {post.frontmatter.firstPub.slice(0, 10)}
+              </time>
+
+            </li>
+            }
+
+
+
+      <li class="inline-flex items-center text-gray-600 my-0">
+        <Icon size={24} name="mdi:pencil"  />
+        <a href="/authors" class="flex items-center">
+          <div class="mr-2">Authors:</div>
+        </a>
+          {post.frontmatter.authors.map((key) => (
+          
+            <span class="ml-2 text-gray-600">
+              <a href={"/authors/" + key} > {getAuthorName(key)} </a> 
+            </span>
+            
+          ))}
+
+      </li>
+      
+      <li class="inline-flex items-center text-gray-600 my-0">
+        <Icon size={24} name="mdi:tag"/>
+        <a href="/tags" class="flex items-center">
+          <div class="mr-2">Tags:</div>
+        </a>
+        {post.frontmatter.tags.map((tag) => (
+          <a class="bg-gray-800 text-white px-2 py-1 text-xs inline-block rounded-lg mr-1" href={"/tags/" + tag + "/1"}>{tag}</a>
+        ))} 
+      </li>
+
+    </ul>
+  </div>
+</div><!--/ card-->
+
+

@@ -6,7 +6,7 @@ import AUTHOR from "$components/author.astro";
 
 let authorData = Config.authors;
 
-const { authors } = Astro.props;
+const { authors, level="2" } = Astro.props;
 
 function getAuthorByKey(authors, key) {
   let author = authors.filter((a) => a.key === key)[0];
@@ -21,6 +21,6 @@ function getAuthorByKey(authors, key) {
 <!-- <div>Author keys:</div>
 {authors.map((author) => <div >{author}</div>)} -->
 {authors &&
-  <h2 class="mt-4">Authors:</h2>
-  {authors.map((author) => <AUTHOR author={getAuthorByKey(authorData,author)} />)}
+  <h2 class="mt-4">Authors</h2>
+  {authors.map((author) => <AUTHOR author={getAuthorByKey(authorData,author)} level={level}/>)}
 }
