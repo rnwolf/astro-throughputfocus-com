@@ -17,6 +17,7 @@ import FeaturedPosts from '$components/FeaturedPosts.astro';
 import FeaturedPostsTwoCards from '$components/FeaturedPostsTwoCards.astro';
 import SiteBanner from '$components/SiteBanner.astro';
 import Testimonials from '$components/Testimonials.astro';
+import FAQ from '$components/FAQ.astro';
 
 import Config from "$/website.config.cjs";
 
@@ -119,5 +120,7 @@ metaImageAlt="System throughput is determined by system constraint.">
         subtext="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat." 
         bgcolour="bg-blue-300"
         testimonials={Config.testimonials} />
+    
+    <FAQ />
 
 </BaseLayout>
