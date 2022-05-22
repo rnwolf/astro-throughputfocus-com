@@ -4,6 +4,7 @@ import AUTHORS from '$components/authors.astro'
 import TOC from '$components/toc.astro'
 import { Icon } from 'astro-icon';
 import RelatedArticles from '$components/RelatedArticles.astro';
+import SocialShare from '$components/SocialShare.astro';
 
 const {content} = Astro.props;
 const postPublished = content.pubDate;
@@ -32,7 +33,7 @@ console.log("Start:",nextUrl, nextTitle, prevUrl, prevTitle, addSlash,":end")
 
 let envMode = import.meta.env.MODE
 
-console.log(envMode, postsNumber)
+// console.log(envMode, postsNumber)
 
 // https://github.com/withastro/astro/issues/1415 was a bug thats come back
 if (envMode == "production") {  // Prior to beta 18 this needed to be development
@@ -57,7 +58,8 @@ for(let x = 0; x < postsNumber; x++) {
     }
 }
 
-console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
+// console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
+console.log(thisUrl.toString());
 ---
 
 <!-- {JSON.stringify({headers})} -->
@@ -159,7 +161,7 @@ metaImageAlt={content.openGraph.image.alt}>
             <article>
                 <slot />
             </article>
-            
+            <SocialShare url={thisUrl.toString()} title={content.title} />
             <AUTHORS authors={content.authors} level="3" />
             <RelatedArticles
                   tags={content.tags}

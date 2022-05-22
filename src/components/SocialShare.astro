@@ -1,0 +1,30 @@
+---
+//https://postsrc.com/components/tailwind-css-social-share-box/basic-social-share
+import { Icon } from 'astro-icon';
+
+const {url, title} = Astro.props;
+
+---
+<div class="border-t border-b py-4 border-gray-200">
+    <h2 class="mt-4">Share</h2>
+
+    <p>If you found this article interesting or useful, please share it with your network.</p>
+
+    <a
+        href=`https://twitter.com/intent/tweet/?text=I%20found%20this%20useful%20article&amp;url=${url}`
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center"
+        ><Icon size={16} name="mdi:twitter"  /> 
+        Share via Twitter. 
+    </a>
+
+    <a
+        href=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center"
+        ><Icon size={16} name="mdi:linkedin"  />
+        Share via LinkedIn.
+    </a>
+</div>
