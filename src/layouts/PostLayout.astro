@@ -29,8 +29,7 @@ let prevTitle = ""
 let addSlash = ""
 let x=""
 
-console.log("Hello")
-console.log("Start:",nextUrl, nextTitle, prevUrl, prevTitle, addSlash,":end")
+// console.log("Start:",nextUrl, nextTitle, prevUrl, prevTitle, addSlash,":end")
 
 let envMode = import.meta.env.MODE
 
@@ -59,8 +58,12 @@ for(let x = 0; x < postsNumber; x++) {
     }
 }
 
-// console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
+ console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
 // console.log(thisUrl.toString());
+
+// console.log(JSON.stringify(content));
+console.log(JSON.stringify(content, false, 2));
+
 ---
 
 <!-- {JSON.stringify({headers})} -->
@@ -98,23 +101,19 @@ metaImageAlt={content.openGraph.image.alt}>
 { content.openGraph.image.secureUrl && 
   <div class="bg-gray-200 overflow-auto">
       <div class="container px-6 py-4 mx-auto  ">
-          <div class="flex items-center justify-center w-full mt-2 lg:h-96 ">
+          <div class="flex items-center justify-center w-full mt-2 ">
+              <figure>
               <img class="object-cover w-full max-w-2xl rounded-md lg:h-full"
                   src={content.openGraph.image.secureUrl} alt="description of the photo">
-
-                    <!-- <div class="heading-container absolute flex justify-center items-center w-full">
-                      <h1 class="text-5xl text-white">Your dream vacation starts here</h1>
-                    </div> -->
+                  { content.imageCredit &&
+                    <figcaption class="absolute prose bg-gray-100/75 text-xs -mt-4 ml-2 text-black px-4 " set:html={content.imageCredit}>
+                    
+                    </figcaption>
+                  }
+              </figure>
           </div>
       </div>
-      <!-- <h1 class="text-4xl mb-2">{content.title}</h1>
-      <time class="text-gray-600 block">{postPublished}</time>
-      <div class="mt-2">
-        <a class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg" href="/tag/model">Model</a>
-        <a class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg" href="/tag/supplychain">Supplychain</a>
-      </div> -->
   </div>
-
 }
 
  <div class="mx-auto pt-8 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-12">

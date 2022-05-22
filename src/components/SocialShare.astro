@@ -12,19 +12,32 @@ const {url, title} = Astro.props;
 
     <a
         href=`https://twitter.com/intent/tweet/?text=I%20found%20this%20useful%20article&amp;url=${url}`
+        title="Share via Twitter"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center"
-        ><Icon size={16} name="mdi:twitter"  /> 
+        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center">
+        <Icon size={16} name="mdi:twitter"  /> 
         Share via Twitter. 
     </a>
 
     <a
         href=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+        title="Share via LinkedIn"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center"
-        ><Icon size={16} name="mdi:linkedin"  />
+        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center">
+        <Icon size={16} name="mdi:linkedin"  />
         Share via LinkedIn.
     </a>
+
+    <a 
+        href=`mailto:?body=${url}` 
+        title="Share via email" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center">
+        <Icon size={16} name="mdi:email"  />
+        Share via Email
+    </a>
+
 </div>
