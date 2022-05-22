@@ -1,0 +1,34 @@
+---
+//https://daily-dev-tips.com/posts/astro-getting-related-articles-based-on-tags/
+import PostPreviewCard from '$components/PostPreviewCard.astro';
+
+let fetchedPosts = await import.meta.globEager(`../pages/posts/*.md`);
+
+const allPosts = Object.keys(fetchedPosts).map((key) => {
+    const post = fetchedPosts[key];
+    const url = key.replace("../pages/", "/").replace(".md", "/");
+    const item = { ...post, url };
+    return item;
+});
+
+// Retrieve the props from the component
+const { tags, currentPathname } = Astro.props;
+
+const mappedTags = allPosts
+  .filter(({ url }) => url !== currentPathname)
+  .filter((post) => !post.frontmatter.draft)
+  .filter((a) => new Date(a.frontmatter.pubDate) <= new Date())
+  .sort(
+      (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+    );
+
+console.log("#### RelatedArticle.astro ######")
+console.log(JSON.stringify(mappedTags[1], false, 2));
+---
+<p> Related articles</p>
+<div class="container md:mx-auto">
+  <div class="mx-0 md:-mx-4 grid grid-cols-1 md:grid-cols-2">
+    <PostPreviewCard post={mappedTags[0]} />
+    <PostPreviewCard post={mappedTags[1]} />  
+  </div>
+</div>

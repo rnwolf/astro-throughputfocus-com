@@ -1,6 +1,8 @@
 // Source
 // https://github.com/brycewray/astro-site/blob/main/src/pages/index.json.js
 
+// Feed package https://github.com/jpmonette/feed
+
 // generate feed (JSON or RSS)
 // https://www.readonlychild.com/blog/astro-md-content/ (2022-04-26)
 // h/t Ernesto Lopez
@@ -9,6 +11,7 @@ import { Feed } from "feed";
 
 let feedExt = "xml"; // 'json' or 'xml';
 const currentyear = new Date().getFullYear();
+const today = new Date();
 
 export async function get() {
   // console.log(import.meta.env.SITE);
@@ -21,6 +24,8 @@ export async function get() {
     language: "en",
     image: `${Config.siteUrl}/android-chrome-192x192.png`,
     favicon: `${Config.siteUrl}/android-chrome-192x192.png`,
+    updated: today, //Should be the most recent article pubDate
+    lastBuildDate: today,
     copyright: `Content copyright ${currentyear} except where otherwise noted`,
     feedLinks: {
       json: `${Config.siteUrl}/rss.json`,
@@ -63,13 +68,6 @@ export async function get() {
         link: `${Config.siteUrl}${post.url}/`,
         description: theDescription,
         content: theContent,
-        author: [
-          {
-            name: "Rudiger Wolf",
-            email: "rudiger.wolf@Throughputfocus.com",
-            link: `${Config.siteUrl}/about/`,
-          },
-        ],
         date: sanitizedDate,
         image: featImg,
       });

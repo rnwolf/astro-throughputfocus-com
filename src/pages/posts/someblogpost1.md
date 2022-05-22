@@ -1,5 +1,4 @@
 ---
-slug: abcd1
 title: this is the page title ONE
 description: "This is a description ONE"
 pubDate: "2020-10-05T08:15:30-05:00"

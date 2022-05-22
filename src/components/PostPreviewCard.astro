@@ -13,27 +13,31 @@ const authorData = Config.authors ?? [];
 // console.log(authorData.filter(author => {return author.key == "rnwolf"; })[0].fullname);
 
 // const getAuthorName = (key) => (authorData.filter(author => {return author.key == key })[0].fullname);
+console.log("===== PostPreviewCard.astro=====");
+console.log(JSON.stringify(post, false, 2));
+console.log("==========");
+console.log(post.frontmatter.title);
 ---
 
 
   <div class="p-6 bg-white rounded-xl shadow-xl">
-      <a href={post.url} class="group" >
-        <div class="overflow-hidden">
-          <img
+    <a href={post.url} class="group" >
+      <div class="overflow-hidden">
+        <img
           src={post.frontmatter.openGraph.image.secureUrl}
           class="w-full h-auto hover:scale-105 transition transition-all duration-200 ease-in-out"
           alt={post.frontmatter.openGraph.image.alt}
-          >
-        </div>
+        >
+      </div>
 
-        <h3
+      <h3
           class="mt-6 leading-normal text-gray-800 group-hover:text-purple-400 font-semibold text-2xl lg:text-4xl line-clamp-3 transition translation-all duration-200 ease-in-out"
           title={post.frontmatter.title}>
           {post.frontmatter.title}
-        </h3>
-      </a>
+      </h3>
+    </a>
 
-      <div class="mt-6">
+    <div class="mt-6">
           <ul class="grid grid-cols-1 gap-1 ">
 
             <li class="inline-flex items-center text-gray-600 my-0">
@@ -86,10 +90,10 @@ const authorData = Config.authors ?? [];
             </li>
 
           </ul>
-      </div>
-
-      <p class="mt-6 leading-normal line-clamp-3 text-lg text-gray-600">
-       {post.frontmatter.description} 
-      </p>
-
     </div>
+
+    <p class="mt-6 leading-normal line-clamp-3 text-lg text-gray-600">
+       {post.frontmatter.description} 
+    </p>
+
+  </div>

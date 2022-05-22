@@ -3,7 +3,7 @@ import BaseLayout from '$layouts/BaseLayout.astro'
 import AUTHORS from '$components/authors.astro'
 import TOC from '$components/toc.astro'
 import { Icon } from 'astro-icon';
-
+import RelatedArticles from '$components/RelatedArticles.astro';
 
 const {content} = Astro.props;
 const postPublished = content.pubDate;
@@ -161,6 +161,15 @@ metaImageAlt={content.openGraph.image.alt}>
             </article>
             
             <AUTHORS authors={content.authors} />
+
+            <section class="-mx-4 md:bg-white md:dark:bg-dark md:pt-8">
+              <div class="container mx-auto ">
+                <RelatedArticles
+                  tags={content.tags}
+                  currentPathname={thisUrl.pathname}
+                />
+              </div>
+            </section> 
 
     <div>
     <h2><a href="/posts/">Other posts</a></h2>
