@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '$layouts/BaseLayout.astro'
+import NavbarSpacer from '../components/NavbarSpacer.astro';
 import AUTHORS from '$components/authors.astro'
 import TOC from '$components/toc.astro'
 import { Icon } from 'astro-icon';
@@ -59,7 +60,7 @@ for(let x = 0; x < postsNumber; x++) {
 }
 
 // console.log( ">" + ((content.openGraph.image.secureUrl) ) + "<" )
-console.log(thisUrl.toString());
+// console.log(thisUrl.toString());
 ---
 
 <!-- {JSON.stringify({headers})} -->
@@ -90,6 +91,9 @@ metaImageAlt={content.openGraph.image.alt}>
 </section> -->
 
 <!-- https://source.unsplash.com/user/erondu/1600x900 -->
+
+<NavbarSpacer />
+
 
 { content.openGraph.image.secureUrl && 
   <div class="bg-gray-200 overflow-auto">
