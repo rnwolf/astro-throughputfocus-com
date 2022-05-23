@@ -1,0 +1,46 @@
+---
+// https://tailwindcomponents.com/component/main-content-component
+import PostMinimalCard from '$components/PostMinimalCard.astro';
+ 
+const { 
+  heading='Default Heading text goes here', 
+  subtext="Default subtext goes here", 
+  bgcolour="bg-white",
+  postUrls = ["/posts/someblogpost0/","/posts/someblogpost1/","/posts/someblogpost2/"] } = Astro.props;
+
+let fetchedPosts = await import.meta.globEager(`../pages/posts/*.md`);
+
+const allPosts = Object.keys(fetchedPosts).map((key) => {
+    const post = fetchedPosts[key];
+    const url = key.replace("../pages/", "/").replace(".md", "/");
+    const item = { ...post, url };
+    return item;
+});
+
+// now filter to only posts in the urls array,
+// these will be rendered below in the markup.
+let posts = allPosts.filter((p) => { 
+   return postUrls.includes(p.url); 
+ });
+---
+<!-- Start of FearturedPostsTwoCards component -->
+<div class={"py-16 " + bgcolour}>  
+  <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+      <div class="mb-12 space-y-2 text-center">
+        <h2 class="text-2xl text-cyan-900 font-bold md:text-4xl">{heading}</h2>
+        <p class="lg:w-6/12 lg:mx-auto">{subtext}</p>
+      </div>
+
+      <div class="grid gap-12 lg:grid-cols-2">
+
+      {posts.map(post => (
+
+        <PostMinimalCard post={post} />
+        
+        ))
+      }
+
+      </div>
+  </div>
+</div>
+<!-- End of FearturedPostsTwoCards component -->

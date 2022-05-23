@@ -1,6 +1,6 @@
 ---
 title: this is the page title TWO
-description: "This is a description TWO"
+description: "This is a description TWO Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
 pubDate: "2020-09-05T08:15:30-05:00"
 firstDate: "2020-09-05T08:15:30-05:00"
 authors:

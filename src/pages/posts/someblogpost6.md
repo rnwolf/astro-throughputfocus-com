@@ -1,6 +1,6 @@
 ---
 title: this is the page title SIX
-description: "This is a description SIX"
+description: "This is a description SIX Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione."
 pubDate: "2020-06-05T08:15:30-05:00"
 firstPub: "2020-06-05T08:15:30-05:00"
 authors:

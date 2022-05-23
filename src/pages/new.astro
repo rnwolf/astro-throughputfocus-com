@@ -15,11 +15,15 @@ import PictureTextLeft from '$components/PictureTextLeft.astro';
 import FeaturedBlogPosts from '$components/FeaturedBlogPosts.astro';
 import FeaturedPosts from '$components/FeaturedPosts.astro';
 import FeaturedPostsTwoCards from '$components/FeaturedPostsTwoCards.astro';
+import FeaturedSelectedPostsTwoCards from '$components/FeaturedSelectedPostsTwoCards.astro';
 import SiteBanner from '$components/SiteBanner.astro';
 import Testimonials from '$components/Testimonials.astro';
 import FAQ from '$components/FAQ.astro';
 
 import Config from "$/website.config.cjs";
+
+
+let postUrls = ["/posts/someblogpost0/","/posts/someblogpost1/","/posts/someblogpost2/"];
 
 ---
 
@@ -37,6 +41,7 @@ metaImageAlt="System throughput is determined by system constraint.">
         imageAlt="Sun Shining through clouds." 
         imageCreditHTML="Photo by <a href='https://unsplash.com/@hdbernd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Bernd Dittrich</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
         bgcolour="bg-red-100" />
+
 
 
     <HeroTwo 
@@ -64,6 +69,12 @@ metaImageAlt="System throughput is determined by system constraint.">
         subtext="Highlighted posts, and some info about why these are signigicant." 
         bgcolour="bg-slate-100"
         featured={Config.selectedPosts} />
+
+    <FeaturedSelectedPostsTwoCards 
+        heading="Selected posts" 
+        subtext="Selected posts, and some info about why these are signigicant." 
+        bgcolour="bg-yellow-100"
+        postUrls={postUrls} />
 
     <ValueStack 
         bgcolour="bg-white" 

@@ -1,0 +1,28 @@
+---
+import {getAuthorName} from "$/utils";
+import { Icon } from 'astro-icon';
+import Config from "$/website.config.cjs";
+
+const { post } = Astro.props;
+const authorData = Config.authors ?? [];
+
+// console.log("===== PostPreviewCard.astro=====");
+// console.log(JSON.stringify(post, false, 2));
+// console.log("==========");
+
+---
+<div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
+    <img src={post.frontmatter.openGraph.image.secureUrl} alt={post.frontmatter.openGraph.image.alt} loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl" />
+
+    <div class="sm:w-7/12 pl-0 p-5">
+        <div class="space-y-2">
+            <div class="space-y-4 prose">
+                <a href={post.url}> 
+                    <h3 class="text-2xl font-semibold text-cyan-900">{post.frontmatter.title}</h3>
+                </a>
+                <p class="text-gray-600">{post.frontmatter.description}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

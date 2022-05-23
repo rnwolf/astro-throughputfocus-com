@@ -109,7 +109,7 @@ const authorData = Config.authors ?? [];
                                   bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
   <!-- media -->
   <div class="h-64 w-auto lg:w-1/2">
-    <img class="inset-0 h-full w-full object-cover object-center" src={post.frontmatter.openGraph.image.secureUrl} />
+    <img class="inset-0 h-full w-full object-cover object-center" src={post.frontmatter.openGraph.image.secureUrl} alt={post.frontmatter.openGraph.image.alt} />
   </div>
   <!-- content -->
   <div class="w-full py-4 px-6 text-gray-800 flex flex-col ">
