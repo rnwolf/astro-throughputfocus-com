@@ -20,7 +20,7 @@ console.log(`level ${level}`);
     <div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
       
       <div class="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4">
-        <img class="object-cover shadow-lg rounded-lg" src={author.photo} alt="Photo of author" width="200">
+        <img class="object-cover shadow-lg rounded-lg" src={author.photo} alt="Photo of author" width="200" height="200">
       </div>
 
       <div class="sm:col-span-2">
@@ -42,7 +42,7 @@ console.log(`level ${level}`);
             <p class="text-gray-500">{author.blurb}</p>
           </div>
 
-          <div role="list" class="flex space-x-5">
+          <div class="flex space-x-5">
 
             {author.twitter &&
             <div>

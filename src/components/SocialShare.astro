@@ -10,34 +10,45 @@ const {url, title} = Astro.props;
 
     <p>If you found this article interesting or useful, please share it with your network.</p>
 
-    <a
-        href=`https://twitter.com/intent/tweet/?text=I%20found%20this%20useful%20article&amp;url=${url}`
-        title="Share via Twitter"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center">
-        <Icon size={16} name="mdi:twitter"  /> 
-        Share via Twitter. 
+    <a href=`https://twitter.com/intent/tweet/?text=I%20found%20this%20useful%20article&amp;url=${url}` 
+    aria-label="Share via Twitter."
+    title="Share via Twitter"
+    target="_blank"
+    rel="noopener noreferrer">
+        <button 
+        type="button" 
+        class="inline-flex items-center justify-center mx-2 px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" >
+            <Icon size={16} name="mdi:twitter"  />
+            <span class="ml-2">Share via Twitter.</span>
+        </button>
     </a>
 
-    <a
-        href=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
-        title="Share via LinkedIn"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center">
-        <Icon size={16} name="mdi:linkedin"  />
-        Share via LinkedIn.
+    <a href=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+    aria-label="Share via LinkedIn."
+    title="Share via LinkedIn."
+    target="_blank"
+    rel="noopener noreferrer">
+        <button 
+        type="button" 
+        class="inline-flex items-center justify-center mx-2 px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" >
+            <Icon size={16} name="mdi:twitter"  />
+            <span class="ml-2">Share via LinkedIn.</span>
+        </button>
+    </a>
+    
+    <a href=`mailto:?body=${url}`
+    aria-label="Share via Email."
+    title="Share via Email."
+    target="_blank"
+    rel="noopener noreferrer">
+        <button 
+        type="button" 
+        class="inline-flex items-center justify-center mx-2 px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" >
+            <Icon size={16} name="mdi:email"  />
+            <span class="ml-2">Share via Email.</span>
+        </button>
     </a>
 
-    <a 
-        href=`mailto:?body=${url}` 
-        title="Share via email" 
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-[#1d9bf0] hover:bg-blue-400 transition-colors text-white p-3 rounded-xl text-sm inline-flex items-center">
-        <Icon size={16} name="mdi:email"  />
-        Share via Email
-    </a>
+
 
 </div>

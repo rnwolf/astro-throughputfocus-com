@@ -4,6 +4,7 @@ import SmallComponent from '$components/SmallComponent.astro';
 import SelectedPosts from '$components/SelectedPosts.astro';
 
 import Config from "$/website.config.cjs";
+import Button from '$components/Button.astro';
 
 // const parentdataarray = [
 //   {
@@ -31,6 +32,8 @@ console.log('See me in the Terminal')
     </br>
     <SmallComponent title='Sent in from the parent' dataarray={Config.parentdataarray}/>
     <SelectedPosts />
+
+    <Button text="Share via LinkedIn" link="https://www.linkedin.com/sharing/share-offsite/?url=" icon="mdi:linkedin" />
   </body>
 </html>
 
