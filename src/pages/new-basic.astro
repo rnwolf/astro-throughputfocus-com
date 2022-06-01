@@ -3,7 +3,8 @@ import BaseLayout from '$layouts/BaseLayout.astro';
 import SiteBanner from '$components/SiteBanner.astro';
 import PictureTextRight from '$components/PictureTextRight.astro';
 import FeaturedBlogPosts from '$components/FeaturedBlogPosts.astro';
-import Button from '$components/Button.astro';
+import BUTTON from '$components/Button.astro';
+import { Picture } from "astro-imagetools/components";
 
 import Config from "$/website.config.cjs";
 
@@ -18,7 +19,7 @@ metaImageAlt="System throughput is determined by system constraint.">
 
     <SiteBanner short="This is a short text" long="This is a long piece of text" link="/contact" />
 
-    <Button text="Share via LinkedIn" link="https://www.linkedin.com/sharing/share-offsite/?url=" icon="mdi:linkedin" />
+    <BUTTON text="Share via LinkedIn" link="https://www.linkedin.com/sharing/share-offsite/?url=" icon="mdi:linkedin" />
 
     <PictureTextRight 
         heading="Heading for Text Right Hand side" 
@@ -30,5 +31,14 @@ metaImageAlt="System throughput is determined by system constraint.">
         subtext="Highlighted posts, and some info about why these are signigicant." 
         bgcolour="bg-red-200"
         featured={Config.featuredPosts} />
-
+<Picture
+      src="/src/images/landscape.jpg"
+      alt="A landscape image"
+      artDirectives={[
+        {
+          src: "/src/images/portrait.jpg",
+          media: "(orientation: potrait)",
+        },
+      ]}
+    />
 </BaseLayout>

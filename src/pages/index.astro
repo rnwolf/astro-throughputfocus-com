@@ -2,6 +2,8 @@
 //src/pages/index.astro
 import SmallComponent from '$components/SmallComponent.astro';
 import SelectedPosts from '$components/SelectedPosts.astro';
+import { Picture } from "astro-imagetools/components";
+import { Img } from "astro-imagetools/components";
 
 import Config from "$/website.config.cjs";
 import Button from '$components/Button.astro';
@@ -34,6 +36,20 @@ console.log('See me in the Terminal')
     <SelectedPosts />
 
     <Button text="Share via LinkedIn" link="https://www.linkedin.com/sharing/share-offsite/?url=" icon="mdi:linkedin" />
+    </br>
+    <Picture
+      src="/src/images/landscape.jpg"
+      alt="A landscape image"
+      artDirectives={[
+        {
+          src: "/src/images/portrait.jpg",
+          media: "(orientation: potrait)",
+        },
+      ]}
+    />
+    </br>
+    <Img src="https://picsum.photos/1024/768" alt="A random image" />
+
   </body>
 </html>
 

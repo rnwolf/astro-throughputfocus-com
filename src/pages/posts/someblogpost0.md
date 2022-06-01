@@ -31,6 +31,8 @@ openGraph:
 imageCredit: Photo by <a href="https://unsplash.com/es/@bogomi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogomil Mihaylov</a> on <a href="https://unsplash.com/backgrounds/art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 setup: |
   import { YouTube } from 'astro-embed';
+src: https://picsum.photos/1024/768
+alt: A random image
 ---
 
 # 0 This is the post H1 header. Only one
@@ -60,6 +62,31 @@ The `@tailwindcss/typography` plugin is our attempt to give you what you _actual
 For more information about how to use the plugin and the features it includes, [read the documentation](https://github.com/tailwindcss/typography/blob/master/README.md).
 
 ---
+
+## Hello Markdown Images
+
+<!-- A remote image -->
+
+![A random remote image](https://picsum.photos/1024/768)
+
+<!-- A local image relative to the markdown file -->
+
+![A local image](./images/landscape.jpg)
+
+<!-- A local image relative to the project root -->
+
+![Another local image](../src/images/landscape.jpg)
+
+<!-- An example of using query params -->
+
+![A remote image with query params](https://picsum.photos/1024/768?grayscale)
+
+<!-- An example of the `<Image />` component inside MD pages -->
+
+<!-- <Picture
+  src={frontmatter.src}
+  alt={frontmatter.alt}
+/> -->
 
 ## This is a heading
 

@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-// import { astroImageTools } from "astro-imagetools";
+import { astroImageTools } from "astro-imagetools";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -30,7 +30,7 @@ export default defineConfig({
     },
   },
   integrations: [
-    // astroImageTools,
+    astroImageTools,
     tailwind({
       config: {
         applyBaseStyles: false,

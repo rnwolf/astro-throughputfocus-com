@@ -309,3 +309,9 @@ let movies = await loadMovies();
     <li>{item.title}</li>
   )}
 </ol>
+
+## How to debug astro build
+
+In your terminal you just run `DEBUG="astro:build" npm run build`
+
+or in MS-Windows at Powershell prompt `$env:DEBUG='astro:build'; & npm run build`
