@@ -71,7 +71,7 @@ For more information about how to use the plugin and the features it includes, [
 
 <!-- A local image relative to the markdown file -->
 
-![A local image](../../images/landscape.jpg)
+![A local image](./images/landscape.jpg)
 
 <!-- An example of using query params -->
 
