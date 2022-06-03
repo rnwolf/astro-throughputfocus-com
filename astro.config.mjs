@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import { astroImageTools } from "astro-imagetools";
-
+import webmanifest from "astro-webmanifest";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -19,7 +19,7 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-      theme: "solarized-light",
+      theme: "dracula",
       wrap: true,
     },
   },
@@ -30,6 +30,16 @@ export default defineConfig({
     },
   },
   integrations: [
+    webmanifest({
+      icon: "src/icons/2022-01-22 throughputfocus_logo-square black.svg", // source for favicon & icons
+      name: "Throughput Focus Website", // required
+      short_name: "Focus Website",
+      description: "How to organise your teams for happiness and wealth.",
+      start_url: "/",
+      theme_color: "#f3f20c",
+      background_color: "#f3f20c",
+      display: "standalone",
+    }),
     astroImageTools,
     tailwind({
       config: {

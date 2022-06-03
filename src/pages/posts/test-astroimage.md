@@ -43,4 +43,4 @@ alt: A random image
 
 <!-- A local image relative to the markdown file -->
 
-![A local image](../../images/landscape.jpg)
+<!-- ![A local image](default-opengraph-image.jpg) -->
