@@ -105,7 +105,14 @@ metaImageAlt={content.openGraph.image.alt}>
           <div class="flex items-center justify-center w-full mt-2 ">
               <figure>
               <div class="object-cover w-full max-w-2xl rounded-xl lg:h-full">
-              <Img src={content.openGraph.image.secureUrl} alt="description of the photo" width="1200" height="627">
+              <Img 
+                src={content.openGraph.image.secureUrl} 
+                alt="description of the photo" 
+                width="1200" 
+                height="627" 
+                loading="eager"
+                placeholder="tracedSVG"
+                format="webp">
               </div>
                   { content.imageCredit &&
                     <figcaption class="absolute prose bg-gray-100/75 text-xs -mt-4 ml-2 text-black px-4 " set:html={content.imageCredit}>
