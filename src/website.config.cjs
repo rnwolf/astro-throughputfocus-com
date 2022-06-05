@@ -9,8 +9,9 @@ export default {
   dateFormat: "yyyy-MM-dd HH:mm",
   socialImage: "default-opengraph-image.png",
   socialMedia: {
-    twitter: "throughputfocus",
-    linkedin: "throughputfocus",
+    twitter: "rnwolf",
+    linkedin: "rnwolf",
+    github: "rnwolf",
   },
   pageSize: 4,
   parentdataarray: [

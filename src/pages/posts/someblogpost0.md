@@ -21,13 +21,13 @@ openGraph:
   basic:
     title: different from the value of the title prop
     type: article
-    image: https://picsum.photos/1200/627
+    image: https://source.unsplash.com/ACoZwVwjElU/1200x627
   image:
-    secureUrl: https://picsum.photos/1200/627
+    secureUrl: https://source.unsplash.com/ACoZwVwjElU/1200x627
     type: "image/png"
     width: 1200
     height: 627
-    alt: This is a description of what is in the image
+    alt: Table mountain sunset with milkyway in the heavens
 imageCredit: Photo by <a href="https://unsplash.com/es/@bogomi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogomil Mihaylov</a> on <a href="https://unsplash.com/backgrounds/art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 setup: |
   import { YouTube } from 'astro-embed';
@@ -128,7 +128,7 @@ And that's the end of our little demo.
 
 YouTube videos work too :-)
 
-<YouTube id="https://youtu.be/xtTy5nKay_Y" />
+<YouTube id="https://youtu.be/xtTy5nKay_Y" playlabel="Play the video"/>
 
 ## What if we stack headings?
 

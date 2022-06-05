@@ -315,3 +315,19 @@ let movies = await loadMovies();
 In your terminal you just run `DEBUG="astro:build" npm run build`
 
 or in MS-Windows at Powershell prompt `$env:DEBUG='astro:build'; & npm run build`
+
+## Wrap with div based on condition
+
+```
+---
+const condition = true;
+---
+
+{
+  () => {
+    const img = <img src="https://picsum.photos/1024/768" alt="" />;
+
+    return condition ? <div>{img}</div> : img;
+  }
+}
+```

@@ -21,9 +21,9 @@ openGraph:
   basic:
     title: different from the value of the title prop
     type: article
-    image: https://picsum.photos/1200/627
+    image: https://source.unsplash.com/V6rLAvAP3lk/1200x627
   image:
-    secureUrl: https://picsum.photos/1200/627
+    secureUrl: https://source.unsplash.com/V6rLAvAP3lk/1200x627
     type: "image/png"
     width: 1200
     height: 627

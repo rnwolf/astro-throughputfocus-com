@@ -142,7 +142,7 @@ metaImageAlt={content.openGraph.image.alt}>
             <h1 class="text-4xl text-centre mb-3">{content.title}</h1>
             <ul>
               <li class="inline-flex items-center text-gray-600">
-                <Icon size={24} name="mdi:calendar"  />
+                <Icon size={24} name="mdi:calendar" aria-label="calendar icon"  />
                 {postPublished &&
                   <time class="ml-2 inline-flex items-center text-gray-600">Published: {postPublished.slice(0,10)}</time>
                 }
@@ -152,7 +152,7 @@ metaImageAlt={content.openGraph.image.alt}>
               </li>
 
               <li class="mt-2 inline-flex items-center text-gray-600">
-                <Icon size={24} name="mdi:tag"/>
+                <Icon size={24} name="mdi:tag" aria-label="tag icon" />
                 <a href="/tags" class="flex items-center">
                   <div class="mr-2">Tags:</div>
                 </a>

@@ -16,7 +16,7 @@ const navLinks = [
     url: '/team',
   },
   {
-    name: 'Contact',
+    name: 'Contact Us',
     url: '/contact',
   },
 ];
@@ -25,7 +25,7 @@ const navLinks = [
 <!-- Start of Navbar component -->
 <div id="main-navigation">
     <header class="fixed w-full mt-0 bg-black z-[9999]">
-      <nav aria-label={Config.siteTitle} class="text-white bg-black">
+      <nav id="main" aria-label="primary" class="text-white bg-black">
         <input type="checkbox" id="nav-Checkbox" class="hidden" />
         <label
           for="nav-Checkbox"
@@ -61,7 +61,7 @@ const navLinks = [
             class="block py-2 my-0 mr-auto ml-6 lg:mt-0 lg:mb-1 lg:tracking-normal lg:leading-none"
           >
             <a  href="/" class="no-underline" aria-label="Home page">
-            <Icon name="logo" width={180} class="print:hidden"/> 
+            <Icon name="logo" width={180} class="print:hidden" aria-label="logo" /> 
             </a>
           </li>
           <li class="list-none hidden font-bold lg:text-sm lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0">

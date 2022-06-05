@@ -21,14 +21,14 @@ openGraph:
   basic:
     title: different from the value of the title prop
     type: article
-    image: https://picsum.photos/1200/627
+    image: https://source.unsplash.com/cmt3JdS5MC4/1200x627
   image:
-    secureUrl: https://picsum.photos/1200/627
+    secureUrl: https://source.unsplash.com/cmt3JdS5MC4/1200x627
     type: "image/png"
     width: 1200
     height: 627
     alt: This is a description of what is in the image
-imageCredit: Photo by <a href="https://unsplash.com/es/@bogomi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogomil Mihaylov</a> on <a href="https://unsplash.com/backgrounds/art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+imageCredit: Photo by Jeremy Bishop on Unsplash
 setup: |
   import { YouTube } from 'astro-embed';
   import { Picture } from "astro-imagetools/components";

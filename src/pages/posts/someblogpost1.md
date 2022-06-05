@@ -11,7 +11,6 @@ tags:
   - flow
   - strategy
 draft: false
-featured_image: https://picsum.photos/1200/627
 readingtime: 10min
 sitemap: true
 layout: ../../layouts/PostLayout.astro
@@ -21,13 +20,13 @@ openGraph:
   basic:
     title: different from the value of the title prop
     type: article
-    image: https://picsum.photos/1200/627
+    image: https://source.unsplash.com/6ImUWHbzRIg/1200x627
   image:
-    secureUrl: https://picsum.photos/1200/627
+    secureUrl: https://source.unsplash.com/6ImUWHbzRIg/1200x627
     type: "image/png"
     width: 1200
     height: 627
-    alt: This is a description of what is in the image
+    alt: View of Houtbay with girl in the foreground
 imageCredit: Photo by <a href="https://unsplash.com/es/@bogomi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogomil Mihaylov</a> on <a href="https://unsplash.com/backgrounds/art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 setup: |
   import { YouTube } from 'astro-embed';

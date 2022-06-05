@@ -6,34 +6,43 @@ const currentyear = new Date().getFullYear();
 const currentisodatetime = new Date().toISOString();
 ---
 
-<footer class="bg-white " aria-labelledby="footer-heading">
-  <h2 id="footer-heading" class="sr-only">Footer</h2>
+<footer class="bg-white " aria-labelledby="footer">
+  <h2 id="footer" class="sr-only">Footer</h2>
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
-    <div class="xl:grid xl:grid-cols-3 xl:gap-8 border-t border-gray-200">
+    <nav id="footer-nav" class="xl:grid xl:grid-cols-3 xl:gap-8 border-t border-gray-200">
       <div class="space-y-8 xl:col-span-1">
-        <Icon name="logo" width={180} class=" mt-4 h-10"/> 
+        <Icon name="logo" width={180} class=" mt-4 h-10" aria-label="logo icon" /> 
         <!-- <img class="h-10" src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg" alt="Company name"> -->
         <p class="text-gray-500 text-base">{Config.siteSlogan}</p>
         <div class="flex space-x-6">
-          <a href="#" class="text-gray-400 hover:text-gray-500">
+
+          {Config.socialMedia.facebook && 
+          <a href={"https://facebook.com/" + Config.socialMedia.facebook} class="text-blue-600 hover:text-blue-900">
             <span class="sr-only">Facebook</span>
-            <Icon size={24} name='mdi:facebook' />
+            <Icon size={24} name='mdi:facebook' aria-label="facebook icon"/>
           </a>
+          }
 
-          <a href="#" class="text-gray-400 hover:text-gray-500">
+          {Config.socialMedia.instagram && 
+          <a href={"https://instragram.com/" + Config.socialMedia.instagram} class="text-blue-600 hover:text-blue-900">
             <span class="sr-only">Instagram</span>
-            <Icon size={24} name='mdi:instagram' />
+            <Icon size={24} name='mdi:instagram' aria-label="Instagram icon"/>
           </a>
+          }
 
-          <a href="#" class="text-gray-400 hover:text-gray-500">
+          {Config.socialMedia.twitter && 
+          <a href={"https://twitter.com/" + Config.socialMedia.twitter} class="text-blue-600 hover:text-blue-900">
             <span class="sr-only">Twitter</span>
-            <Icon size={24} name='mdi:twitter' />
+            <Icon size={24} name='mdi:twitter' aria-label="twitter icon"/>
           </a>
+          }
 
-          <a href="#" class="text-gray-400 hover:text-gray-500">
+          {Config.socialMedia.github && 
+          <a href={"https://github.com/" + Config.socialMedia.github} class="text-blue-600 hover:text-blue-900">
             <span class="sr-only">GitHub</span>
-            <Icon size={24} name='mdi:github' />
+            <Icon size={24} name='mdi:github' aria-label="github icon"/>
           </a>
+          }
 
         </div>
       </div>
@@ -41,7 +50,7 @@ const currentisodatetime = new Date().toISOString();
         <div class="md:grid md:grid-cols-2 md:gap-8">
           <div>
             <h3 class="text-sm font-bold text-black tracking-wider uppercase">Solutions</h3>
-            <ul role="list" class="mt-4 space-y-4">
+            <ul class="mt-4 space-y-4">
               <li>
                 <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Marketing </a>
               </li>
@@ -57,7 +66,7 @@ const currentisodatetime = new Date().toISOString();
           </div>
           <div class="mt-12 md:mt-0">
             <h3 class="text-sm font-bold text-black tracking-wider uppercase">Support</h3>
-            <ul role="list" class="mt-4 space-y-4">
+            <ul class="mt-4 space-y-4">
 
               <li>
                 <a href="/posts" class="text-base text-gray-500 hover:text-gray-900"> Blog </a>
@@ -77,7 +86,7 @@ const currentisodatetime = new Date().toISOString();
         <div class="md:grid md:grid-cols-2 md:gap-8">
           <div>
             <h3 class="text-sm font-bold text-black tracking-wider uppercase">Company</h3>
-            <ul role="list" class="mt-4 space-y-4">
+            <ul class="mt-4 space-y-4">
               <li>
                 <a href="/about" class="text-base text-gray-500 hover:text-gray-900"> About </a>
               </li>
@@ -90,7 +99,7 @@ const currentisodatetime = new Date().toISOString();
           </div>
           <div class="mt-12 md:mt-0">
             <h3 class="text-sm font-bold text-black tracking-wider uppercase">Legal</h3>
-            <ul role="list" class="mt-4 space-y-4">
+            <ul class="mt-4 space-y-4">
               <li>
                 <a href="/accessibility" class="text-base text-gray-500 hover:text-gray-900"> Accessibility </a>
               </li>
@@ -106,7 +115,7 @@ const currentisodatetime = new Date().toISOString();
           </div>
         </div>
       </div>
-    </div>
+    </nav>
     <div class="mt-12 border-t border-gray-200 pt-8">
       <p class="text-base text-gray-800 xl:text-center">&copy; {currentyear} {Config.siteCopyright} All rights reserved.</p>
       <p class="text-base text-gray-800 xl:text-center">Last published {currentisodatetime}.</p>
