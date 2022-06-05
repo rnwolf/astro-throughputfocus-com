@@ -25,8 +25,10 @@ openGraph:
     width: 1200
     height: 627
     alt: This is a description of what is in the image
+imageCredit: Photo by <a href="https://unsplash.com/es/@bogomi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogomil Mihaylov</a> on <a href="https://unsplash.com/backgrounds/art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 setup: |
   import { YouTube } from 'astro-embed';
+  import { Picture } from "astro-imagetools/components";
 ---
 
 # 3 This is the post H1 header. Only one

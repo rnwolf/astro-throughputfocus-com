@@ -31,6 +31,7 @@ openGraph:
 imageCredit: Photo by <a href="https://unsplash.com/es/@bogomi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bogomil Mihaylov</a> on <a href="https://unsplash.com/backgrounds/art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 setup: |
   import { YouTube } from 'astro-embed';
+  import { Picture } from "astro-imagetools/components";
 src: https://picsum.photos/1024/768
 alt: A random image
 ---
@@ -43,4 +44,4 @@ alt: A random image
 
 <!-- A local image relative to the markdown file -->
 
-<!-- ![A local image](default-opengraph-image.jpg) -->
+<!-- ![A local image](./images/landscape.jpg) -->

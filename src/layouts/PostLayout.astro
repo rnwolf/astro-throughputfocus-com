@@ -6,6 +6,7 @@ import TOC from '$components/toc.astro'
 import { Icon } from 'astro-icon';
 import RelatedArticles from '$components/RelatedArticles.astro';
 import SocialShare from '$components/SocialShare.astro';
+import { Img } from "astro-imagetools/components";
 
 const {content} = Astro.props;
 const postPublished = content.pubDate;
@@ -103,8 +104,9 @@ metaImageAlt={content.openGraph.image.alt}>
       <div class="container px-6 py-4 mx-auto  ">
           <div class="flex items-center justify-center w-full mt-2 ">
               <figure>
-              <img class="object-cover w-full max-w-2xl rounded-md lg:h-full"
-                  src={content.openGraph.image.secureUrl} alt="description of the photo" width="1200" height="627">
+              <div class="object-cover w-full max-w-2xl rounded-xl lg:h-full">
+              <Img src={content.openGraph.image.secureUrl} alt="description of the photo" width="1200" height="627">
+              </div>
                   { content.imageCredit &&
                     <figcaption class="absolute prose bg-gray-100/75 text-xs -mt-4 ml-2 text-black px-4 " set:html={content.imageCredit}>
                     

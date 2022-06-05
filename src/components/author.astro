@@ -46,7 +46,7 @@ const { author={}, count, level="2" } = Astro.props;
 
             {author.twitter &&
             <div>
-              <a href={"https://twitter.com/" + author.twitter} class="text-gray-400 hover:text-gray-500">
+              <a href={"https://twitter.com/" + author.twitter} class="text-blue-400 hover:text-blue-700">
                 <span class="sr-only">Twitter</span>
                 <Icon size={24} name='mdi:twitter' />
               </a>
@@ -54,7 +54,7 @@ const { author={}, count, level="2" } = Astro.props;
 
             {author.linkedin &&
             <div>
-              <a href={"https://linkedin.com" + author.linkedin} class="text-gray-400 hover:text-gray-500">
+              <a href={"https://linkedin.com" + author.linkedin} class="text-blue-400 hover:text-blue-700">
                 <span class="sr-only">LinkedIn</span>
                 <Icon size={24} name='mdi:linkedin' />
               </a>
@@ -62,7 +62,7 @@ const { author={}, count, level="2" } = Astro.props;
 
             {author.website &&
             <div>
-              <a href={author.website} class="text-gray-400 hover:text-gray-500">
+              <a href={author.website} class="text-blue-400 hover:text-blue-700">
                 <span class="sr-only">Website</span>
                 <Icon size={24} name='mdi:internet' />
               </a>
