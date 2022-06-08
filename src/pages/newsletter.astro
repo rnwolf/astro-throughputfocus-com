@@ -1,0 +1,34 @@
+---
+// Offer to the market
+import NewsLetter from '$/components/NewsLetter.astro';
+import { Markdown } from 'astro/components'
+import BaseLayout from '$layouts/BaseLayout.astro'
+---
+<BaseLayout title="Newsletter | Throughput Focus" 
+description="Throughput Focus newsletter" 
+metaDescription="Sign up to the Throughput Focus newsletter."
+metaTitle="Subscribe to occasional email newsletter updates."
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint. Our team focuses efforts on throughput at your constraint.">
+<div class="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	<!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+	<div class="prose max-w-6xl mx-auto">
+ 	<article>
+		<Markdown>
+
+# Newsletter
+
+Information about the newsletter goes here.
+
+		</Markdown>
+
+    
+		<NewsLetter 
+        	heading="Sign up for our newsletter" 
+        	subtext="Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat." 
+        	link='/api/submit' 
+        	linkText='Notify Me' 
+        	bgcolour="bg-white-100"  />
+	
+	</article>
+</Baselayout>
