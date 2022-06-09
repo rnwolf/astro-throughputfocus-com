@@ -1,6 +1,7 @@
 ---
 import {getAuthorName} from "$/utils";
 import { Icon } from 'astro-icon';
+import { Img } from "astro-imagetools/components";
 import Config from "$/website.config.cjs";
 
 const { post } = Astro.props;
@@ -25,11 +26,22 @@ const authorData = Config.authors ?? [];
   <div class="p-6 bg-white rounded-xl shadow-xl">
     <a href={post.url} class="group" >
       <div class="overflow-hidden">
-        <img
+        <!-- <img
           src={post.frontmatter.openGraph.image.secureUrl}
           class="w-full h-auto hover:scale-105 transition transition-all duration-200 ease-in-out"
           alt={post.frontmatter.openGraph.image.alt}
-        >
+        > -->
+        <Img
+        attributes={{
+            img: {
+              class: 'w-full h-auto hover:scale-105 transition transition-all duration-200 ease-in-out rounded-lg'
+            }
+        }}
+        src={post.frontmatter.openGraph.image.secureUrl} 
+        alt={post.frontmatter.openGraph.image.alt} 
+        loading="lazy" 
+         />
+
       </div>
 
       <h3
