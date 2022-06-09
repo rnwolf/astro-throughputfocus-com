@@ -1,6 +1,6 @@
 ---
 // https://tailwindcomponents.com/component/about-section
-// import { Picture } from "astro-imagetools/components";
+import { Img } from "astro-imagetools/components";
 
 const { heading='Default Heading text goes here', 
         subtext="Default subtext goes here", 
@@ -17,16 +17,29 @@ const { heading='Default Heading text goes here',
 
 ---
 
-<!-- Start of PictureText Component -->
+<!-- Start of PictureTextRight Component -->
 <div class={"py-16 " + bgcolour}>  
   <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
       <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-        <div class="md:5/12 lg:w-5/12">
+        <!-- <div class="md:5/12 lg:w-5/12"> -->
           <!-- <Picture src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="image description goes here"
           preload="webp" 
           format={["webp"]} /> -->
-          <img src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="image description goes here" loading="lazy" width="" height="" />
-        </div>
+          <!-- <img src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png" alt="image description goes here" loading="lazy" width="" height="" /> -->
+          <Img
+          attributes={{
+              img: {
+                class: 'md:5/12 lg:w-6/12'
+              }
+          }}
+          src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
+          alt="Image description goes here"
+          loading="lazy" 
+          width="677" 
+          height="574"
+          />
+
+        <!-- </div> -->
         <div class="md:7/12 lg:w-6/12">
           <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">{heading}</h2>
           {paragraphs.map(paragraph => (
@@ -38,5 +51,5 @@ const { heading='Default Heading text goes here',
       </div>
   </div>
 </div>
-<!-- End of PictureText Component -->
+<!-- End of PictureTextRight Component -->
 

@@ -5,6 +5,7 @@ export default {
     "Website for people that want to improve the performance of their organisation.",
   siteSlogan: "Helping people have a great life.",
   siteCopyright: "Throughput Focus Ltd",
+  siteFormEmail: "website_form@throughputfocus.com",
   favicon: "/favicon.ico",
   dateFormat: "yyyy-MM-dd HH:mm",
   socialImage: "default-opengraph-image.png",
