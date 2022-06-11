@@ -1,4 +1,5 @@
 import Config from "$/website.config.cjs";
+import childProcess from "node:child_process";
 
 const capitalize = ([firstLetter, ...restOfWord]) =>
   firstLetter.toUpperCase() + restOfWord.join("");

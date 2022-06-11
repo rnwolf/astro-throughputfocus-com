@@ -331,3 +331,11 @@ const condition = true;
   }
 }
 ```
+
+## Using host environment variables
+
+const DATABASE_URL = process.env.DATABASE_URL || import.meta.env.DATABASE_URL;
+
+or create helper utility
+
+export function getEnvVar(name) { return process.env[name] || import.meta.env[name]; }

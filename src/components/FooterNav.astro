@@ -1,9 +1,18 @@
 ---
 import Config from "$/website.config.cjs";
 import { Icon } from 'astro-icon';
+import childProcess from 'node:child_process';
 
 const currentyear = new Date().getFullYear();
 const currentisodatetime = new Date().toISOString();
+
+const latestGitCommitHash =
+  childProcess
+  .execSync('git rev-parse --short HEAD')
+  .toString()
+  .trim();
+
+// console.log(`Git Hash ${latestGitCommitHash}`);
 ---
 
 <footer class="bg-white " aria-labelledby="footer">
@@ -114,7 +123,10 @@ const currentisodatetime = new Date().toISOString();
     </nav>
     <div class="mt-12 border-t border-gray-200 pt-8">
       <p class="text-base text-gray-800 xl:text-center">&copy; {currentyear} {Config.siteCopyright} All rights reserved.</p>
-      <p class="text-base text-gray-800 xl:text-center">Last published {currentisodatetime}.</p>
+      <p class="text-base text-gray-800 xl:text-center">Last published {currentisodatetime} 
+        {latestGitCommitHash && 
+        <a href={"https://github.com/rnwolf/astro-throughputfocus-com/commit/"+ latestGitCommitHash} class="text-base text-gray-800 xl:text-center" rel="noreferrer noopener" target="_blank">Latest commit {latestGitCommitHash}</a> }
+      </p>
     </div>
   </div>
 </footer>

@@ -1,6 +1,11 @@
 ---
+import {latestGitCommitHash} from "$/utils";
 const currentyear = new Date().getFullYear();
 const currentisodatetime = new Date().toISOString();
+
+const hash = latestGitCommitHash();
+console.log(`Git Hash ${hash}`);
+
 ---
 
 <!-- Start of Footer Component -->
@@ -49,6 +54,9 @@ const currentisodatetime = new Date().toISOString();
 
     </div>
     <p class="mt-8 text-center text-base text-gray-500">&copy; {currentyear}  Throughput Focus Ltd All rights reserved.</p>
-    <p class="mt-8 text-center text-base text-gray-500">Last published {currentisodatetime}.</p>
+    <p class="mt-8 text-center text-base text-gray-500">
+      Last published {currentisodatetime}. 
+      <a href=i{"https://github.com/rnwolf/astro-throughputfocus-com/commit/"+ latestGitCommitHash} rel="noreferrer noopener" target="_blank">{latestGitCommitHash}</a> 
+    </p>
   </div>
 </footer>
