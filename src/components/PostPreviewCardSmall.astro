@@ -2,6 +2,7 @@
 import {getAuthorName} from "$/utils";
 import { Icon } from 'astro-icon';
 import Config from "$/website.config.cjs";
+import { Img } from "astro-imagetools/components";
 
 const { post } = Astro.props;
 const authorData = Config.authors ?? [];

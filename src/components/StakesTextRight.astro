@@ -1,6 +1,7 @@
 ---
 //The Stakes Section
 // In this section we want to show the reader that we understand their problems and how critical it is to solve those problems.
+import { Img } from "astro-imagetools/components";
 import { Icon } from 'astro-icon';
 // import Image from "astro-imagetools";
 const { heading='Default Heading text goes here', 
@@ -59,9 +60,25 @@ const { heading='Default Heading text goes here',
             <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
           </svg>
           <!-- <img class="relative mx-auto" width="490" src="https://tailwindui.com/img/features/feature-example-2.png" alt=""> -->
-          <div class="relative mx-auto">
-            <img src="https://tailwindui.com/img/features/feature-example-2.png" alt="Image description goes here" loading="lazy" width="490" height="" />
-          </div> 
+
+          <!-- <div class="relative mx-auto"> -->
+            <!-- <img src="https://tailwindui.com/img/features/feature-example-2.png" alt="Image description goes here" loading="lazy" width="490" height="" /> -->
+
+            <Img
+            attributes={{
+                img: {
+                  class: 'relative mx-auto'
+                }
+            }}
+            src="https://tailwindui.com/img/features/feature-example-2.png"
+            alt="This is some text to describe what is inh the image."
+            width={400}
+            height={300}
+            loading="lazy" 
+            placeholder="tracedSVG"
+            format="webp"
+            />
+          <!-- </div>  -->
         </div>
 
       </div>

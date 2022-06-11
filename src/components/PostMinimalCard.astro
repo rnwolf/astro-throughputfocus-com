@@ -22,9 +22,11 @@ const authorData = Config.authors ?? [];
         }}
         src={post.frontmatter.openGraph.image.secureUrl} 
         alt={post.frontmatter.openGraph.image.alt} 
+        width={320}
+        height={170}
         loading="lazy" 
-        width="1000" 
-        height="667"
+        placeholder="tracedSVG"
+        format="webp"
         />
  
     <div class="sm:w-7/12 pl-0 p-5">
