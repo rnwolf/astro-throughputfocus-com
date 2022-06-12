@@ -28,19 +28,18 @@ metaImageAlt="System throughput is determined by system constraint.">
 
 			</Markdown>
 
-      <ul>    {Config.tags.map(tag => (
+      {Config.tags.map(tag => (
         <h2>{tag.title}</h2> 
-        <li >
+      
         <!-- tagsRootURL.href -->
         <a href={"/tags/" + tag.key + "/1"} class="inline-flex items-center text-gray-600 my-0">
           <Icon size={42} name={tag.icon}/>
           <Icon size={24} name="mdi:tag"/>
           {tag.key}</a> 
-        </li>
         <p>
         {tag.blurb}
         </p>))}
-      </ul>
+
     </div>
   </div>
 </BaseLayout>
