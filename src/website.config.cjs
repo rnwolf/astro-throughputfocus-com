@@ -6,6 +6,8 @@ export default {
   siteSlogan: "Helping people have a great life.",
   siteCopyright: "Throughput Focus Ltd",
   siteFormEmail: "website_form2@throughputfocus.com",
+  siteTelNumber: "+44(0)7771678634",
+  siteContactEmail: "hello@ThroughputFocus.com",
   favicon: "/favicon.ico",
   dateFormat: "yyyy-MM-dd HH:mm",
   socialImage: "default-opengraph-image.png",

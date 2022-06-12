@@ -40,7 +40,9 @@ const authorData = Config.authors ?? [];
         src={post.frontmatter.openGraph.image.secureUrl} 
         alt={post.frontmatter.openGraph.image.alt} 
         loading="lazy" 
-         />
+        placeholder="tracedSVG"
+        format="webp" 
+        />
 
       </div>
 
@@ -55,7 +57,7 @@ const authorData = Config.authors ?? [];
           <ul class="grid grid-cols-1 gap-1 ">
 
             <li class="inline-flex items-center text-gray-600 my-0">
-              <Icon size={24} name="mdi:calendar"  />
+              <Icon size={24} name="mdi:calendar" aria-label="calendar icon" />
               <time class="text-gray-600" datetime={post.frontmatter.pubDate}>
                 Published:  {post.frontmatter.pubDate.slice(0, 10)}
               </time>
@@ -70,7 +72,7 @@ const authorData = Config.authors ?? [];
             
             {post.frontmatter.firstPub &&
             <li class="inline-flex items-center text-gray-600 my-0">
-              <Icon size={24} name="mdi:calendar"  />
+              <Icon size={24} name="mdi:calendar"   aria-label="calendar icon"/>
               <time class="text-gray-600" datetime={post.frontmatter.firstPub}>
                 First published: {post.frontmatter.firstPub.slice(0, 10)}
               </time>
@@ -79,7 +81,7 @@ const authorData = Config.authors ?? [];
             }
 
             <li class="inline-flex items-center text-gray-600 my-0">
-              <Icon size={24} name="mdi:pencil"  />
+              <Icon size={24} name="mdi:pencil"   aria-label="author icon"/>
               <a href="/authors" class="flex items-center">
                 <div class="mr-2">Authors:</div>
               </a>
@@ -94,7 +96,7 @@ const authorData = Config.authors ?? [];
             </li>
             
             <li class="inline-flex items-center text-gray-600 my-0">
-              <Icon size={24} name="mdi:tag"/>
+              <Icon size={24} name="mdi:tag" aria-label="tag icon"/>
               <a href="/tags" class="flex items-center">
                 <div class="mr-2">Tags:</div>
               </a>
