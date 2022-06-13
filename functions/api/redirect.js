@@ -1,12 +1,11 @@
 /**
- * reacts to POST /api/hello
+ * reacts to POST /api/redirect
  *
- * //functions/api/hello.js
  **/
 
 // export async function onRequestPost(request, env) {
 // ...
-export async function onRequest(context) {
+export async function onRequestGet(context) {
   // Contents of context object
   const {
     request, // same as existing Worker API
@@ -19,5 +18,7 @@ export async function onRequest(context) {
 
   const somedata = env.API_KEY_DUMMY;
 
-  return new Response(`Hello, world! ${somedata}`);
+  const destinationURL = "https://throughputfocus.com/thanks_contact";
+
+  return new Response.redirect(destinationURL, { status: 301 });
 }
