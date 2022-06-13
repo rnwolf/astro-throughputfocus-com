@@ -5,6 +5,7 @@ import TagCard from '$components/TagCard.astro';
 import PostPreviewCard from '$components/PostPreviewCard.astro';
 import NavPaginationPageOne from '$components/NavPaginationPageOne.astro';
 import Config from "$/website.config.cjs";
+const tagData = Config.tags ?? [];
 
 export async function getStaticPaths () {
   // grab all .md files from a folder
@@ -58,6 +59,7 @@ let tagged = filteredPosts.filter((p) => {
   return p.frontmatter.tags.includes(tagname); 
 });
 
+const postTag = tagData.filter( tag => tag.key === tagname)[0];
 ---
 
 <BaseLayout title={tagname + " posts"} 
@@ -77,9 +79,10 @@ metaImageAlt="System throughput is determined by system constraint.">
 
 			</Markdown>
 
-			<TagCard tag={tagname} />
-      <p>{tagged.length}</p>
-			<div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
+			<TagCard tag={postTag} count={tagged.length} />
+      <!-- TODO The tagged.length does not match up with the count on the paged tag page -->
+			
+      <div class="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
 				<div class="grid lg:grid-cols-2 gap-12 lg:gap-6">
 					{tagged.map((post) => <PostPreviewCard post={post} />)}
 				</div>

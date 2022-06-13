@@ -9,7 +9,6 @@ tags:
   - strategy
   - leadership
   - flow
-  - strategy
 draft: false
 readingtime: 10min
 sitemap: true
