@@ -1,0 +1,81 @@
+---
+// Figure out how to get 100% for Google Lighthouse performance analysis
+// With astro-imagetools and tailwindcss
+import HeroImage from '$components/HeroImage.astro';
+import { Markdown } from 'astro/components'
+import BaseLayout from '$layouts/BaseLayout.astro'
+---
+<BaseLayout title="Responsive Image | Throughput Focus" 
+description="Experiment in responsive images Throughput Focus" 
+metaDescription="Responsive us."
+metaTitle="Responsive images"
+metaImage="default-opengraph-image.png"
+metaImageAlt="System throughput is determined by system constraint. Our team focuses efforts on throughput at your constraint.">
+
+    <!-- <HeroImage 
+        heading="This is a catchy statement" 
+        subtext="Here is a bit of a teaser ablout how we can make your world a better place." 
+        link="/contact_form" 
+        linkText="Talk to an Expert" 
+        bgcolour="bg-blue-300" /> -->
+    <br>
+    <br>
+    <br>
+
+    <!--
+    Tailwindcss Breakpoint prefix	Minimum width	CSS
+    sm	640px	@media (min-width: 640px) { ... }
+    md	768px	@media (min-width: 768px) { ... }
+    lg	1024px	@media (min-width: 1024px) { ... }
+    xl	1280px	@media (min-width: 1280px) { ... }
+    2xl	1536px	@media (min-width: 1536px) { ... }
+    -->
+
+
+    <div class="bg-blue-100 sm:bg-yellow-300 md:bg-red-300 lg:bg-indigo-300 xl:bg-slate-300 2xl:bg-blue-300">
+
+            <img
+            src="/images/dog_w300_h200.jpg"
+            alt="Portrait of a happy-looking handsome dog with a ball in its mouth."
+            loading="lazy"
+            decoding="async"
+            srcset="/images/dog_w300_h200.jpg 300w,
+            /images/dog_w600_h400.jpg 600w,
+            /images/dog_w1200_h800.jpg 1200w"
+            sizes="(min-width: 1024px) calc(50vw - 3rem), 
+            (min-width: 640px) min(100vw - 3rem, 48rem), 
+            calc(100vw - 1rem)"
+        >
+        <!-- came with dog example
+            sizes="(min-width: 66em) 33vw,
+            (min-width: 44em) 50vw,
+            100vw"
+        -->
+
+        <br>
+        <p class="text-white "> Always white </p>
+        <p class="text-white sm:text-black"> sm 640px </p>
+        <p class="text-white md:text-black"> md 768px </p>
+        <p class="text-white lg:text-black"> lg 1024px </p>
+        <p class="text-white xl:text-black"> xl 1280px </p>
+        <p class="text-white 2xl:text-black"> 2xl 1536px </p>
+        <br>
+
+    </div>
+
+    <div class="relative h-64 m-8 overflow-hidden bg-indigo-500 rounded-lg">
+        <div class="absolute top-0 right-0 block w-9/12 h-full">
+        <img
+            class="object-cover h-full min-w-full"
+            src="/images/dog_w300_h200.jpg"
+            alt="Portrait of a happy-looking handsome dog with a ball in its mouth."
+            loading="lazy"
+            decoding="async"
+            srcset="/images/dog_w300_h200.jpg 300w,
+            /images/dog_w600_h400.jpg 600w,
+            /images/dog_w1200_h800.jpg 1200w"
+        />
+        </div>
+    </div>
+
+</Baselayout>

@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/rnwolf/astro-throughputfocus-com#readme",
   "dependencies": {
-    "astro": "^1.0.0-beta.42"
+    "astro": "^1.0.0-beta.46",
+    "astro-compress": "^0.0.11"
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^0.9.4",
