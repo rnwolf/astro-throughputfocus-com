@@ -48,7 +48,6 @@ export default defineConfig({
       },
     }),
     sitemap(),
-    // Only run `compress` integration when in production environments, etc...
-    import.meta.env.production ? compress() : null,
+    compress(),
   ],
 });
