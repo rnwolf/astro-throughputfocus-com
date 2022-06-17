@@ -2,6 +2,7 @@
 // Figure out how to get 100% for Google Lighthouse performance analysis
 // With astro-imagetools and tailwindcss
 import HeroImage from '$components/HeroImage.astro';
+import { Img } from "astro-imagetools/components";
 import { Markdown } from 'astro/components'
 import BaseLayout from '$layouts/BaseLayout.astro'
 ---
@@ -43,9 +44,16 @@ metaImageAlt="System throughput is determined by system constraint. Our team foc
 		<!--Right Col-->
 		<div class="w-full lg:w-1/2 lg:py-6 text-center">
 			<!--Add your product image here-->
-			<svg class="fill-current text-gray-900 w-3/5 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+			<!-- <svg class="fill-current text-gray-900 w-3/5 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
 				<path d="M17 6V5h-2V2H3v14h5v4h3.25H11a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6zm-5.75 14H3a2 2 0 0 1-2-2V2c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5.75zM11 8v8h6V8h-6zm3 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-			</svg>
+			</svg> -->
+
+            <Img src="/images/tetris-hero-1200x628.png"
+            alt="3D tetris blocks"
+            sizes="(min-width: 1024px) calc(50vw - 3rem), (min-width: 640px) min(100vw - 3rem, 48rem), calc(100vw - 1rem)"
+            loading="eager"
+            placeholder="tracedSVG"
+            format="webp">/>
 		</div>
 
 	</div>
@@ -69,7 +77,7 @@ metaImageAlt="System throughput is determined by system constraint. Our team foc
         -->
     
     
-        <div class="bg-blue-100 sm:bg-yellow-300 md:bg-red-300 lg:bg-indigo-300 xl:bg-slate-300 2xl:bg-blue-300">
+        <!-- <div class="bg-blue-100 sm:bg-yellow-300 md:bg-red-300 lg:bg-indigo-300 xl:bg-slate-300 2xl:bg-blue-300"> -->
     
                 <!-- <img
                 src="/images/dog_w300_h200.jpg"
@@ -89,15 +97,15 @@ metaImageAlt="System throughput is determined by system constraint. Our team foc
                 100vw"
             -->
     
-            <br>
-            <p class="text-white "> Always white </p>
+            <!-- <br> -->
+            <!-- <p class="text-white "> Always white </p>
             <p class="text-white sm:text-black"> sm 640px </p>
             <p class="text-white md:text-black"> md 768px </p>
             <p class="text-white lg:text-black"> lg 1024px </p>
             <p class="text-white xl:text-black"> xl 1280px </p>
             <p class="text-white 2xl:text-black"> 2xl 1536px </p>
-            <br>
+            <br> -->
     
-        </div>
+        <!-- </div> -->
 
 </Baselayout>
