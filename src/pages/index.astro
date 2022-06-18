@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '$layouts/BaseLayout.astro';
 import Hero from '$components/Hero.astro';
-import HeroTwo from '$components/HeroTwo.astro';
+import HeroTextImage from '$components/HeroTextImage.astro';
 import HeroThree from '$components/HeroThree.astro';
 import ValueStack from '$components/ValueStack.astro';
 import ValueStackNumbers from '$components/ValueStackNumbers.astro';
@@ -42,14 +42,21 @@ metaImageAlt="System throughput is determined by system constraint.">
         imageCreditHTML="Photo by <a href='https://unsplash.com/@hdbernd?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Bernd Dittrich</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
         bgcolour="bg-white-100" /> -->
 
-
-
-    <HeroTwo 
+    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+    <HeroTextImage
         heading="Does it feel like you are playing 3D Tetris with your development teams?" 
         subtext="Findout how you can empower your teams to use constaints inherant in every organisational process to simplify and improve the flow of work." 
         link="/contact_form" 
         linkText="Talk to an Expert" 
-        bgcolour="bg-white-100" />
+        bgcolour="bg-blue-100" />
+    </div>
+
+    <!-- <HeroTwo 
+        heading="Does it feel like you are playing 3D Tetris with your development teams?" 
+        subtext="Findout how you can empower your teams to use constaints inherant in every organisational process to simplify and improve the flow of work." 
+        link="/contact_form" 
+        linkText="Talk to an Expert" 
+        bgcolour="bg-white-100" /> -->
     
     <!-- <FeaturedBlogPosts 
         heading="Featured posts" 
@@ -69,6 +76,7 @@ metaImageAlt="System throughput is determined by system constraint.">
         subtext="Highlighted posts, and some info about why these are signigicant." 
         bgcolour="bg-white-100"
         featured={Config.selectedPosts} /> -->
+
 
     <FeaturedSelectedPostsTwoCards 
         heading="Selected posts" 
