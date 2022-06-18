@@ -17,22 +17,26 @@ import Config from "$/website.config.cjs";
         <div>
           <dt class="sr-only">Postal address</dt>
           <dd>
-            <p>742 Evergreen Terrace</p>
-            <p>Springfield, OR 12345</p>
+            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <p itemprop="streetAddress">{Config.streetAddress}</p>
+              <p itemprop="addressLocality">{Config.addressLocality}</p>
+              <p itemprop="addressRegion">{Config.addressRegion}</p>
+              <p itemprop="postalCode">{Config.postalCode}</p>
+            </div>
           </dd>
         </div>
         <div class="mt-6">
           <dt class="sr-only">Phone number</dt>
           <dd class="flex">
             <Icon size={24} name='mdi:phone' aria-label="phone icon"/>
-            <span class="ml-3">{Config.siteTelNumber}</span>
+            <a href={"tel:"+Config.siteTelNumber}><span class="ml-3" itemprop="telephone">{Config.siteTelNumber}</span></a>
           </dd>
         </div>
         <div class="mt-3">
           <dt class="sr-only">Email</dt>
           <dd class="flex">
             <Icon size={24} name='mdi:email' aria-label="email icon"/>
-            <span class="ml-3"> {Config.siteContactEmail} </span>
+            <span class="ml-3"> <a href={"mailto:"+Config.siteContactEmail} itemprop="email">{Config.siteContactEmail}</a></span>
           </dd>
         </div>
       </dl>

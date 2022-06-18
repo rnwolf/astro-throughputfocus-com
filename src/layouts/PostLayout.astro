@@ -138,13 +138,13 @@ metaImageAlt={content.openGraph.image.alt}>
     <!-- </div> -->
 
     <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
-        <div class="prose max-w-none">
-            <h1 class="text-4xl text-centre mb-3">{content.title}</h1>
+        <div class="prose max-w-none" itemscope itemtype="https://schema.org/Article">
+            <h1 class="text-4xl text-centre mb-3" itemprop="name">{content.title}</h1>
             <ul>
               <li class="inline-flex items-center text-gray-600">
                 <Icon size={24} name="mdi:calendar" aria-label="calendar icon"  />
                 {postPublished &&
-                  <time class="ml-2 inline-flex items-center text-gray-600">Published: {postPublished.slice(0,10)}</time>
+                  <time class="ml-2 inline-flex items-center text-gray-600" itemprop="datePublished">Published: {postPublished.slice(0,10)}</time>
                 }
                 {postFirstPublished && 
                   <time class="ml-2 inline-flex items-center text-gray-600">First Published: {postFirstPublished.slice(0,10)}</time>

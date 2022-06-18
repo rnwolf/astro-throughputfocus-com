@@ -26,15 +26,15 @@ metaImageAlt="System throughput is determined by system constraint. Our team foc
           {team.map(member => (
 
             <li>
-            <div class="space-y-4">
+            <div class="space-y-4" itemscope itemtype="https://schema.org/Person">
                 <div class="aspect-w-3 aspect-h-2">
-                <img class="object-cover shadow-lg rounded-lg" src={member.photo} alt="Head shot photo" width="589" height="589">
+                <img class="object-cover shadow-lg rounded-lg" itemprop="image" src={member.photo} alt="Head shot photo" width="589" height="589">
                 </div>
 
                 <div class="space-y-2">
                 <div class="text-lg leading-6 font-medium space-y-1">
-                    <h3>{member.fullname}</h3>
-                    <p class="text-indigo-600">{member.role}</p>
+                    <h3 itemprop="name">{member.fullname}</h3>
+                    <p class="text-indigo-600" itemprop="jobTitle">{member.role}</p>
                 </div>
                 <div class="text-lg">
                     <p class="text-gray-500">Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.</p>
@@ -42,13 +42,13 @@ metaImageAlt="System throughput is determined by system constraint. Our team foc
 
                 <ul class="flex space-x-5">
                     <li>
-                      <a href={`https://twitter.com${member.twitterprofile}`} class="text-blue-600 hover:text-blue-900  hover:underline-offset-4">
+                      <a href={`https://twitter.com${member.twitterprofile}`} class="text-blue-600 hover:text-blue-900  hover:underline-offset-4" itemprop="url">
                         <span class="sr-only">Twitter</span>
                         <Icon size={24} name='mdi:twitter' aria-label="twitter icon"/>
                       </a>
                     </li>
                     <li>
-                      <a href={`https://linkedin.com${member.linkedinprofile}`} class="text-blue-600 hover:text-blue-900  hover:underline-offset-4">
+                      <a href={`https://linkedin.com${member.linkedinprofile}`} class="text-blue-600 hover:text-blue-900  hover:underline-offset-4" itemprop="url">
                         <span class="sr-only">LinkedIn</span>
                         <Icon size={24} name='mdi:linkedin' aria-label="linkedin icon"/>
                       </a>
