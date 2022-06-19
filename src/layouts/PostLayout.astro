@@ -145,10 +145,12 @@ metaImageAlt={content.openGraph.image.alt}>
               <li class="inline-flex items-center text-gray-600">
                 <Icon size={24} name="mdi:calendar" aria-label="calendar icon"  />
                 {postPublished &&
-                  <time class="ml-2 inline-flex items-center text-gray-600" itemprop="dateModified">Published: {postPublished.slice(0,10)}</time>
+                  <span class="font-bold">Published:</span>
+                  <time class="mx-2 inline-flex items-center text-gray-600" itemprop="dateModified"> {postPublished.slice(0,10)}</time>
                 }
                 {postFirstPublished && 
-                  <time class="ml-2 inline-flex items-center text-gray-600" itemprop="datePublished">First Published: {postFirstPublished.slice(0,10)}</time>
+                  <span class="font-bold">First Published:</span>
+                  <time class="ml-2 inline-flex items-center text-gray-600" itemprop="datePublished"> {postFirstPublished.slice(0,10)}</time>
                 }
               </li>
 
@@ -160,9 +162,7 @@ metaImageAlt={content.openGraph.image.alt}>
                   {content.tags.map((tag) => <a class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg" href={`/tags/${tag}/1`}>{tag}</a>)}
               </li>
               <li class="mt-2 inline-flex items-center text-gray-600">
-                <span itemprop="author">
                   <AUTHORSSCHEMA authors={content.authors} />
-                </span>
               </li>
             </ul>
 
