@@ -44,17 +44,17 @@ import Config from "$/website.config.cjs";
 
 
     <div class="mt-12">
-      <form action="/api/sendemail" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+      <form action="/api/form-submit" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
         <div>
           <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
           <div class="mt-1">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+            <input type="text" name="firstName" id="first-name" autocomplete="given-name" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
           </div>
         </div>
         <div>
           <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
           <div class="mt-1">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+            <input type="text" name="lastName" id="last-name" autocomplete="family-name" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
           </div>
         </div>
         <div class="sm:col-span-2">
