@@ -160,7 +160,9 @@ metaImageAlt={content.openGraph.image.alt}>
                   {content.tags.map((tag) => <a class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg" href={`/tags/${tag}/1`}>{tag}</a>)}
               </li>
               <li class="mt-2 inline-flex items-center text-gray-600">
-                <AUTHORSSCHEMA authors={content.authors} />
+                <span itemprop="author">
+                  <AUTHORSSCHEMA authors={content.authors} />
+                </span>
               </li>
             </ul>
 
