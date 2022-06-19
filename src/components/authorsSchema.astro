@@ -25,9 +25,10 @@ function getAuthorByKey(authors, key) {
   </a>
   {authors.map((author) => 
     <span itemprop="author">
-      <a href={"/authors/" + author} itemprop="url" class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg">
-        <span itemprop="name">{getAuthorByKey(authorData,author).fullname}  </span>
+      <a href={"/authors/" + author}  class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg" itemprop="url">
+        {getAuthorByKey(authorData,author).fullname}
       </a> 
+      <span class="hidden" itemprop="name">{getAuthorByKey(authorData,author).fullname}  </span>
     </span>
   )}
   </div>
