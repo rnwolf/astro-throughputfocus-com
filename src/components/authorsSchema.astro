@@ -1,0 +1,26 @@
+---
+//src/components/authorsSchema.astro
+// Some buttons with links to author pages
+// To indicate via microformat who the author is http://microformats.org/wiki/rel-author
+import Config from "$/website.config.cjs";
+import { Icon } from 'astro-icon';
+
+let authorData = Config.authors;
+
+const { authors } = Astro.props;
+
+function getAuthorByKey(authors, key) {
+  let author = authors.filter((a) => a.key === key)[0];
+  return author;
+}
+---
+<!-- {JSON.stringify({authors})}  -->
+<!-- {JSON.stringify({authorData})} -->
+
+{authors &&
+  <Icon size={24} name="mdi:pencil"   aria-label="author icon"/>
+  <a href="/authors" class="flex items-center">
+    <div class="mr-2">Authors:</div>
+  </a>
+  {authors.map((author) => <a href={"/authors/" + author} rel="author" class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg"> {getAuthorByKey(authorData,author).fullname} </a> )}
+}

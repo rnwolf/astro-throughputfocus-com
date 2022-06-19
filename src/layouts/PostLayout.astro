@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '$layouts/BaseLayout.astro'
 import NavbarSpacer from '../components/NavbarSpacer.astro';
-import AUTHORS from '$components/authors.astro'
-import TOC from '$components/toc.astro'
+import AUTHORSSCHEMA from '$components/authorsSchema.astro';
+import AUTHORS from '$components/authors.astro';
+import TOC from '$components/toc.astro';
 import { Icon } from 'astro-icon';
 import RelatedArticles from '$components/RelatedArticles.astro';
 import SocialShare from '$components/SocialShare.astro';
@@ -158,6 +159,9 @@ metaImageAlt={content.openGraph.image.alt}>
                 </a>
                   {content.tags.map((tag) => <a class="bg-gray-800 px-2 py-1 mx-1 text-white rounded-lg" href={`/tags/${tag}/1`}>{tag}</a>)}
               </li>
+              <li class="mt-2 inline-flex items-center text-gray-600">
+                <AUTHORSSCHEMA authors={content.authors} />
+              </li>
             </ul>
 
             <p><em></em>{content.openGraph.description}<p><em></em>
@@ -176,9 +180,7 @@ metaImageAlt={content.openGraph.image.alt}>
                 <slot />
             </article>
             <SocialShare url={thisUrl.toString()} title={content.title} />
-            <span itemprop="author">
-              <AUTHORS authors={content.authors} level="3" />
-            </span>
+            <AUTHORS authors={content.authors} level="3" />
             <RelatedArticles
                   tags={content.tags}
                   currentPathname={thisUrl.pathname}
