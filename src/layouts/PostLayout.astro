@@ -144,10 +144,10 @@ metaImageAlt={content.openGraph.image.alt}>
               <li class="inline-flex items-center text-gray-600">
                 <Icon size={24} name="mdi:calendar" aria-label="calendar icon"  />
                 {postPublished &&
-                  <time class="ml-2 inline-flex items-center text-gray-600" itemprop="datePublished">Published: {postPublished.slice(0,10)}</time>
+                  <time class="ml-2 inline-flex items-center text-gray-600" itemprop="dateModified">Published: {postPublished.slice(0,10)}</time>
                 }
                 {postFirstPublished && 
-                  <time class="ml-2 inline-flex items-center text-gray-600">First Published: {postFirstPublished.slice(0,10)}</time>
+                  <time class="ml-2 inline-flex items-center text-gray-600" itemprop="datePublished">First Published: {postFirstPublished.slice(0,10)}</time>
                 }
               </li>
 
@@ -166,7 +166,7 @@ metaImageAlt={content.openGraph.image.alt}>
                 {content.tags.map((tag) => <div ><a href={`/tags/${tag}`}>{tag}</a></div>)}
             </div> -->
             <!-- <p>Written by: {content.author}</p> -->
-            <!-- <img src={content.openGraph.image.secureUrl}> -->
+            <span class="invisible" itemprop="image">{content.openGraph.image.secureUrl}</span>
 
             <TOC toc={content.astro.headers} />
 
