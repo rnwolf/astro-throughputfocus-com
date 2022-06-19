@@ -17,8 +17,8 @@ export default async function onRequestGet(context) {
   } = context;
 
   const somedata = env.API_KEY_DUMMY;
-
+  const statusCode = 301;
   const destinationURL = "https://throughputfocus.com/thanks_contact";
 
-  return new Response.redirect(destinationURL, { status: 301 });
+  return new Response.redirect(destinationURL, statusCode);
 }
