@@ -6,7 +6,7 @@
 
 // export async function onRequestPost(request, env) {
 // ...
-export async function onRequest(context) {
+export default async function onRequestGet(context) {
   // Contents of context object
   const {
     request, // same as existing Worker API
@@ -19,5 +19,12 @@ export async function onRequest(context) {
 
   const somedata = env.API_KEY_DUMMY;
 
-  return new Response(`Hello, world! ${somedata}`);
+  let htmlContent =
+    "<html><head></head><body><pre>" +
+    '</pre><p>Click to send message: <form method="post">Name: <input type="text" name="name"/><br>Email: <input         type="text" name="email"/><br>Sub: <input type="text" name="subject"/><br>Msg: <input type="text" name="message"/><br><input type="submit" value="Send"/></form></p>' +
+    "<pre>" +
+    "</pre>" +
+    "</body></html>";
+
+  return new Response(htmlContent, { status: 200 });
 }
