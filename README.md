@@ -339,3 +339,45 @@ const DATABASE_URL = process.env.DATABASE_URL || import.meta.env.DATABASE_URL;
 or create helper utility
 
 export function getEnvVar(name) { return process.env[name] || import.meta.env[name]; }
+
+# Example of attaching a bit of code to a button and running an api function
+
+## '''
+
+import { Button } from '../components';
+
+function handlePie() {
+const response = await fetch('/api/pie?flavor=cherry');
+const pie = await response.json();
+alert(pie);
+}
+
+---
+
+<Button onClick={handlePie} client:idle>
+  Test
+</Button>
+'''
+
+/api/pie.js:
+'''
+export async function get ({ request }) {
+let response, status;
+const parsedURL = new URL(request.url);
+const flavor = parsedURL.searchParams.get('flavor');
+if (flavor) {
+response = { flavor };
+status = 200;
+}
+
+if (!flavor) {
+response = { message: 'Flavor not found' };
+status = 404;
+}
+
+return new Response(JSON.stringify(response, null, 2), {
+status,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+'''
