@@ -8,6 +8,8 @@ export default {
   siteFormEmail: "website_form2@throughputfocus.com",
   siteTelNumber: "+44(0)7771678634",
   siteContactEmail: "hello@ThroughputFocus.com",
+  siteFormAPI:
+    "https://europe-west2-functions-dev-286915.cloudfunctions.net/main",
   favicon: "/favicon.ico",
   dateFormat: "yyyy-MM-dd HH:mm",
   socialImage: "default-opengraph-image.png",

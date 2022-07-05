@@ -44,7 +44,7 @@ import Config from "$/website.config.cjs";
 
 
     <div class="mt-12">
-      <form action="/api/submit" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+      <form action={Config.siteFormAPI} method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
         <div>
           <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
           <div class="mt-1">
@@ -66,7 +66,7 @@ import Config from "$/website.config.cjs";
         <div class="sm:col-span-2">
           <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
           <div class="mt-1">
-            <input id="email" name="email" type="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+            <input id="email" name="eml" type="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
           </div>
         </div>
         <div class="sm:col-span-2">
@@ -75,8 +75,10 @@ import Config from "$/website.config.cjs";
             <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"></textarea>
           </div>
         </div>
+        <input type="hidden" name="eml2" >
         <input type="hidden" name="_subject" value="Throughput Focus Website contact submission">
-        <input type="hidden" name="_next" value={Config.siteUrl+"/thanks_contact.html"}>
+        <input type="hidden" name="success" value={Config.siteUrl+"/contact_success"}>
+        <input type="hidden" name="problem" value={Config.siteUrl+"/contact_problem"}>
 
         <div class="sm:col-span-2">
           <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Let's talk</button>
