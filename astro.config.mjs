@@ -47,7 +47,15 @@ export default defineConfig({
         applyBaseStyles: false,
       },
     }),
-    sitemap(),
-    //compress(),
+    sitemap({
+      filter: (page) =>
+        [
+          "https://throughputfocus.com/contact_success/",
+          "https://throughputfocus.com/contact_problem/",
+          "https://throughputfocus.com/newsletter_success/",
+          "https://throughputfocus.com/newsletter_problem/",
+        ].indexOf(page) < 0,
+    }),
+    compress(),
   ],
 });

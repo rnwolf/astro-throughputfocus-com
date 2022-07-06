@@ -40,7 +40,7 @@ const params = Astro.params;
 
 const postTag = tagData.filter( tag => tag.key === Astro.params.tag)[0];
 
-console.log(JSON.stringify(postTag));
+// console.log(JSON.stringify(postTag));
 ---
 
 <BaseLayout title={postTag.title + " posts"} 

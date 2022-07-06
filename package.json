@@ -22,12 +22,12 @@
   },
   "homepage": "https://github.com/rnwolf/astro-throughputfocus-com#readme",
   "dependencies": {
-    "astro": "^1.0.0-beta.46",
+    "astro": "^1.0.0-beta.63",
     "astro-compress": "^0.0.11"
   },
   "devDependencies": {
-    "@astrojs/markdown-remark": "^0.9.4",
-    "@astrojs/sitemap": "^0.1.0",
+    "@astrojs/markdown-remark": "^0.11.3",
+    "@astrojs/sitemap": "^0.2.4",
     "@astrojs/tailwind": "^0.2.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.2",
