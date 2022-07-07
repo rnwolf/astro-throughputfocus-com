@@ -56,6 +56,6 @@ export default defineConfig({
           "https://throughputfocus.com/newsletter_problem/",
         ].indexOf(page) < 0,
     }),
-    compress(),
+    // compress(),
   ],
 });
