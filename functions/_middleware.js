@@ -31,14 +31,17 @@ const abTest = async ({ request, next, env }) => {
       }
       // get the static file from ASSETS, and attach a cookie
       // const asset = await env.ASSETS.fetch(url);
-      const assetURL = new URL("/", request.url).toString();
-      const assetReq = new Request(assetURL, {
+      // const assetURL = new URL("/", url).toString();
+      const assetReq = new Request(newHomepagePathName, {
         cf: request.cf,
       });
       const asset = await env.ASSETS.fetch(assetReq);
 
       let response = new Response(asset.body, asset);
-      response.headers.append("Set-Cookie", `${cookieName}=${version}; path=/`);
+      response.headers.append(
+        "Set-Cookie",
+        `${cookieName}=${version}; SameSite=None; Secure; path=/`
+      );
       return response;
     }
   }
