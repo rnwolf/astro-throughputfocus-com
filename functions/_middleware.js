@@ -1,5 +1,5 @@
 const cookieName = "ab-test-cookie";
-const newHomepagePathName = "https://throughputfocus.com/new-basic/";
+const newHomepagePathName = "new-basic";
 
 const abTest = async ({ request, next, env }) => {
   const url = new URL(request.url);
@@ -11,11 +11,10 @@ const abTest = async ({ request, next, env }) => {
     let cookie = request.headers.get("cookie");
     // is cookie set?
     if (cookie && cookie.includes(`${cookieName}=new`)) {
-      // pass the request to /test
-      url.pathname = newHomepagePathName;
+      // pass the request to pages under test
 
-      // return env.ASSETS.fetch(url);
-      const assetURL = new URL("/", request.url).toString();
+      // return env.ASSETS.fetch(url); this line did not work
+      const assetURL = new URL("/", newHomepagePathName).toString();
       const assetReq = new Request(assetURL, {
         cf: request.cf,
       });
@@ -31,8 +30,8 @@ const abTest = async ({ request, next, env }) => {
       }
       // get the static file from ASSETS, and attach a cookie
       // const asset = await env.ASSETS.fetch(url);
-      // const assetURL = new URL("/", url).toString();
-      const assetReq = new Request(newHomepagePathName, {
+      const assetURL = new URL("/", url).toString();
+      const assetReq = new Request(assetURL, {
         cf: request.cf,
       });
       const asset = await env.ASSETS.fetch(assetReq);
