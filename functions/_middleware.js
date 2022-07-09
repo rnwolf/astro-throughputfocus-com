@@ -13,7 +13,14 @@ const abTest = async ({ request, next, env }) => {
     if (cookie && cookie.includes(`${cookieName}=new`)) {
       // pass the request to /test
       url.pathname = newHomepagePathName;
-      return env.ASSETS.fetch(url);
+
+      // return env.ASSETS.fetch(url);
+      const assetURL = new URL("/", request.url).toString();
+      const assetReq = new Request(assetURL, {
+        cf: request.cf,
+      });
+      const asset = await env.ASSETS.fetch(assetReq);
+      return asset;
     } else {
       const percentage = Math.floor(Math.random() * 100);
       let version = "current"; // default version
@@ -23,7 +30,13 @@ const abTest = async ({ request, next, env }) => {
         version = "new";
       }
       // get the static file from ASSETS, and attach a cookie
-      const asset = await env.ASSETS.fetch(url);
+      // const asset = await env.ASSETS.fetch(url);
+      const assetURL = new URL("/", request.url).toString();
+      const assetReq = new Request(assetURL, {
+        cf: request.cf,
+      });
+      const asset = await env.ASSETS.fetch(assetReq);
+
       let response = new Response(asset.body, asset);
       response.headers.append("Set-Cookie", `${cookieName}=${version}; path=/`);
       return response;
