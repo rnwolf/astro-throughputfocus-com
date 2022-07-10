@@ -381,3 +381,8 @@ headers: { 'Content-Type': 'application/json' }
 });
 }
 '''
+
+## Consider using LogFlare to catch events from serverless functions
+
+https://github.com/vercel/vercel/discussions/5204
+Can take any JSON POST body and we turn that into a log event. Nested, not nested, anything.
