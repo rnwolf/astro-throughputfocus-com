@@ -15,7 +15,7 @@ const abTest = async ({ request, next, env }) => {
       url.pathname = newHomepagePathName;
 
       // return env.ASSETS.fetch(url);
-      const assetURL = new URL("/", request.url).toString();
+      const assetURL = new URL(newHomepagePathName).toString();
       const assetReq = new Request(assetURL, {
         cf: request.cf,
       });
@@ -32,7 +32,7 @@ const abTest = async ({ request, next, env }) => {
       // get the static file from ASSETS, and attach a cookie
       // const asset = await env.ASSETS.fetch(url);
       // const assetURL = new URL("/", url).toString();
-      const assetReq = new Request(newHomepagePathName, {
+      const assetReq = new Request("/", request.url, {
         cf: request.cf,
       });
       const asset = await env.ASSETS.fetch(assetReq);
