@@ -1,5 +1,5 @@
 const cookieName = "ab-test-cookie";
-const newHomepagePathName = "https://throughputfocus.com/new-basic/";
+const newHomepagePathName = "/new-basic";
 
 const abTest = async ({ request, next, env }) => {
   const url = new URL(request.url);
