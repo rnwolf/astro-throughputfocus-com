@@ -16,7 +16,7 @@ const abTest = async ({ request, next, env }) => {
       url.pathname = newHomepagePathName;
 
       // return env.ASSETS.fetch(url);
-      const assetURL = new URL(newHomepagePathName).toString();
+      const assetURL = new URL(url).toString();
       const assetReq = new Request(assetURL, {
         cf: request.cf,
       });
