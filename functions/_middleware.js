@@ -7,6 +7,7 @@ const abTest = async ({ request, next, env }) => {
   if (url.pathname === "/") {
     // if cookie ab-test-cookie=new then change the request to go to /test
     // if no cookie set, pass x% of traffic and set a cookie value to "current" or "new"
+    // Session cookies expire once you log off or close the browser.
 
     let cookie = request.headers.get("cookie");
     // is cookie set?
@@ -32,7 +33,7 @@ const abTest = async ({ request, next, env }) => {
       // get the static file from ASSETS, and attach a cookie
       // const asset = await env.ASSETS.fetch(url);
       // const assetURL = new URL("/", url).toString();
-      const assetReq = new Request("/", request.url, {
+      const assetReq = new Request(request.url, {
         cf: request.cf,
       });
       const asset = await env.ASSETS.fetch(assetReq);
