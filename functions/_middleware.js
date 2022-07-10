@@ -2,7 +2,7 @@
 // https://developers.cloudflare.com/pages/how-to/use-worker-for-ab-testing-in-pages/
 // https://github.com/cloudflare/wrangler2/issues/165
 const cookieName = "ab-test-cookie";
-const newHomepagePathName = "/new-basic";
+const newHomepagePathName = "/index-new";
 
 const abTest = async ({ request, next, env }) => {
   const url = new URL(request.url);
