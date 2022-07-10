@@ -1,3 +1,6 @@
+// Source for abtest code
+// https://developers.cloudflare.com/pages/how-to/use-worker-for-ab-testing-in-pages/
+// https://github.com/cloudflare/wrangler2/issues/165
 const cookieName = "ab-test-cookie";
 const newHomepagePathName = "/new-basic";
 
@@ -5,17 +8,15 @@ const abTest = async ({ request, next, env }) => {
   const url = new URL(request.url);
   // if homepage
   if (url.pathname === "/") {
-    // if cookie ab-test-cookie=new then change the request to go to /test
+    // if cookie ab-test-cookie=new then change the request to go to new test page
     // if no cookie set, pass x% of traffic and set a cookie value to "current" or "new"
     // Session cookies expire once you log off or close the browser.
 
     let cookie = request.headers.get("cookie");
     // is cookie set?
     if (cookie && cookie.includes(`${cookieName}=new`)) {
-      // pass the request to /test
       url.pathname = newHomepagePathName;
 
-      // return env.ASSETS.fetch(url);
       const assetURL = new URL(url).toString();
       const assetReq = new Request(assetURL, {
         cf: request.cf,
@@ -31,8 +32,6 @@ const abTest = async ({ request, next, env }) => {
         version = "new";
       }
       // get the static file from ASSETS, and attach a cookie
-      // const asset = await env.ASSETS.fetch(url);
-      // const assetURL = new URL("/", url).toString();
       const assetReq = new Request(request.url, {
         cf: request.cf,
       });
