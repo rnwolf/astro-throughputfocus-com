@@ -10,53 +10,46 @@ const {url, title} = Astro.props;
 
     <p>If you found this article interesting or useful, please share it with your network.</p>
 
-    <a href=`https://twitter.com/intent/tweet/?text=I%20found%20this%20useful%20article&amp;url=${url}` 
-    aria-label="Share via Twitter."
-    title="Share via Twitter"
-    target="_blank"
-    rel="noopener noreferrer">
-        <button 
-        type="button" 
-        class="inline-flex items-center justify-center mx-2 px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" >
+    
+    <div class="p-2">
+        <a href=`https://twitter.com/intent/tweet/?text=I%20found%20this%20useful%20article&amp;url=${url}` 
+        aria-label="Share via Twitter."
+        title="Share via Twitter"
+        target="_blank"
+        rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 font-medium hover:bg-blue-900 text-white rounded-md">
             <Icon size={16} name="mdi:twitter" aria-label="twitter icon"  />
             <span class="ml-2">Share via Twitter.</span>
             <span class="sr-only">opens a new window</span>
             <span class="sr-only">opens a new window</span>
             <Icon size={16} name="ci:external-link" aria-label="external link icon"  />
-        </button>
-    </a>
-
-    <a href=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
-    aria-label="Share via LinkedIn."
-    title="Share via LinkedIn."
-    target="_blank"
-    rel="noopener noreferrer">
-        <button 
-        type="button" 
-        class="inline-flex items-center justify-center px-5 py-2.5 mr-2 mb-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" >
+        </a>
+    </div>
+  
+    <div class="p-2">
+        <a href=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+        aria-label="Share via LinkedIn."
+        title="Share via LinkedIn."
+        target="_blank"
+        rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 font-medium hover:bg-blue-900 text-white rounded-md">
             <Icon size={16} name="mdi:linkedin" aria-label="linkedin icon" />
             <span class="ml-2">Share via LinkedIn.</span>
             <span class="sr-only">opens a new window</span>
             <span class="sr-only">opens a new window</span>
             <Icon size={16} name="ci:external-link" aria-label="external link icon" />
-        </button>
-    </a>
-    
-    <a href=`mailto:?body=${url}`
-    aria-label="Share via Email."
-    title="Share via Email."
-    target="_blank"
-    rel="noopener noreferrer" class="px-5 py-2.5 mr-2 mb-12">
-        <button 
-        type="button" 
-        class="inline-flex items-center justify-center text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" >
+        </a>
+    </div>
+
+    <div class="p-2">
+        <a href=`mailto:?body=${url}`
+        aria-label="Share via Email."
+        title="Share via Email."
+        target="_blank"
+        rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 font-medium hover:bg-blue-900 text-white rounded-md">
             <Icon size={16} name="mdi:email" aria-label="email icon"  />
             <span class="ml-2">Share via Email.</span>
             <span class="sr-only">opens a new window</span>
             <Icon size={16} name="ci:external-link" aria-label="external link icon" />
-        </button>
-    </a>
-
-
+        </a>
+    </div>
 
 </div>
