@@ -21,6 +21,8 @@ function getAuthorByKey(authors, key) {
 <!-- <div>Author keys:</div>
 {authors.map((author) => <div >{author}</div>)} -->
 {authors &&
+  <>
   <h2 class="mt-4" >Authors</h2>
   {authors.map((author) => <AUTHOR author={getAuthorByKey(authorData,author)} level={level}/>)}
+  </>
 }

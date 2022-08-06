@@ -6,6 +6,10 @@ import NavbarSpacer from '../components/NavbarSpacer.astro';
 import Footer from '../components/FooterNav.astro';
 import { SEO } from "astro-seo";
 
+// https://github.com/withastro/astro/pull/4012  replace when feature is released
+import { dependencies } from 'package.json';
+const generator = `astro-${dependencies.astro}`;
+
 const currentyear = new Date().getFullYear();
 const { title, description='', metaTitle='', metaDescription='', metaImage='',metaImageAlt='' } = Astro.props;
 const {content} = Astro.props;
@@ -42,6 +46,7 @@ const metaImageUrl = projectRootURL+'/'+metaImage
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
   <!-- {description && <meta name="description" content={description} />} -->
 	<!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
+  <meta name='generator' content={generator} />
 <SEO
   {title}
   {description}
