@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import { astroImageTools } from "astro-imagetools";
 import webmanifest from "astro-webmanifest";
 import sitemap from "@astrojs/sitemap";
-import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
