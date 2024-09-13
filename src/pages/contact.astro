@@ -6,6 +6,7 @@ import { getEntry } from "astro:content";
 import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const entry = await getEntry("pages", "contact");
+const {base_url} = config.site
 const { contact_form_action } = config.params;
 const { address, email, phone } = config.contactinfo;
 const { title, description, meta_title, image } = entry.data;
@@ -67,9 +68,9 @@ const { title, description, meta_title, image } = entry.data;
             </div>
 
             <input type="hidden" name="eml2">
-            <input type="hidden" name="_subject" value="www.rnwolf.net Website contact submission">
-            <input type="hidden" name="success" value="https://www.rnwolf.net/contact_success">
-            <input type="hidden" name="problem" value="https://www.rnwolf.net/contact_problem">
+            <input type="hidden" name="_subject" value="https://throughputfocus.com Website contact submission">
+            <input type="hidden" name="success" value="https://throughputfopcus.com/contact_success">
+            <input type="hidden" name="problem" value="https://throughputfocus.com/contact_problem">
 
             <div class="col-12">
               <button class="btn btn-primary mt-2">Submit Now</button>
