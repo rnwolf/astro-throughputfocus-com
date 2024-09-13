@@ -3,9 +3,9 @@ title: Rüdiger Wolf
 image: /images/authors/2019-12-06_rnwolf_photo.jpg
 description: Photo of Rüdiger
 social:
+  website: https://www.rnwolf.net
   twitter: https://x.com/rnwolf
   linkedin: https://www.linkedin.com/in/rudigerwolf
-  gitlab: https://abc.com
   facebook: https://facebook.com/rnwolf
   youtube: https://youtube.com/@rudigerwolf
   
