@@ -1,0 +1,82 @@
+---
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+import { markdownify } from "@/lib/utils/textConverter";
+import Posts from "@/layouts/Posts.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("home", "index");
+const { title, description, meta_title, image, what_we_do } = entry.data;
+const { Content } = await entry.render();
+
+const posts = await getSinglePage("posts");
+const sortedPosts = sortByDate(posts);
+const totalPages = Math.ceil(posts.length / config.settings.pagination);
+const currentPosts = sortedPosts.slice(0, 2);
+const currentPostsCount = currentPosts.length
+---
+
+<Base>
+
+    <section class="section">
+    <div class="container">
+      <div class="row md:gx-4">
+        <div class="sm:col-5 md:col-4">
+          {
+            image && (
+              <div class="img-cover mb-8">
+                <Image
+                  src={image}
+                  width={295}
+                  height={395}
+                  alt={title}
+                  class="rounded-lg w-full"
+                />
+              </div>
+            )
+          }
+        </div>
+        <div class="sm:col-7 md:col-8">
+          <h1 set:html={markdownify(title)} class="h3 mb-8" />
+
+          <div class="content">
+            <Content />
+          </div>
+          <a href="/contact" class="btn btn-primary text-white py-2"
+            >Get In Touch</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <h3 class="page-heading mb-20">{what_we_do.title}</h3>
+      <div class="row justify-center gy-4 text-center">
+        {
+          what_we_do.items.map((item: any) => (
+            <div class="lg:col-4 md:col-6">
+              <i class="{{.icon}} fa-3x text-primary mb-4" />
+              <h4 class="text-dark font-weight-700 mb-3">{item.title}</h4>
+              <p>{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+{currentPostsCount ? 
+  <section class="section">
+    <h3 class="page-heading mb-20" >Latest Blog Posts</h3>
+    <div class="container">
+      <Posts posts={currentPosts}  fluid={false} className="mb-16" />
+    </div>
+  </section> 
+: <p></p>}
+
+</Base>

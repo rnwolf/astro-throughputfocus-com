@@ -1,0 +1,36 @@
+{
+  "site": {
+    "title": "Throughput focused tech team delivery management services",
+    "base_url": "https://www.throughputfopcus.com",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/favicon.ico",
+    "logo": "/logo_throughputfocus200x40_black_text.png",
+    "logo_width": "200",
+    "logo_height": "40",
+    "logo_text": "Logo for website"
+  },
+
+  "settings": {
+    "pagination": 4,
+    "summary_length": 80
+  },
+
+  "metadata": {
+    "meta_author": "Rüdiger Wolf",
+    "meta_image": "/default-opengraph-image.jpg",
+    "meta_image_alt": "All organisation's throughput is limited by a constraint, where is yours?",
+    "meta_description": "Delivery Manmagement services to maximise your teams valuable throughput."
+  },
+
+  "params": {
+    "contact_form_action": "https://europe-west2-functions-dev-286915.cloudfunctions.net/main",
+    "copyright": "Copyright © 2024 - Website theme by [Themefisher](https://themefisher.com)"
+  },
+
+  "contactinfo": {
+    "address": "Clophill<br/> United Kingdom",
+    "email": "info@ThroughputFocus.com",
+    "phone": "+44-7771678634"
+  }
+}

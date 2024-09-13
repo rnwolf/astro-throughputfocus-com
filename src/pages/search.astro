@@ -1,0 +1,24 @@
+---
+import Base from "@/layouts/Base.astro";
+import SearchBar from "@/layouts/SearchBar";
+import { getSinglePage } from "@/lib/contentParser.astro";
+
+// Retrieve all articles
+const posts = await getSinglePage("posts");
+
+// List of items to search in
+const searchList = posts.map((item: any) => ({
+  slug: item.slug,
+  data: item.data,
+  content: item.body,
+}));
+---
+
+<Base title={`Search`}>
+  <section class="section">
+    <p class="mx-4 text-center">White space acts as an AND operator, while a single pipe (|) character acts as an OR operator.</p>
+    <div class="container">
+      <SearchBar client:load searchList={searchList} />
+    </div>
+  </section>
+</Base>
