@@ -58,7 +58,7 @@ jobs:
         run: pnpm install -D @playwright/test@latest
 
       - name: Install Playwright Browsers
-        run: pnpm exec playwright install --with-deps
+        run: pnpm exec playwright install --with-deps chromium
 
       - name: Build Astro Site
         run: pnpm run build
@@ -78,7 +78,7 @@ jobs:
         id: deploy_to_production
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.LOUDFLARE_ACCOUNT_ID }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
           directory: ./dist
           # Optional: Enable this if you want to have GitHub Deployments triggered
