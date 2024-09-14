@@ -33,17 +33,17 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm install -D @playwright/test@latest` | Install Playwrite |
-| `npx playwright install --with-deps` | Install dependencies |
-| `npm run build -mode production` | build and use playwrite when required. |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                                  | Action                                           |
+| :--------------------------------------- | :----------------------------------------------- |
+| `npm install`                            | Installs dependencies                            |
+| `npm install -D @playwright/test@latest` | Install Playwrite                                |
+| `npx playwright install --with-deps`     | Install dependencies                             |
+| `npm run build -mode production`         | build and use playwrite when required.           |
+| `npm run dev`                            | Starts local dev server at `localhost:4321`      |
+| `npm run build`                          | Build your production site to `./dist/`          |
+| `npm run preview`                        | Preview your build locally, before deploying     |
+| `npm run astro ...`                      | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help`                | Get help using the Astro CLI                     |
 
 ## 👀 Want to learn more?
 
