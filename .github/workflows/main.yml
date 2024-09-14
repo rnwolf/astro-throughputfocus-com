@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -69,10 +69,6 @@ jobs:
           path: ./dist
           name: dist
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         id: deploy_to_production
@@ -80,7 +76,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
-          directory: dist
+          directory: ./dist
           # Optional: Enable this if you want to have GitHub Deployments triggered
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           # Optional: Switch what branch you are publishing to.
