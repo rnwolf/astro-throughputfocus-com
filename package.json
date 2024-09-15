@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "deploy": "npx wrangler pages deploy dist --project-name=astro-throughputfocus-com"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.2",
@@ -46,6 +47,7 @@
     "sharp": "0.33.4",
     "tailwind-bootstrap-grid": "^5.1.0",
     "tailwindcss": "^3.4.4",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "wrangler": "^3.78.2"
   }
 }
