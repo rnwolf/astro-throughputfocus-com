@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Throughput focused tech team delivery management services",
-    "base_url": "https://www.throughputfopcus.com",
+    "base_url": "https://www.throughputfocus.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/favicon.ico",
@@ -20,7 +20,7 @@
     "meta_author": "Rüdiger Wolf",
     "meta_image": "/default-opengraph-image.jpg",
     "meta_image_alt": "All organisation's throughput is limited by a constraint, where is yours?",
-    "meta_description": "Delivery Manmagement services to maximise your teams valuable throughput."
+    "meta_description": "Delivery Management services to maximise your teams valuable throughput."
   },
 
   "params": {

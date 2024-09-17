@@ -39,6 +39,7 @@ const currentPosts = sortPostsByDate.filter((post) => {
   meta_title={meta_title}
   description={description}
   image={image}
+  canonical={Astro.url.href}
 >
   <AuthorSingle author={author} />
 

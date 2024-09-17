@@ -12,7 +12,9 @@ const totalPages = Math.ceil(posts.length / config.settings.pagination);
 const currentPosts = sortedPosts.slice(0, config.settings.pagination);
 ---
 
-<Base>
+<Base
+canonical={Astro.url.href}
+>
   <section class="section">
     <div class="container">
       <Posts posts={currentPosts} className="mb-16" />

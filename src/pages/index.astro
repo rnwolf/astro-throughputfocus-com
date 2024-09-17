@@ -19,7 +19,9 @@ const currentPosts = sortedPosts.slice(0, 2);
 const currentPostsCount = currentPosts.length
 ---
 
-<Base>
+<Base
+canonical={Astro.url.href}
+>
 
     <section class="section">
     <div class="container">
