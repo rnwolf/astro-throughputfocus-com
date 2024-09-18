@@ -1,10 +1,10 @@
 name: Deploy to Cloudflare Page Static Site
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
+  # Trigger the workflow every time you push to the `main` or `staging` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [main]
+    branches: [main, staging]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -24,8 +24,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+              
+      - name: Extract branch name
+        shell: bash
+        run: echo "GIT_BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_ENV
+        id: extract_branch
+
+      - name: Display git branch
+        shell: bash
+        run: echo ${{ env.GIT_BRANCH }}
+
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.STORE_PATH }}
 
       - name: Use Node.js 20
         uses: actions/setup-node@v4
