@@ -13,6 +13,9 @@ pids
 *.seed
 *.pid.lock
 
+# Wrangler
+.wrangler
+
 # Astro build time artifacts
 .astro
 
