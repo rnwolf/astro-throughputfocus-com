@@ -51,9 +51,11 @@ Setup environment variable. Assumes that Wrangler CLI has been installed and per
 
 `$ENV:CLOUDFLARE_ACCOUNT_ID = "XXXXXXXXXXXXXXXXX"`
 
-From the root termincal run the following to deploy.
+From the directory root use the following to deploy.
 
 `npx wrangler pages deploy dist --project-name=astro-throughputfocus-com`
+
+When you have got the functions working, commit to github and github action will commit the saved changes.
 
 
 ## 👀 Want to learn more?

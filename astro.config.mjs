@@ -23,12 +23,19 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) =>
-        page !== 'https://www.throughputfocus.com/contact_problem' &&
-        page !== 'https://www.throughputfocus.com/test-a' &&
-        page !== 'https://www.throughputfocus.com/test-b' &&
-        page !== 'https://www.throughputfocus.com/elements' &&
-        page !== 'https://www.throughputfocus.com/contact_success',
+        serialize(item) {
+          if (/contact_.*[a-z]|test-[a-z]|elements/.test(item.url)) {  // Update this to exclude more pages from site-map
+            return undefined;
+          }
+          // Make sure that any blog posts with todays date n url and the blog index page have a lastmod date
+          let dateString = `${new Date().toLocaleString("en-CA", { timeZone: "Europe/London" }).slice(0, 10)}.*|blog`;
+          if (new RegExp(dateString, 'i').test(item.url)) {
+            item.changefreq = 'daily';
+            item.lastmod = new Date();
+            item.priority = 0.9;
+          }
+          return item;
+        },
     }),
     tailwind({
       config: {
