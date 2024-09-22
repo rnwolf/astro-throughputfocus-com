@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /api/*
-
-Sitemap: https://www.throughputfocus.com/sitemap-index.xml
