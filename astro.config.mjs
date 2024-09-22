@@ -25,6 +25,7 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         page !== 'https://www.throughputfocus.com/contact_problem' &&
+        page !== 'https://www.throughputfocus.com/index-test' &&
         page !== 'https://www.throughputfocus.com/elements' &&
         page !== 'https://www.throughputfocus.com/contact_success',
     }),
